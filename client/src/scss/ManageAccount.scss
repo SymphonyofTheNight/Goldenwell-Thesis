@@ -1,0 +1,787 @@
+@import 'fonts.scss';  
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+@mixin baseDisplay($height,$width,$display,$alignItems,$justifyContent){
+    height: $height;
+    width: $width;
+    display: $display;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+.ManageAccount{
+    background: rgba($color: #663737, $alpha: 0);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .header{
+        background: rgba($color: #3d6439, $alpha: 0);
+        height: 5vh;
+        width: 100vw;
+        display: flex;
+        .clientNameContainer{
+            background: rgba($color: #33267a, $alpha: 0);
+            height: 5vh;
+            width: 15vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .ClientName{
+                font-family: 'myFont',sans-serif;
+                font-weight: 700;
+                font-size: 1.3em;
+                margin-left: 3.3vw;
+            }
+        }
+        .titleContainer{
+            background: rgba($color: #612c68, $alpha: 0);
+            height: 5vh;
+            width: 25vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .textTitle{
+                font-size: 2em;
+                font-family: 'myFont',sans-serif;
+                font-weight: bold;
+                margin-left: 1vw;
+            }
+        }
+    }
+    .contentContainer{
+        background: rgba($color: #226f72, $alpha: 0);
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        .navigationContainer{
+            background: rgba($color: #6c1a8d, $alpha: 0);
+            height: 80vh;
+            width: 15vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            .ManageAccountBtn{
+                background: rgba($color: #3199b3, $alpha: 0);
+                height: 3vh;
+                width: 15vw;
+                margin-top: 1vh;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border: 0px solid transparent;
+                .text{
+                    margin-left: 3.3vw;
+                    font-size: 1.2em;
+                    font-family: 'myFont', sans-serif;
+                    font-weight: bold;
+                }
+            }
+            .myProfileBtn{
+                background: rgba($color: #1f8577, $alpha: 0);
+                height: auto;
+                width: 15vw;
+                margin-top: .5vh;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border: 0px solid transparent;
+                .text{
+                    margin-left: 4vw;
+                    font-size: 1.1em;
+                    font-family: 'myFont', sans-serif;
+                }
+            }
+            .myAddressBtn{
+                background: rgba($color: #1f8577, $alpha: 0);
+                height: auto;
+                width: 15vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                 border: 0px solid transparent;
+                .text{
+                    margin-left: 4vw;
+                    font-size: 1.1em;
+                    font-family: 'myFont', sans-serif;
+                }
+            }
+            .OrderBtn{
+                background: rgba($color: #3199b3, $alpha: 0);
+                height: 3vh;
+                width: 15vw;
+                margin-top: 1vh;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border: 0px solid transparent;
+                .text{
+                    margin-left: 3.3vw;
+                    font-size: 1.2em;
+                    font-family: 'myFont', sans-serif;
+                    font-weight: bold;
+                }
+            }
+            .myCancellationsBtn{
+                background: rgba($color: #1f8577, $alpha: 0);
+                height: auto;
+                width: 15vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                 border: 0px solid transparent;
+                .text{
+                    margin-left: 4vw;
+                    font-size: 1.1em;
+                    font-family: 'myFont', sans-serif;
+                }
+            }
+        }
+        .selectedCategoryContainer{
+            background: rgba($color: #3219a0, $alpha: 0);
+            height: 80vh;
+            width: 81vw;
+            display: flex;
+            .ManageAccountLandingpage{
+                background: rgba($color: #000000, $alpha: 0);
+                height: 40vh;
+                width: 81vw;
+                margin-top: 1vh;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                .PersonalInfoContainer{
+                    background: rgba($color: #f0f0f0, $alpha: 1);
+                    height: 40vh;
+                    width: 28vw;
+                    .Container-1{
+                        background: rgba($color: #18a59e, $alpha: 0);
+                        height: 4vh;
+                        width: 28vw;
+                        margin-top: 2vh;
+                        display: flex;
+                        .textContainer{
+                            background: rgba($color: #7f8619, $alpha: 0);
+                            height: 4vh;
+                            width: 12vw;
+                            margin-left: 1.5vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            border-right: 2px solid black;
+                            .text{
+                                font-size: 2em;
+                                font-family: 'myFont', sans-serif;
+                            }
+                        }
+                        .btnContainer{
+                            background: rgba($color: #9e1daa, $alpha: 0);
+                            height: 4vh;
+                            width: auto;
+                            .btnEdit{
+                                background: rgba($color: #c47226, $alpha: 0);
+                                height: 4vh;
+                                width: 3.5vw;
+                                border: 0px solid transparent;
+                                font-size: 1.5em;
+                                display: grid;
+                                place-items: center;
+                                font-family: 'myFont', sans-serif;
+                                color: #18a59e;
+                            }
+                        }
+                    }
+                    .ClientDetailsContainer{
+                        background: rgba($color: #000000, $alpha: 0);
+                        height: 10vh;
+                        width: 28vw;
+                        margin-top: 2vh;
+                        display: grid;
+                        .nameTextContainer{
+                            background: rgba($color: #8d8b1a, $alpha: 0);
+                            height: 5vh;
+                            width: 28vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                margin-left: 1.5vw;
+                                font-size: 1.5em;
+                            }
+                        }
+                        .emailTextContainer{
+                            background: rgba($color: #17978d, $alpha: 0);
+                            height: 5vh;
+                            width: 28vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                margin-left: 1.5vw;
+                                font-size: 1.5em;
+                            }
+                        }
+                    }
+                }
+                .AddressBookContainer{
+                    background: rgba($color: #f0f0f0, $alpha: 1);
+                    height: 40vh;
+                    width: 50vw;
+                    .Container-1{
+                        background: rgba($color: #18a59e, $alpha: 0);
+                        height: 4vh;
+                        width: 50vw;
+                        margin-top: 2vh;
+                        display: flex;
+                        .textContainer{
+                            background: rgba($color: #7f8619, $alpha: 0);
+                            height: 4vh;
+                            width: 11.2vw;
+                            margin-left: 1.5vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            border-right: 2px solid black;
+                            .text{
+                                font-size: 2em;
+                                font-family: 'myFont', sans-serif;
+                            }
+                        }
+                        .btnContainer{
+                            background: rgba($color: #9e1daa, $alpha: 0);
+                            height: 4vh;
+                            width: auto;
+                            .btnEdit{
+                                background: rgba($color: #c47226, $alpha: 0);
+                                height: 4vh;
+                                width: 3.5vw;
+                                border: 0px solid transparent;
+                                font-size: 1.5em;
+                                display: grid;
+                                place-items: center;
+                                font-family: 'myFont', sans-serif;
+                                color: #18a59e;
+                            }
+                        }
+                    }
+                    .ClientDetailsContainer{
+                        background: rgba($color: #000000, $alpha: 0);
+                        height: 30vh;
+                        width: 50vw;
+                        margin-top: 2vh;
+                        display: grid;
+                        .addressTextContainer{
+                            background: rgba($color: #17978d, $alpha: 0);
+                            height: 30vh;
+                            width: 50vw;
+                            display: flex;
+                            .addressContainer-1{
+                                background: rgba($color: #218694, $alpha: 0);
+                                height: 30vh;
+                                width: 25vw;
+                                display: flex;
+                                flex-direction: column;
+                                border-right: 2px solid gray;
+                                .labelContentContainer{
+                                    background: rgba($color: #283eb6, $alpha: 0);
+                                    height: 5vh;
+                                    width: 25vw;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    .text{
+                                        font-family: 'myFont',sans-serif;
+                                        color: gray;
+                                        font-size: 1.1em;
+                                        font-weight: 700;
+                                        margin-left: 1.5vw;
+                                    }
+                                }
+                                .nameTextContainer{
+                                    background: rgba($color: #bb641e, $alpha: 0);
+                                    height: 4vh;
+                                    width: 25vw;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    .text{
+                                        font-family: 'myFont',sans-serif;
+                                        font-size: 1.5em;
+                                        font-weight: 700;
+                                        margin-left: 1.5vw;
+                                    }
+                                }
+                                .contentTextContainer{
+                                    background: rgba($color: #c21a6e, $alpha: 0);
+                                    height: auto;
+                                    width: 25vw;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    .text{
+                                        font-family: 'myFont',sans-serif;
+                                        font-size: 1.5em;
+                                        margin-left: 1.5vw;
+                                    }
+                                }
+                            }
+                            .addressContainer-2{
+                                background: rgba($color: #3c1585, $alpha: 0);
+                                height: 30vh;
+                                width: 25vw;
+                                display: flex;
+                                flex-direction: column;
+                                .labelContentContainer{
+                                    background: rgba($color: #283eb6, $alpha: 0);
+                                    height: 5vh;
+                                    width: 25vw;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    .text{
+                                        font-family: 'myFont',sans-serif;
+                                        color: gray;
+                                        font-size: 1.1em;
+                                        font-weight: 700;
+                                        margin-left: 1.5vw;
+                                    }
+                                }
+                                .nameTextContainer{
+                                    background: rgba($color: #bb641e, $alpha: 0);
+                                    height: 4vh;
+                                    width: 25vw;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    .text{
+                                        font-family: 'myFont',sans-serif;
+                                        font-size: 1.5em;
+                                        font-weight: 700;
+                                        margin-left: 1.5vw;
+                                    }
+                                }
+                                .contentTextContainer{
+                                    background: rgba($color: #c21a6e, $alpha: 0);
+                                    height: auto;
+                                    width: 25vw;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    .text{
+                                        font-family: 'myFont',sans-serif;
+                                        font-size: 1.5em;
+                                        margin-left: 1.5vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .PersonalDetails{
+                background: rgba($color: #000000, $alpha: 0);
+                @include baseDisplay(60vh,81vw,flex,center,center);
+                margin-top: 1vh;
+                .DetailsContainer{
+                    background: rgba($color: #f0f0f0, $alpha: 1);
+                    height: 60vh;
+                    width: 79vw;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .innerContainer{
+                        background: rgba($color: #a03e3e, $alpha: 0);
+                        height: 60vh;
+                        width: 26vw;
+                        display: flex;
+                        flex-direction: column;
+                        .fullnameContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 2vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .birthdayContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 10vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .emailContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 2vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .genderContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 10vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .mobileContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 2vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .customerDetailContainer{
+                            background: rgba($color: #199292, $alpha: 0);
+                            height: 4vh;
+                            width: 26vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                font-size: 1.5em;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .btnContainer-1{
+                            background: rgba($color: #1d7c99, $alpha: 0);
+                            margin-top: 10vh;
+                            @include baseDisplay(7vh,26vw,grid,center,flex-start);
+                            .editProfile{
+                                background: rgba($color: #0a7aa7, $alpha: 1.0);
+                                height: 6vh;
+                                width: 23vw;
+                                margin-left: 1.5vw;
+                                border: 0px solid transparent;
+                                display: grid;
+                                place-items: center;
+                                color: #fff;
+                            }
+                        }
+                        .btnContainer-2{
+                            background: rgba($color: #1d813e, $alpha: 0);
+                            // height: 6vh;
+                            // width: 26vw;
+                            // display: grid;
+                            // align-items: center;
+                            // justify-content: flex-start;
+                            @include baseDisplay(7vh,26vw,grid,center,flex-start);
+                            .changePasswordBtn{
+                                background: rgba($color: #0a7aa7, $alpha: 1.0);
+                                height: 6vh;
+                                width: 23vw;
+                                margin-left: 1.5vw;
+                                border: 0px solid transparent;
+                                display: grid;
+                                place-items: center;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+            .AddressBook{
+                background: rgba($color: #000000, $alpha: 0);
+                @include baseDisplay(25vh,81vw,flex,center,center);
+                margin-top: 1vh;
+                .innerContainer{
+                    background: rgba($color: #f0f0f0, $alpha: 1);
+                    @include baseDisplay(25vh,79vw,flex,center,center);
+                    overflow-x: auto;
+                    .customerDetailContainer{
+                        background: rgba($color: #4e2181, $alpha: 0);
+                        height: 18vh;
+                        width: 75vw;
+                        display: flex;
+                        flex-direction: column;
+                        .customerDetailBtnEditContainer{
+                            background: rgba($color: #106441, $alpha: 0);
+                            height: 8vh;
+                            width: 75vw;
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: flex-start;
+                            .editDetailsBtn{
+                                background: rgba($color: #0a7aa7, $alpha: 1.0);
+                                height: 6vh;
+                                width: 10vw;
+                                border: 0px solid transparent;
+                                display: grid;
+                                place-items: center;
+                                .text{
+                                    color: #fff;
+                                    font-size: .9em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .MyOrders{
+                background: rgba($color: #000000, $alpha: 0);
+                @include baseDisplay(60vh,81vw,flex,center,flex-start);
+                flex-direction: column;
+                margin-top: 1vh;
+                .navigationHeader{
+                    background: rgba($color: #863232, $alpha: 0);
+                    @include baseDisplay(auto,81vw,flex,flex-start,flex-start);
+                    .nav-tabs{
+                        margin-left: 1vw;
+                        .nav-item{
+                            .nav-link{
+                                background: rgba($color: #f0f0f0, $alpha: 1);
+                                border-radius: 0px;
+                                color: #000000;
+                            }
+                            .nav-link:focus{
+                                background: rgba($color: #000000, $alpha: 1.0);
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                .TabsContentContainer{
+                    background: rgba($color: #f0f0f0, $alpha: 1);
+                    min-height: 55vh;
+                    max-height: auto;
+                    width: 79vw;
+                }
+            }
+            .MyCart{
+                @include baseDisplay(60vh,81vw,flex,center,center);
+                background: rgba($color: #000000, $alpha: 0);
+                .CartListContainer{
+                    background: rgba($color: #f0f0f0, $alpha: 1);
+                    @include baseDisplay(60vh,79vw,flex,flex-start,flex-start);
+
+                }
+            }
+
+            // scss editing functions
+
+            .EditPersonalDetails{
+                background: rgba($color: #000000, $alpha: 0);
+                @include baseDisplay(55vh,81vw,flex,center,center);
+                margin-top: 1vh;
+                .EditDetailsContainer{
+                    background: rgba($color: #f0f0f0, $alpha: 1);
+                    height: 55vh;
+                    width: 79vw;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .innerContainer{
+                        background: rgba($color: #a03e3e, $alpha: 0);
+                        height: 60vh;
+                        width: 26vw;
+                        display: flex;
+                        flex-direction: column;
+                        .fullnameContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 2vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .birthdayContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 10vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .emailContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 2vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .genderContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 10vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .mobileContainer{
+                            background: rgba($color: #37138a, $alpha: 0);
+                            height: 6vh;
+                            width: 26vw;
+                            margin-top: 2vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                                color: gray;
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        .customerDetailContainer{
+                            background: rgba($color: #199292, $alpha: 0);
+                            height: 4vh;
+                            width: 26vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .datePicker{
+                                margin-left: 1.5vw;
+                                height: 4.5vh;
+                                width: 15vw;
+                                font-size: 1.4em;
+                                padding: 0px 12px;
+                                border: 1px solid gray;
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                            }
+                            .fullnameTextContainer{
+                                height: 4.5vh;
+                                width: 18vw;
+                                border-radius: 0px;
+                                margin-left: 1.5vw;
+                                outline: none;
+                                border: 1px solid gray;
+                                padding: 0px 12px;
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                            }
+                            .emailTextContainer{
+                                height: 4.5vh;
+                                width: 18vw;
+                                border-radius: 0px;
+                                margin-left: 1.5vw;
+                                outline: none;
+                                border: 1px solid gray;
+                                padding: 0px 12px;
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                            }
+                            .genderTextContainer{
+                                height: 4.5vh;
+                                width: 18vw;
+                                border-radius: 0px;
+                                margin-left: 1.5vw;
+                                outline: none;
+                                border: 1px solid gray;
+                                padding: 0px 12px;
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                            }
+                            .numberTextContainer{
+                                height: 4.5vh;
+                                width: 18vw;
+                                border-radius: 0px;
+                                margin-left: 1.5vw;
+                                outline: none;
+                                border: 1px solid gray;
+                                padding: 0px 12px;
+                                font-family: 'myFont', sans-serif;
+                                font-size: 1.3em;
+                            }
+                        }
+                        .btnContainer-1{
+                            background: rgba($color: #1d9969, $alpha: 0);
+                            margin-top: 10vh;
+                            @include baseDisplay(7vh,26vw,grid,center,flex-start);
+                            .editProfile{
+                                background: rgba($color: #db6708, $alpha: 1.0);
+                                height: 6vh;
+                                width: 23vw;
+                                margin-left: 1.5vw;
+                                border: 0px solid transparent;
+                                display: grid;
+                                place-items: center;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+        }
+    }
+}

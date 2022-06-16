@@ -1,0 +1,344 @@
+@import 'fonts.scss'; 
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.Mission{
+    background: rgba($color: #40aa3d, $alpha: 0);
+    height: 550vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .titleContainer{
+        background: rgba($color: #8f2121, $alpha: 0);
+        height: 45vh;
+        width: 100vw;
+        margin-top: 12vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        .txt{
+            margin-left: 3vw;
+            font-size: 6rem;
+            // line-height: 115px;
+            letter-spacing: 1px;
+            margin-bottom: 4vh;
+            font-family: 'myFont', sans-serif;
+            font-weight: bold;
+            color: rgba($color: #000000, $alpha: 1.0);
+            text-rendering: optimizeSpeed;
+            line-height: 90px;
+        }
+    }
+    .imgContainer{
+        // background: rgba($color: #a3af31, $alpha: 1.0);
+        background-image: url('../img/missionpng.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 90vh;
+        width: 95vw;
+    }
+    .imgContainer-2{
+        background: rgba($color: #000000, $alpha: 0);
+        height: 65vh;
+        width: 95vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .innerContainer-1{
+            background: rgba($color: #751f1f, $alpha: 0);
+            height: 65vh;
+            width: 28vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .img{
+                height: 40vh;
+            }
+        }
+        .innerContainer-2{
+            background: rgba($color: #339615, $alpha: 0);
+            height: 65vh;
+            width: 67vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .text{
+                font-family: 'myFont',sans-serif;
+                font-weight: 700;
+                font-size: 3.5em;
+                margin-left: 3vw;
+            }
+        }
+    }
+    .imgContainer-3{
+        background-image: url('../img/missionpng3.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        // background: rgba($color: #000000, $alpha: 1.0);
+        height: 90vh;
+        width: 100vw;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        .textContainer{
+            background: rgba($color: #ad2e2e, $alpha: 0);
+            height: 90vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .textInnerContainer-1{
+                background: rgba($color: #247583, $alpha: 0);
+                height: 90vh;
+                width: 50vw;
+                display: grid;
+                align-items: flex-start;
+                justify-content: center;
+                position: relative;
+                .text{
+                    margin-top: 5vh;
+                    font-family: 'myFont',sans-serif;
+                    font-weight: 700;
+                    font-size: 4em;
+                    margin-left: 3vw;
+                    color: white;
+                }
+                .text2{
+                    // background: rgba($color: #000000, $alpha: 1.0);
+                    color: white;
+                    margin-top: 2vh;
+                    // font-weight: 700;
+                    font-size: 2.2em;
+                    margin-left: 3vw;
+                    position: absolute;
+                    bottom: 5vh;
+                }
+            }
+
+        }
+    }
+    .imgContainer-4{
+        background: rgba($color: #000000, $alpha: 0);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 5vh;
+        .innerContainer-1{
+            background: rgba($color: #7a2323, $alpha: 0);
+            height: 100vh;
+            width: 50vw;
+            display: grid;
+            place-items: center;
+            .imgContainerInner-4{
+                // background: rgba($color: #2da764, $alpha: 1.0);
+                background-image: url('../img/missionpng4.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 90vh;
+                width: 45vw;
+            }
+        }
+        .innerContainer-2{
+            background: rgba($color: #23aac2, $alpha: 0);
+            height: 100vh;
+            width: 50vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            .textContainer-1{
+                background: rgba($color: #852727, $alpha: 0);
+                height: 50vh;
+                width: 50vw;
+                display: flex;
+                flex-direction: column;
+                .txt{
+                    font-family: 'myFont',sans-serif;
+                    font-size: 2.5em;
+                    font-weight: bold;
+                    margin-top: 12vh;
+                }
+                .txt2{
+                    font-family: 'myFont',sans-serif;
+                    font-size: 2.5em;
+                    // font-weight: bold;
+                    margin-top: 4vh;
+                }
+            }
+            .secondContainer{
+                background: rgba($color: #1d6920, $alpha: 0);
+                height: 50vh;
+                width: 50vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .btnToSustain{
+                    background: rgba($color: #ffffff, $alpha: 0);
+                    height: 40vh;
+                    width: 22vw;
+                    margin-right: 2vw;
+                    border: 0px solid transparent;
+                    position: relative;
+                    overflow: hidden;
+                    .coverInnerContainer{
+                        background: rgba($color: #000000, $alpha: 0.2);
+                        height: 40vh;
+                        width: 22vw;
+                        display: grid;
+                        position: relative;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        .topContainer{
+                            background: rgba($color: #ffffff, $alpha: 0);
+                            height: 10vh;
+                            width: 22vw;
+                            display: flex;
+                            .topInnerContainer-1{
+                                background: rgba($color: #c73939, $alpha: 0);
+                                height: 10vh;
+                                width: 11vw;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                .text{
+                                    margin-left: 1.5vw;
+                                    font-family: 'myFont',sans-serif;
+                                    font-weight: bold;
+                                    color: rgb(255, 255, 255);
+                                }
+                            }
+                            .topInnerContainer-2{
+                                background: rgba($color: #acc426, $alpha: 0);
+                                height: 10vh;
+                                width: 11vw;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-end;
+                                .text{
+                                    margin-right: 1.5vw;
+                                    font-family: 'myFont',sans-serif;
+                                    font-weight: bold;
+                                    color: rgb(255, 255, 255);
+                                }
+                            }
+                        }
+                        .bottomContainer{
+                            background: rgba($color: #000000, $alpha: 0);
+                            height: 10vh;
+                            width: 22vw;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                margin-left: 1.5vw;
+                                font-family: 'myFont',sans-serif;
+                                font-weight: bold;
+                                font-size: 1.1em;
+                                color: rgb(255, 255, 255);
+                            }
+                        }
+                    }
+                    .img{
+                        position: absolute;
+                        transform: translate(-50%,-50%);
+                        height: 60vh;
+                        top: 50;
+                        left: 50;
+                        transition: .5s;
+                    }
+                }
+                .btnToSustain:hover{
+                    .img{
+                        height: 65vh;
+                    }
+                }
+            }
+        }
+    }
+    .imgContainer-5{
+        // background: rgba($color: #000000, $alpha: 1.0);
+        background-image: url('../img/missionpng6.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        margin-top: 5vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .imgInnerContainer1{
+            background: rgba($color: #a13c3c, $alpha: 0);
+            height: 100vh;
+            width: 50vw;
+            display: grid;
+            .text{
+                margin-top: 5vh;
+                font-family: 'myFont',sans-serif;
+                font-weight: 700;
+                font-size: 3.5em;
+                margin-left: 3vw;
+                color: white;
+                width: 40vw;
+            }
+        }
+    }
+    .imgContainer-6{
+        background: rgba($color: #000000, $alpha: 0);
+        height: 70vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        .innerContainer-1{
+            background: rgba($color: #8b4444, $alpha: 0);
+            height: 50vh;
+            width: 70vw;
+            display: flex;
+            .text{
+                margin-top: 5vh;
+                font-family: 'myFont',sans-serif;
+                font-weight: 700;
+                font-size: 4em;
+                margin-left: 3vw;
+                color: rgb(0, 0, 0);
+            }
+        }
+        .innerContainer-2{
+            background: rgba($color: #3eaca6, $alpha: 0);
+            height: 50vh;
+            width: 30vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .imgContainer{
+                // background: rgba($color: #000000, $alpha: 1.0);
+                background-image: url('../img/missionpng7.jpg');
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 45vh;
+                width: 25vw;
+                margin-left: 2vw;
+            }
+        }
+    }
+}

@@ -1,0 +1,390 @@
+@import 'fonts.scss';  
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.CollectionModal{
+    background: rgba($color: #000000, $alpha: 0.5);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    .innerModal{
+        background: rgba($color: #ffffff, $alpha: 1.0);
+        box-shadow: 0px 5px 10px rgba($color: #000000, $alpha: 0.2);
+        height: 93vh;
+        width: 50vw;
+        border-radius: 10px;
+        .AddItemTitleContainer{
+            background: rgba($color: #833838, $alpha: 0);
+            height: 10vh;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .txt{
+                font-family: 'myFont', sans-serif;
+                font-size: 2em; 
+                margin-left: 2vw;
+                font-weight: bold;
+            }
+        }
+        .ProductIdContainer{
+            background: rgba($color: #d37c2a, $alpha: 0);
+            height: 7vh;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .innerProductIdContainer{
+                height: 7vh;
+                width: 10vw;
+                background: rgba($color: #aa1cbd, $alpha: 0);
+                display: grid;
+                align-items: center;
+                justify-content: flex-start;
+                .txt{
+                    font-family: 'Open Sans', sans-serif;
+                    margin-left: 2vw;
+                    font-size: .9em;
+                }
+            }
+            .InputContainer{
+                height: 7vh;
+                width: 40vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .input{
+                    outline: none;
+                    height: 4vh;
+                    width: 20vw;
+                    border-radius: 0px;
+                    border: 1px solid gray;
+                    padding: 12px 16px;
+                }
+            }
+        }
+        .NameContainer{
+            background: rgba($color: #d37c2a, $alpha: 0);
+            height: 7vh;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .innerNameContainer{
+                height: 7vh;
+                width: 10vw;
+                background: rgba($color: #aa1cbd, $alpha: 0);
+                display: grid;
+                align-items: center;
+                justify-content: flex-start;
+                .txt{
+                    font-family: 'Open Sans', sans-serif;
+                    margin-left: 2vw;
+                    font-size: .9em;
+                }
+            }
+            .InputContainer{
+                height: 7vh;
+                width: 40vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .input{
+                    outline: none;
+                    height: 4vh;
+                    width: 20vw;
+                    border-radius: 0px;
+                    border: 1px solid gray;
+                    padding: 12px 16px;
+                }
+            }
+        }
+        .PriceContainer{
+            background: rgba($color: #22b3ab, $alpha: 0);
+            height: 7vh;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .innerPriceContainer{
+                height: 7vh;
+                width: 10vw;
+                background: rgba($color: #aa1cbd, $alpha: 0);
+                display: grid;
+                align-items: center;
+                justify-content: flex-start;
+                .txt{
+                    font-family: 'Open Sans', sans-serif;
+                    margin-left: 2vw;
+                    font-size: .9em;
+                }
+            }
+            .InputContainer{
+                height: 7vh;
+                width: 40vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .input{
+                    outline: none;
+                    height: 4vh;
+                    width: 10vw;
+                    border-radius: 0px;
+                    border: 1px solid gray;
+                    padding: 12px 16px;
+                }
+            }
+        }
+        .QuantityContainer{
+            background: rgba($color: #29a71e, $alpha: 0);
+            height: 7vh;
+            width: 50vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .innerQuantityContainer{
+                height: 7vh;
+                width: 10vw;
+                background: rgba($color: #aa1cbd, $alpha: 0);
+                display: grid;
+                align-items: center;
+                justify-content: flex-start;
+                .txt{
+                    font-family: 'Open Sans', sans-serif;
+                    margin-left: 2vw;
+                    font-size: .9em;
+                }
+            }
+            .InputContainer{
+                height: 7vh;
+                width: 40vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .input{
+                    outline: none;
+                    height: 4vh;
+                    width: 10vw;
+                    border-radius: 0px;
+                    border: 1px solid gray;
+                    padding: 12px 16px;
+                }
+            }
+        }
+        .CategoryContainer{
+            background: rgba($color: #df3bad, $alpha: 0);
+            height: 7vh;
+            width: 50vw;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            .innerCategoryContainer{
+                height: 7vh;
+                width: 10vw;
+                background: rgba($color: #aa1cbd, $alpha: 0);
+                display: grid;
+                align-items: center;
+                justify-content: flex-start;
+                .txt{
+                    font-family: 'Open Sans', sans-serif;
+                    margin-left: 2vw;
+                    font-size: .9em;
+                }
+            }
+            .InputContainer{
+                height: 7vh;
+                width: 40vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .form-select{
+                    outline: none;
+                    border: 1px solid gray;
+                    width: 20vw;
+                }
+            }
+        }
+        .DescriptionContainer{
+            background: rgba($color: #df3bad, $alpha: 0);
+            height: 7vh;
+            width: 50vw;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            .innerDescriptionContainer{
+                height: 7vh;
+                width: 10vw;
+                background: rgba($color: #aa1cbd, $alpha: 0);
+                display: grid;
+                align-items: center;
+                justify-content: flex-start;
+                .txt{
+                    font-family: 'Open Sans', sans-serif;
+                    margin-left: 2vw;
+                    font-size: .9em;
+                }
+            }
+            .InputContainer{
+                height: 7vh;
+                width: 40vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .input{
+                    outline: none;
+                    height: 4vh;
+                    width: 20vw;
+                    border-radius: 0px;
+                    border: 1px solid gray;
+                    padding: 12px 16px;
+                }
+            }
+        }
+        .SpecsContainer{
+            background: rgba($color: #df3bad, $alpha: 0);
+            height: 7vh;
+            width: 50vw;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            .innerSpecsContainer{
+                height: 7vh;
+                width: 10vw;
+                background: rgba($color: #aa1cbd, $alpha: 0);
+                display: grid;
+                align-items: center;
+                justify-content: flex-start;
+                .txt{
+                    font-family: 'Open Sans', sans-serif;
+                    margin-left: 2vw;
+                    font-size: .9em;
+                }
+            }
+            .InputContainer{
+                height: 7vh;
+                width: 40vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .input{
+                    outline: none;
+                    height: 4vh;
+                    width: 20vw;
+                    border-radius: 0px;
+                    border: 1px solid gray;
+                    padding: 12px 16px;
+                }
+            }
+        }
+        .UploadContainer{
+            background: rgba($color: #292728, $alpha: 0);
+            margin-top: 1.5vh;
+            height: 20vh;
+            width: 50vw;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            .innerUploadContainer{
+                height: 7vh;
+                width: 10vw;
+                background: rgba($color: #aa1cbd, $alpha: 0);
+                display: grid;
+                align-items: flex-start;
+                justify-content: flex-start;
+                .txt{
+                    font-family: 'Open Sans', sans-serif;
+                    margin-left: 2vw;
+                    font-size: .9em;
+                }
+            }
+            .ImgContainer{
+                background: rgba($color: #991c1c, $alpha: 0);
+                height: 20vh;
+                width: 40vw;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                .innerImgContainer{
+                    background: #ffffff;
+                    height: 20vh;
+                    width: 15vw;
+                    border: 1px solid gray;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    margin-right: .5vw;
+                }
+            }
+        }
+        .btnContainer{
+            background: rgba($color: #8d4e4e, $alpha: 0);
+            height: 6vh;
+            width: 50vw;
+            margin-top: 5vh;
+            display: flex;
+            position: relative;
+            .innerBtnContainer{
+                background: rgba($color: #4e94af, $alpha: 0);
+                height: 6vh;
+                width: 15.5vw;
+                position: absolute;
+                right: 0;
+                display: flex;
+                .cancelContainer{
+                    background: rgba($color: #61a051, $alpha: 0);
+                    height: 6vh;
+                    width: 7vw;
+                    display: grid;
+                    place-items: center;
+                    .cancel{
+                        background: rgba($color: #ebebeb, $alpha: 1.0);
+                        font-family: 'Open Sans', sans-serif;
+                        height: 4vh;
+                        width: 6vw;
+                        border: 0px solid transparent;
+                    }
+                    .cancel:hover{
+                        background: rgba($color: #d42222, $alpha: 1.0);
+                        color: rgba($color: #ffffff, $alpha: 1.0);
+                    }
+                }
+                .submitContainer{
+                    background: rgba($color: #db7151, $alpha: 0);
+                    height: 6vh;
+                    width: 7vw;
+                    display: grid;
+                    place-items: center;
+                    .submit{
+                        background: rgba($color: #ffffff, $alpha: 1.0);
+                        font-family: 'Open Sans', sans-serif;
+                        height: 4vh;
+                        width: 6vw;
+                        border: 0px solid transparent;
+                        border: 1px solid gray;
+                    }
+                    .submit:hover{
+                        background: rgba($color: #000000, $alpha: 1.0);
+                        color: rgba($color: #ffffff, $alpha: 1.0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.CollectionModalNone{
+    display: none;
+}
+

@@ -1,0 +1,21 @@
+@import 'fonts.scss';  
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.TransitionToLogin{
+    background: rgba($color: #000000, $alpha: 1.0);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    transition: .5s;
+    font-family: 'myFont',sans-serif;
+    font-size: 2em;
+    color: #fff;
+    opacity: 1;
+}

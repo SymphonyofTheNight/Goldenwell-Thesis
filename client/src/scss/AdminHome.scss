@@ -1,0 +1,1373 @@
+@import 'fonts.scss';  // font-family: 'Heebo', sans-serif;
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.Adminhome{
+    background-color: rgba($color: #803434, $alpha: 0);
+    height: 146vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    .innerContainer{
+        background: rgba($color: #915353, $alpha: 0);
+        height: 138vh; // 90vh normal
+        width: 84vw;
+        margin-top: 7vh;
+        border-radius: 8px;
+        // box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        overflow: hidden;
+        .salesChart{
+            background: rgba($color: #a17878, $alpha: 0);
+            height: 60vh;
+            width: 45vw;
+            border-radius: 20px;
+            display: grid;
+            .titleContainer{
+                background: rgba($color: #411d1d, $alpha: 0);
+                height: 8vh;
+                width: 45vw;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                .txt{
+                    margin-bottom: 2vh;
+                    margin-left: 1.2vw;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    color: rgba($color: #000000, $alpha: 1.0);
+                }
+            }
+            .chartContaner{
+                background: rgba($color: #ffffff, $alpha: 1);
+                height: 52vh;
+                width: 45vw;
+                border-radius: 20px;
+                box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                display: grid;
+                place-items: center;
+                position: relative;
+                .LineChart{
+                    padding: 0px 20px;
+                }
+            }
+        }
+        .channelChart{
+            background: rgba($color: #ffffff, $alpha: 0);
+            height: 60vh;
+            width: 36vw;
+            display: grid;
+            .titleContainer{
+                background: rgba($color: #ad4747, $alpha: 0);
+                height: 8vh;
+                width: 36vw;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                .txt{
+                    margin-bottom: 2vh;
+                    margin-left: 1.2vw;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+            }
+            .chartContaner{
+                background: rgba($color: #ffffff, $alpha: 1);
+                height: 52vh;
+                width: 36vw;
+                border-radius: 20px;
+                box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                .pie{
+                    padding: 40px 38px;
+                }
+            }
+        }
+        .orders{
+            background: rgba($color: #ffffff, $alpha: 1);
+            height: 25vh;
+            width: 27vw;
+            border-radius: 20px;
+            box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+            overflow: hidden;
+            display: grid;
+            .titleContainer{
+                background: rgba($color: #ad4747, $alpha: 0);
+                height: 8vh;
+                width: 27vw;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                position: relative;
+                .txt{
+                    margin-left: 1.5vw;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+                .logo{
+                    position: absolute;
+                    right: 0;
+                    font-size: 2em;
+                    margin-right: 1.5vw;
+                    margin-bottom: .5vh;
+                }
+            }
+            .totalOrderContainer{
+                background: rgba($color: #3d6969, $alpha: 0);
+                height: 10vh;
+                width: 27vw;
+                display: grid;
+                align-content: center;
+                justify-content: flex-start;
+                .txt{
+                    margin-left: 1.5vw;
+                    font-family: 'Heebo', sans-serif;
+                    font-size: 4em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+            }
+            .orderFooter{
+                background: rgba($color: #ffffff, $alpha: 1);
+                height: 7vh;
+                width: 27vw;
+                display: grid;
+                align-content: center;
+                justify-content: flex-start;
+                .txt{
+                    margin-left: 1.5vw;
+                    font-family: 'Heebo', sans-serif;
+                    font-size: 1em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+            }
+        }
+        .sales{
+            background: rgba($color: #ffffff, $alpha: 1);
+            height: 25vh;
+            width: 27vw;
+            border-radius: 20px;
+            box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+            overflow: hidden;
+            display: grid;
+            .titleContainer{
+                background: rgba($color: #ad4747, $alpha: 0);
+                height: 8vh;
+                width: 27vw;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                position: relative;
+                .txt{
+                    margin-left: 1.5vw;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+                .logo{
+                    position: absolute;
+                    right: 0;
+                    font-size: 2em;
+                    margin-right: 1.5vw;
+                    margin-bottom: .5vh;
+                }
+            }
+            .totalSalesContainer{
+                background: rgba($color: #3d6969, $alpha: 0);
+                height: 10vh;
+                width: 27vw;
+                display: grid;
+                align-content: center;
+                justify-content: flex-start;
+                .txt{
+                    margin-left: 1.5vw;
+                    font-family: 'Heebo', sans-serif;
+                    font-size: 4em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+            }
+            .salesFooter{
+                background: rgba($color: #588566, $alpha: 0);
+                height: 7vh;
+                width: 27vw;
+                display: grid;
+                align-content: center;
+                justify-content: flex-start;
+                .txt{
+                    margin-left: 1.5vw;
+                    font-family: 'Heebo', sans-serif;
+                    font-size: 1em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+            }
+        }
+        .arrivedProducts{
+            background: rgba($color: #ffffff, $alpha: 1);
+            height: 25vh;
+            width: 27vw;
+            border-radius: 20px;
+            box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+            .titleContainer{
+                background: rgba($color: #ad4747, $alpha: 0);
+                height: 8vh;
+                width: 27vw;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                position: relative;
+                .txt{
+                    margin-left: 1.5vw;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+                .logo{
+                    position: absolute;
+                    right: 0;
+                    font-size: 2em;
+                    margin-right: 1.5vw;
+                    margin-bottom: .5vh;
+                }
+            }
+            .totalArrivedContainer{
+                background: rgba($color: #3d6969, $alpha: 0);
+                height: 10vh;
+                width: 27vw;
+                display: grid;
+                align-content: center;
+                justify-content: flex-start;
+                .txt{
+                    margin-left: 1.5vw;
+                    font-family: 'Heebo', sans-serif;
+                    font-size: 4em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+            }
+            .arrivedFooter{
+                background: rgba($color: #588566, $alpha: 0);
+                height: 7vh;
+                width: 27vw;
+                display: grid;
+                align-content: center;
+                justify-content: flex-start;
+                .txt{
+                    margin-left: 1.5vw;
+                    font-family: 'Heebo', sans-serif;
+                    font-size: 1em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+            }
+        }
+        .ProductStockContainer{
+            background: rgba($color: #1f6139, $alpha: 0);
+            height: 49vh;
+            width: 82vw;
+            border-radius: 20px;
+            display: grid;
+            .titleContainer{
+                background: rgba($color: #411d1d, $alpha: 0);
+                height: 6vh;
+                width: 82vw;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                .txt{
+                    margin-bottom: 1.5vh;
+                    margin-left: 1.2vw;
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    color: rgba($color: #424242, $alpha: 1.0);
+                }
+            }
+            .productsContainer{
+                background: rgba($color: #ffffff, $alpha: 1.0);
+                height: 43vh;
+                width: 82vw;
+                box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                border-radius: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: flex-start;
+                .innerContainer-1{
+                    background: rgba($color: #a34646, $alpha: 0);
+                    min-height: auto;
+                    max-height: 40vh;
+                    width: 82vw;
+                    display: flex;
+                    align-items: flex-start;
+                    align-items: center;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    overflow-y: scroll;
+                    margin-top: 1vh;
+                    .innerContainer-2{
+                        // background: rgba($color: #dfdfdf, $alpha: 1);
+                        // border-bottom: 1px solid rgb(201, 201, 201);
+                        // border-top: 1px solid rgb(201, 201, 201);
+                        // border: 2px solid red;
+                        box-shadow: 0px 2px 7px rgba($color: #000000, $alpha: 0.2);
+                        width: 80vw;
+                        border-radius: 10px;
+                        display: flex;
+                        height: 7vh;
+                        padding: 0px 16px;
+                        margin-top: .2vh;
+                        margin-bottom:  .7vh;
+                        .imgContainer{
+                            background: rgba($color: #80b1b8, $alpha: 0);
+                            height: 7vh;
+                            width: 6.5vw;
+                            display: grid;
+                            place-items: center;
+                            .clipImg{
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                height: 6.5vh;
+                                width: 4.5vw;
+                                clip-path: circle(30%);
+                            }
+                        }
+                        .productIDContainer{
+                            background: rgba($color: #22db4a, $alpha: 0);
+                            height: 7vh;
+                            width: 13vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                        }
+                        .productNameContainer{
+                            background: rgba($color: #db228e, $alpha: 0);
+                            height: 7vh;
+                            width: 15.4vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                        }
+                        .productPriceContainer{
+                            background: rgba($color: #911dad, $alpha: 0);
+                            height: 7vh;
+                            width: 10.5vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                        }
+                        .productParentContainer{
+                            background: rgba($color: #911dad, $alpha: 0);
+                            height: 7vh;
+                            width: 9vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                        }
+                        .productStatusContainer{
+                            background: rgba($color: #1eda92, $alpha: 0);
+                            height: 7vh;
+                            width: 12vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .status{
+                                padding: 0px 12px;
+                                border-radius: 5px;
+                                display: grid;
+                                place-items: center;
+                                font-family: 'myFont', sans-serif;
+                                color: #ffffff;
+                                font-weight: bold;
+                                margin-left: 1vw;
+                            }
+                        }
+                        .EditContainer{
+                            background: rgba($color: #000000, $alpha: 0);
+                            height: 7vh;
+                            width: 8.3vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .EditBtn{
+                                height: 4vh;
+                                width: 6vw;
+                                border: 1px solid transparent;
+                                border-radius: 0px;
+                                font-family: 'myFont', sans-serif;
+                                background: rgba($color: #b8b8b8, $alpha: 1.0);
+                            }
+                            .EditBtn:hover{
+                                border: 1px solid black;
+                                color: rgba($color: #000000, $alpha: 1.0);
+                            }
+                        }
+                        .checkBoxContainer{
+                            height: 7vh;
+                            width: 6.3vw;
+                            background: rgba($color: #1f8137, $alpha: 0);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media('<=sWindow'){
+    .Adminhome{
+        background-color: rgba($color: #803434, $alpha: 0);
+        height: 140vh;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        .innerContainer{
+            background: rgba($color: #915353, $alpha: 0);
+            height: 131vh; // 90vh normal
+            width: 84vw;
+            margin-top: 7vh;
+            border-radius: 8px;
+            // box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            overflow: hidden;
+            .salesChart{
+                background: rgba($color: #a17878, $alpha: 0);
+                height: 52vh;
+                width: 45vw;
+                border-radius: 20px;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 8vh;
+                    width: 45vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: 2vh;
+                        margin-left: 1.2vw;
+                        font-size: 1.2em;
+                    }
+                }
+                .chartContaner{
+                    height: 44vh;
+                    width: 45vw;
+                    .LineChart{
+                        padding: 12px 16px;
+                    }
+                }
+            }
+            .channelChart{
+                background: rgba($color: #ffffff, $alpha: 0);
+                height: 52vh;
+                width: 36vw;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #ad4747, $alpha: 0);
+                    height: 8vh;
+                    width: 36vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: 2vh;
+                        margin-left: 1.2vw;
+                        font-size: 1.2em;
+                    }
+                }
+                .chartContaner{
+                    background: rgba($color: #995e5e, $alpha: 0);
+                    height: 44vh;
+                    width: 36vw;
+                    border-radius: 20px;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    .pie{
+                        padding: 22px 23px;
+                    }
+                }
+            }
+            .orders{
+                .titleContainer{
+                    .txt{
+                        font-size: 1.2em;
+                    }
+                    .logo{
+                        font-size: 1.4em;
+                    }
+                }
+                .totalOrderContainer{
+                    .txt{
+                        font-size: 3em;
+                    }
+                }
+                .orderFooter{
+                    .txt{
+                        font-size: .8em;
+                    }
+                }
+            }
+            .sales{
+                .titleContainer{
+                    .txt{
+                        font-size: 1.2em;
+                    }
+                    .logo{
+                        font-size: 1.4em;
+                    }
+                }
+                .totalSalesContainer{
+                    .txt{
+                        font-size: 3em;
+                    }
+                }
+                .salesFooter{
+                    .txt{
+                        font-size: .8em;
+                    }
+                }
+            }
+            .arrivedProducts{
+                .titleContainer{
+                    .txt{
+                        font-size: 1.2em;
+                    }
+                    .logo{
+                        font-size: 1.4em;
+                    }
+                }
+                .totalArrivedContainer{
+                    .txt{
+                        font-size: 3em;
+                    }
+                }
+                .arrivedFooter{
+                    .txt{
+                        font-size: .8em;
+                    }
+                }
+            }
+            .ProductStockContainer{
+                background: rgba($color: #1f6139, $alpha: 0);
+                height: 49vh;
+                width: 82vw;
+                border-radius: 20px;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 6vh;
+                    width: 82vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: 1.5vh;
+                        margin-left: 1.2vw;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        color: rgba($color: #424242, $alpha: 1.0);
+                    }
+                }
+                .productsContainer{
+                    background: rgba($color: #ffffff, $alpha: 1.0);
+                    height: 43vh;
+                    width: 82vw;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=Ipad'){
+    .Adminhome{
+        background-color: rgba($color: #803434, $alpha: 0);
+        height: 1630px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        .innerContainer{
+            background: rgba($color: #921f1f, $alpha: 0);
+            height: 1550px; // 90vh normal
+            width: 84vw;
+            margin-top: 4vh;
+            .salesChart{
+                background: rgba($color: #a17878, $alpha: 0);
+                height: 490px;
+                width: 84vw;
+                border-radius: 20px;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 41px;
+                    width: 84vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-size: 1.2em;
+                    }
+                }
+                .chartContaner{
+                    height: 449px;
+                    width: 84vw;
+                    .LineChart{
+                        padding: 12px 16px;
+                    }
+                }
+            }
+            .channelChart{
+                background: rgba($color: #a17878, $alpha: 0);
+                height: 490px;
+                width: 84vw;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #ad4747, $alpha: 0);
+                    height: 41px;
+                    width: 84vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-size: 1.2em;
+                    }
+                }
+                .chartContaner{
+                    background: rgba($color: #ffffff, $alpha: 0);
+                    height: 449px;
+                    width: 84vw;
+                    border-radius: 20px;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    .pie{
+                        padding: 22px 23px;
+                    }
+                }
+            }
+            .orders{
+                background: rgba($color: #ffffff, $alpha: 1);
+                height: 164px;
+                .titleContainer{
+                    background: rgba($color: #5e3b3b, $alpha: 0);
+                    height: 55px;
+                    .txt{
+                        font-size: 1.2em;
+                    }
+                    .logo{
+                        font-size: 1.4em;
+                    }
+                }
+                .totalOrderContainer{
+                    background: rgba($color: #403b5e, $alpha: 0);
+                    height: 68px;
+                    .txt{
+                        font-size: 3em;
+                    }
+                }
+                .orderFooter{
+                    background: rgba($color: #465e3b, $alpha: 0);
+                    height: 41px;
+                    .txt{
+                        font-size: .8em;
+                    }
+                }
+            }
+            .sales{
+                height: 164px;
+                .titleContainer{
+                    height: 55px;
+                    .txt{
+                        font-size: 1.2em;
+                    }
+                    .logo{
+                        font-size: 1.4em;
+                    }
+                }
+                .totalSalesContainer{
+                    height: 68px;
+                    .txt{
+                        font-size: 3em;
+                    }
+                }
+                .salesFooter{
+                    height: 41px;
+                    .txt{
+                        font-size: .8em;
+                    }
+                }
+            }
+            .arrivedProducts{
+                height: 164px;
+                .titleContainer{
+                    height: 55px;
+                    .txt{
+                        font-size: 1.2em;
+                    }
+                    .logo{
+                        font-size: 1.4em;
+                    }
+                }
+                .totalArrivedContainer{
+                    height: 68px;
+                    .txt{
+                        font-size: 3em;
+                    }
+                }
+                .arrivedFooter{
+                    height: 41px;
+                    .txt{
+                        font-size: .8em;
+                    }
+                }
+            }
+            .ProductStockContainer{
+                background: rgba($color: #1f6139, $alpha: 0);
+                height: 350px;
+                width: 82vw;
+                border-radius: 20px;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 41px;
+                    width: 82vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: 1vh;
+                        margin-left: 1.2vw;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        color: rgba($color: #424242, $alpha: 1.0);
+                    }
+                }
+                .productsContainer{
+                    background: rgba($color: #ffffff, $alpha: 1);
+                    height: 309px;
+                    width: 82vw;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=Tablet'){
+    .Adminhome{
+        background-color: rgba($color: #803434, $alpha: 0);
+        height: 120vh;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        .innerContainer{
+            background: rgba($color: #915353, $alpha: 0);
+            height: 115vh; // 90vh normal
+            width: 84vw;
+            margin-top: 4vh;
+            .salesChart{
+                background: rgba($color: #a17878, $alpha: 0);
+                height: 36vh;
+                width: 84vw;
+                border-radius: 20px;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 3vh;
+                    width: 84vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-size: 1em;
+                    }
+                }
+                .chartContaner{
+                    height: 33vh;
+                    width: 84vw;
+                    .LineChart{
+                        padding: 12px 16px;
+                    }
+                }
+            }
+            .channelChart{
+                background: rgba($color: #a17878, $alpha: 0);
+                height: 36vh;
+                width: 84vw;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #ad4747, $alpha: 0);
+                    height: 3vh;
+                    width: 84vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-size: 1em;
+                    }
+                }
+                .chartContaner{
+                    background: rgba($color: #ffffff, $alpha: 0);
+                    height: 33vh;
+                    width: 84vw;
+                    border-radius: 20px;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    .pie{
+                        padding: 22px 23px;
+                    }
+                }
+            }
+            .orders{
+                background: rgba($color: #ffffff, $alpha: 1);
+                height: 12vh;
+                .titleContainer{
+                    background: rgba($color: #5e3b3b, $alpha: 0);
+                    height: 4vh;
+                    .txt{
+                        font-size: 1em;
+                    }
+                    .logo{
+                        font-size: 1.1em;
+                    }
+                }
+                .totalOrderContainer{
+                    background: rgba($color: #403b5e, $alpha: 0);
+                    height: 5vh;
+                    .txt{
+                        font-size: 2.1em;
+                    }
+                }
+                .orderFooter{
+                    background: rgba($color: #465e3b, $alpha: 0);
+                    height: 3vh;
+                    .txt{
+                        font-size: .7em;
+                    }
+                }
+            }
+            .sales{
+                height: 12vh;
+                .titleContainer{
+                    height: 4vh;
+                    .txt{
+                        font-size: 1em;
+                    }
+                    .logo{
+                        font-size: 1.1em;
+                    }
+                }
+                .totalSalesContainer{
+                    height: 5vh;
+                    .txt{
+                        font-size: 2.1em;
+                    }
+                }
+                .salesFooter{
+                    height: 3vh;
+                    .txt{
+                        font-size: .7em;
+                    }
+                }
+            }
+            .arrivedProducts{
+                height: 12vh;
+                .titleContainer{
+                    height: 4vh;
+                    .txt{
+                        font-size: 1em;
+                    }
+                    .logo{
+                        font-size: 1.1em;
+                    }
+                }
+                .totalArrivedContainer{
+                    height: 5vh;
+                    .txt{
+                        font-size: 2.1em;
+                    }
+                }
+                .arrivedFooter{
+                    height: 3vh;
+                    .txt{
+                        font-size: .7em;
+                    }
+                }
+            }
+            .ProductStockContainer{
+                background: rgba($color: #1f6139, $alpha: 0);
+                height: 26vh;
+                width: 82vw;
+                border-radius: 20px;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 3vh;
+                    width: 82vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: 1vh;
+                        margin-left: 1.2vw;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1em;
+                        font-weight: bold;
+                        color: rgba($color: #424242, $alpha: 1.0);
+                    }
+                }
+                .productsContainer{
+                    background: rgba($color: #ffffff, $alpha: 1.0);
+                    height: 23vh;
+                    width: 82vw;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=Phone'){
+    .Adminhome{
+        background-color: rgba($color: #803434, $alpha: 0);
+        height: 155vh;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        .innerContainer{
+            background: rgba($color: #915353, $alpha: 0);
+            height: 148vh; // 90vh normal
+            width: 90vw;
+            margin-top: 4vh;
+            .salesChart{
+                background: rgba($color: #a17878, $alpha: 0);
+                height: auto;
+                width: 84vw;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 4vh;
+                    width: 84vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-size: 1em;
+                    }
+                }
+                .chartContaner{
+                    height: 25vh;
+                    width: 84vw;
+                    border-radius: 8px;
+                    .LineChart{
+                        padding: 12px 16px;
+                    }
+                }
+            }
+            .channelChart{
+                background: rgba($color: #a17878, $alpha: 0);
+                height: auto;
+                width: 84vw;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #ad4747, $alpha: 0);
+                    height: 4vh;
+                    width: 84vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-size: 1em;
+                    }
+                }
+                .chartContaner{
+                    background: rgba($color: #ffffff, $alpha: 1);
+                    height: 28vh;
+                    width: 84vw;
+                    border-radius: 8px;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    .pie{
+                        padding: 22px 23px;
+                    }
+                }
+            }
+            .orders{
+                background: rgba($color: #ffffff, $alpha: 1);
+                height: 18vh;
+                width: 84vw;
+                border-radius: 8px;
+                .titleContainer{
+                    background: rgba($color: #5e3b3b, $alpha: 0);
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 1em;
+                        margin-left: 4vw;
+                    }
+                    .logo{
+                        font-size: 1.3em;
+                        margin-right: 4vw;
+                    }
+                }
+                .totalOrderContainer{
+                    background: rgba($color: #403b5e, $alpha: 0);
+                    height: 8vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 2.2em;
+                        margin-left: 4vw;
+                    }
+                }
+                .orderFooter{
+                    background: rgba($color: #465e3b, $alpha: 0);
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: .8em;
+                        margin-left: 4vw;
+                    }
+                }
+            }
+            .sales{
+                height: 18vh;
+                width: 84vw;
+                border-radius: 8px;
+                .titleContainer{
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 1em;
+                        margin-left: 4vw;
+                    }
+                    .logo{
+                        font-size: 1.3em;
+                        margin-right: 4vw;
+                    }
+                }
+                .totalSalesContainer{
+                    height: 8vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 2.2em;
+                        margin-left: 4vw;
+                    }
+                }
+                .salesFooter{
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: .8em;
+                        margin-left: 4vw;
+                    }
+                }
+            }
+            .arrivedProducts{
+                height: 18vh;
+                width: 84vw;
+                border-radius: 8px;
+                .titleContainer{
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 1em;
+                        margin-left: 4vw;
+                    }
+                    .logo{
+                        font-size: 1.3em;
+                        margin-right: 4vw;
+                    }
+                }
+                .totalArrivedContainer{
+                    height: 8vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 2.2em;
+                        margin-left: 4vw;
+                    }
+                }
+                .arrivedFooter{
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: .8em;
+                        margin-left: 4vw;
+                    }
+                }
+            }
+            .ProductStockContainer{
+                background: rgba($color: #1f6139, $alpha: 0);
+                height: 27vh;
+                width: 82vw;
+                border-radius: 20px;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 4vh;
+                    width: 82vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1em;
+                        font-weight: bold;
+                        color: rgba($color: #424242, $alpha: 1.0);
+                    }
+                }
+                .productsContainer{
+                    background: rgba($color: #ffffff, $alpha: 1.0);
+                    height: 23vh;
+                    width: 82vw;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=mPhone'){
+    .Adminhome{
+        background-color: rgba($color: #803434, $alpha: 0);
+        height: 150vh;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        .innerContainer{
+            background: rgba($color: #915353, $alpha: 0);
+            height: 145vh; // 90vh normal
+            width: 84vw;
+            margin-top: 4vh;
+            .salesChart{
+                background: rgba($color: #a17878, $alpha: 0);
+                height: auto;
+                width: 84vw;
+                // border-radius: 20px;
+                display: grid;
+
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 4vh;
+                    width: 84vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-size: .9em;
+                    }
+                }
+                .chartContaner{
+                    height: auto;
+                    width: 84vw;
+                    .LineChart{
+                        padding: 12px 16px;
+                    }
+                }
+            }
+            .channelChart{
+                background: rgba($color: #a17878, $alpha: 0);
+                height: 30vh;
+                width: 84vw;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #ad4747, $alpha: 0);
+                    height: 4vh;
+                    width: 84vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-size: .9em;
+                    }
+                }
+                .chartContaner{
+                    background: rgba($color: #ffffff, $alpha: 1);
+                    height: 26vh;
+                    width: 84vw;
+                    border-radius: 20px;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    .pie{
+                        padding: 22px 23px;
+                    }
+                }
+            }
+            .orders{
+                background: rgba($color: #ffffff, $alpha: 1);
+                height: 18vh;
+                width: 84vw;
+                .titleContainer{
+                    background: rgba($color: #5e3b3b, $alpha: 0);
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 1em;
+                        margin-left: 4vw;
+                    }
+                    .logo{
+                        font-size: 1em;
+                        margin-right: 4vw;
+                    }
+                }
+                .totalOrderContainer{
+                    background: rgba($color: #403b5e, $alpha: 0);
+                    height: 8vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 2em;
+                        margin-left: 4vw;
+                    }
+                }
+                .orderFooter{
+                    background: rgba($color: #465e3b, $alpha: 0);
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: .8em;
+                        margin-left: 4vw;
+                    }
+                }
+            }
+            .sales{
+                height: 18vh;
+                width: 84vw;
+                .titleContainer{
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 1em;
+                        margin-left: 4vw;
+                    }
+                    .logo{
+                        font-size: 1em;
+                        margin-right: 4vw;
+                    }
+                }
+                .totalSalesContainer{
+                    height: 8vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 2em;
+                        margin-left: 4vw;
+                    }
+                }
+                .salesFooter{
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: .8em;
+                        margin-left: 4vw;
+                    }
+                }
+            }
+            .arrivedProducts{
+                height: 18vh;
+                width: 84vw;
+                .titleContainer{
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 1em;
+                        margin-left: 4vw;
+                    }
+                    .logo{
+                        font-size: 1em;
+                        margin-right: 4vw;
+                    }
+                }
+                .totalArrivedContainer{
+                    height: 8vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: 2em;
+                        margin-left: 4vw;
+                    }
+                }
+                .arrivedFooter{
+                    height: 5vh;
+                    width: 84vw;
+                    .txt{
+                        font-size: .8em;
+                        margin-left: 4vw;
+                    }
+                }
+            }
+            .ProductStockContainer{
+                background: rgba($color: #1f6139, $alpha: 0);
+                height: 27vh;
+                width: 82vw;
+                border-radius: 20px;
+                display: grid;
+                .titleContainer{
+                    background: rgba($color: #411d1d, $alpha: 0);
+                    height: 4vh;
+                    width: 82vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .txt{
+                        margin-bottom: .5vh;
+                        margin-left: 1.2vw;
+                        font-family: 'Raleway', sans-serif;
+                        font-size: .9em;
+                        font-weight: bold;
+                        color: rgba($color: #424242, $alpha: 1.0);
+                    }
+                }
+                .productsContainer{
+                    background: rgba($color: #ffffff, $alpha: 1.0);
+                    height: 23vh;
+                    width: 82vw;
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.2);
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+//mobile tommorow

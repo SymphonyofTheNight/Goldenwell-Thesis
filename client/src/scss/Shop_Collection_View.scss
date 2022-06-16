@@ -1,0 +1,785 @@
+@import 'fonts.scss';  
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.ShopCollectionView{
+    background: rgba($color: #000000, $alpha: 0);
+    // background-image: url('../img/samsung1.jpg');
+    // background-position: center center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    height: auto;
+    width: 100vw;
+    .innerDiv-1{
+        background: rgba($color: #279c79, $alpha: 0);
+        height: auto;
+        display: flex;
+        .ProductViewContainer-1{
+            background: rgba($color: #8a2828, $alpha: 0);
+            height: 82vh;
+            width: 50vw;
+            display: grid;
+            align-items: center;
+            justify-content: flex-end;
+            .img{
+                margin-right: 4vw;
+                height: 55vh;
+            }
+        }
+        .ProductViewContainer-2{
+            background: rgba($color: #8f4d4d, $alpha: 0);
+            height: 82vh;
+            width: 50vw;
+            .innerProductViewContainer-2{
+                height: 78vh;
+                width: 50vw;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                .ProductTitleContainer{
+                    background: rgba($color: #303799, $alpha: 0);
+                    height: 5vh;
+                    width: 50vw;
+                    margin-top: 3vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .titletxt{
+                        font-family: 'myFont', sans-serif;
+                        font-size: 2.3em;
+                        font-weight: bold;
+                        margin-left: 7vw;
+                        color: rgba($color: #000000, $alpha: 1.0);
+                    }
+                }
+                .ProductPriceContainer{
+                    background: rgba($color: #522c2c, $alpha: 0);
+                    height: 4vh;
+                    width: 50vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    position: relative;
+                    .pricetxt{
+                        font-family: 'myFont', sans-serif;
+                        font-size: 1em;
+                        font-weight: bold;
+                        margin-left: 7vw;
+                        color: rgba($color: #000000, $alpha: 1.0);
+                    }
+                    .AddToWishlistBtn{
+                        position: absolute;
+                        height: 4vh;
+                        width: auto;
+                        background: rgba($color: #ad0e93, $alpha: 0);
+                        border: 0px solid transparent;
+                        right: 0;
+                        margin-right: 10vw;
+                        padding: 0px 12px;
+                        font-family: 'myFont', sans-serif;
+                        font-size: 1em;
+                        font-weight: bold;
+                        letter-spacing: .10em;
+                        .icon{
+                            margin-bottom: .4vh;
+                            color: gray;
+                        }
+                    }
+                    .AddToWishlistBtn:hover{
+                        .icon{
+                            color: rgb(150, 17, 35);
+                        }
+                    }
+                }
+                .ProductDescriptionContainer{
+                    background: rgba($color: #217297, $alpha: 0);
+                    height: auto;
+                    width: 50vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin-top: 3vh;
+                    .DescriptionContainer{
+                        background: rgba($color: #2ac02a, $alpha: 0);
+                        height: auto;
+                        width: 33vw;
+                        margin-left: 7vw;
+                        text-align: justify;
+                        column-count: 1;
+                        .descriptiontext{
+                            font-family: 'myFont', sans-serif;
+                            font-size: .9em;
+                            // font-weight: bold;
+                            color: rgba($color: #3f3f3f, $alpha: 1.0);
+                            // word-wrap: break-word;
+                            // word-spacing: 9999px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+                .ProductMiniImgContainer{
+                    background: rgba($color: #28a072, $alpha: 0);
+                    height: 23vh;
+                    width: 50vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .imgContainer{
+                        // background: rgba($color: #585858, $alpha: 0);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center center;
+                        height: 14vh;
+                        width: 9vw;
+                        margin-left: 7vw;
+                        border: 2px solid black;
+                        cursor: pointer;
+                    }
+                    // .SpecsContainer{
+                    //     background: rgba($color: #2ac02a, $alpha: 1);
+                    //     height: 27vh;
+                    //     width: 16vw;
+                    //     margin-left: 7vw;
+                    //     text-align: justify;
+                    //     column-count: 1;
+                    //     .specstext{
+                    //         font-family: 'myFont', sans-serif;
+                    //         font-size: .9em;
+                    //         // font-weight: bold;
+                    //         color: rgba($color: #3f3f3f, $alpha: 1.0);
+                    //         word-wrap: break-word;
+                    //         word-spacing: 9999px;
+                    //     }
+                    // }
+                }
+                .ProductOrderQuantity{
+                    background: rgba($color: #5f3f3f, $alpha: 0);
+                    height: 5vh;
+                    width: 50vw;
+                    margin-top: 3vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .counterContainer{
+                        background: rgba($color: #000000, $alpha: 1.0);
+                        height: auto;
+                        width: auto;
+                        margin-left: 7vw;
+                        display: flex;
+                        .decrement{
+                            background: rgba($color: #686868, $alpha: 1.0);
+                            height: 40px;
+                            width: 60px;
+                            display: grid;
+                            place-items: center;
+                            border: 0px solid transparent;
+                            color: rgba($color: #000000, $alpha: 1.0);
+                            .icon{
+                                font-size: .9em;
+                            }
+                        }
+                        .counter{
+                            background: rgba($color: #ffffff, $alpha: 1.0);
+                            height: 40px;
+                            width: 50px;
+                            border: 2px 0px 2px 0px solid rgb(0, 0, 0);
+                            display: grid;
+                            place-items: center;
+                        }
+                        .increment{
+                            background: rgba($color: #0c0c0c, $alpha: 1.0);
+                            height: 40px;
+                            width: 60px;
+                            display: grid;
+                            place-items: center;
+                            border: 0px solid transparent;
+                            color: #ffffff;
+                            .icon{
+                                font-size: .9em;
+                            }
+                        }
+                    }
+                    .quantityCountContainer{
+                        background: rgba($color: #816161, $alpha: 0);
+                        height: 40px;
+                        width: 120px;
+                        margin-left: .5vw;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: rgba($color: #000000, $alpha: 1.0);
+                        font-family: 'myFont', sans-serif;
+                    }
+                }
+                .addtocartBtnContainer{
+                    background: rgba($color: #2b9990, $alpha: 0);
+                    height: auto;
+                    width: 50vw;
+                    margin-top: 5vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .ToggleContainerbtn{
+                        background: rgba($color: #d1a574, $alpha: 0);
+                        height: 45px;
+                        width: 400px;
+                        margin-left: 7vw;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space;
+                        position: relative;
+                        overflow: hidden;
+                        .textContainer{
+                            background: rgba($color: #d1a574, $alpha: 1);
+                            height: 45px;
+                            width: 306px;
+                            position: absolute;
+                            left: 0vw;
+                            transform: translateX(0px);
+                            transition: .5s;
+                            display: grid;
+                            place-items: center;
+                            font-family: 'myFont', sans-serif;
+                            font-weight: bold;
+                            letter-spacing: .25em;
+                        }
+                        .toggleSwitchIcon{
+                            position: absolute;
+                            background: rgba($color: #303030, $alpha: 1.0);
+                            height: 45px;
+                            width: 5vw;
+                            border: 0px solid transparent;
+                            right: 0vw;
+                            transform: translateX(0px);
+                            transition: .5s;
+                            display: grid;
+                            place-items: center;
+                            .icon{
+                                color: #fff;
+                                font-size: 1.2em;
+                            }
+                        }
+                        .addtoCartFunctionBtn{
+                            position: absolute;
+                            height: 45px;
+                            width: 305px;
+                            background: rgba($color: #0f0f0f, $alpha: 1.0);
+                            display: grid;
+                            place-items: center;
+                            top: 0;
+                            right: -15.85vw;
+                            border: 0px solid transparent;
+                            transform: translateX(0px);
+                            transition: .5s;
+                            .text{
+                                width: auto;
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                    .ToggleContainerbtn:hover{
+                        .textContainer{
+                            transform: translateX(-305px);
+                        }
+                        .toggleSwitchIcon{
+                            transform: translateX(-305px);
+                        }
+                        .addtoCartFunctionBtn{
+                            transform: translateX(-305px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .innerDiv-2{
+        background: rgba($color: #5f3a3a, $alpha: 0);
+        height: auto;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        .SpecsContainer{
+            background: rgba($color: #d4a03f, $alpha: 0);
+            height: 12vh;
+            width: 100vw;
+            margin-top: 0vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .text{
+                font-family: 'myFont', sans-serif;
+                font-size: 2.4em;
+                font-weight: bold;
+                margin-left: 4vw;
+                letter-spacing: 5px;
+            }
+        }
+        .SpecsInfoContainer{
+            background: rgba($color: #44d4bc, $alpha: 0);
+            height: auto;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .textContainer{
+                background: rgba($color: #8f4eda, $alpha: 0);
+                height: 40vh;
+                width: 20vw;
+                margin-left: 4vw;
+                column-count: 1;
+                .text{
+                    font-family: 'myFont', sans-serif;
+                    color: black;
+                    font-size: 1.3em;
+                    // word-wrap: break-word;
+                    word-spacing: 9999px;
+                    line-height: 55px;
+                }
+            }
+        }
+        .WarrantyContainer{
+            background: rgba($color: #d4a03f, $alpha: 0);
+            height: 12vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .text{
+                font-family: 'myFont', sans-serif;
+                font-size: 2.4em;
+                font-weight: bold;
+                margin-left: 4vw;
+                letter-spacing: 5px;
+            }
+        }
+        .WarrantyInfoContainer{
+            background: rgba($color: #44d4bc, $alpha: 0);
+            height: auto;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .textContainer{
+                background: rgba($color: #8f4eda, $alpha: 0);
+                height: auto;
+                width: 20vw;
+                margin-left: 4vw;
+                .text{
+                    font-family: 'myFont', sans-serif;
+                    color: black;
+                    font-size: 1.3em;
+                    line-height: 55px;
+                }
+            }
+        }
+    }
+    .innerDiv-3{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 70vh;
+        width: 100vw;
+        margin-bottom: 50px;
+        transition: .5s ease-in-out;
+        .hoverBtnContaioner{
+            background: rgba($color: #ffffff, $alpha: 0);
+            transition: .5s;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            // background: -webkit-linear-gradient(
+            //     rgba(255, 255, 255, 0) 0%,
+            //     rgba(255, 255, 255, 1) 100%
+            // ); 
+            // background-image: -moz-linear-gradient(
+            //     rgba(255, 255, 255, 0) 0%,
+            //     rgba(255, 255, 255, 1) 100%
+            // );
+            // background-image: -o-linear-gradient(
+            //     rgba(255, 255, 255, 0) 0%,
+            //     rgba(255, 255, 255, 1) 100%
+            // );
+            // background-image: linear-gradient(rgba(184, 43, 43, 0) 0%, rgba(255, 255, 255, 1) 100%);
+            // background-image: -ms-linear-gradient(
+            //     rgba(255, 255, 255, 0) 0%,
+            //     rgba(255, 255, 255, 1) 100%
+            // ); 
+            // box-shadow: 0px 100px 40px #fff inset;
+            height: 70vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            .titleContainer{
+                background: rgba($color: #885252, $alpha: 0);
+                height: 10vh;
+                width: 100vw;
+                margin-top: 5vh;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .title{
+                    font-family: 'myFont', sans-serif;
+                    font-size: 4em;
+                    font-weight: bold;
+                    margin-left: 4vw;
+                    color: rgba($color: #000000, $alpha: 1.0);
+                    letter-spacing: 5px;
+                    transition: .5s;
+                }
+            }
+            .contentContainer{
+                background: rgba($color: #38b690, $alpha: 0);
+                height: 30vh;
+                width: 40vw;
+                margin-left: 4vw;
+                transition: .5s;
+                .contentText{
+                    font-family: 'myFont', sans-serif;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    color: rgba($color: #000000, $alpha: 1.0);
+                    letter-spacing: 5px;
+                    transition: .5s;
+                }
+            }
+        }
+        .hoverBtnContaioner:hover{
+            .titleContainer{
+                .title{
+                    color: rgba($color: #000000, $alpha: 1.0);
+                }
+            }
+            .contentContainer{
+                .contentText{
+                    color: rgba($color: #000000, $alpha: 1.0);
+                }
+            }
+        }
+    }
+    .innerDiv-4{
+        background: rgba($color: #8d7979, $alpha: 0);
+        height: auto;
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        .categoryContainer{
+            background: rgba($color: #d65c5c, $alpha: 0);
+            height: 10vh;
+            width: 100vw;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .txt{
+                margin-left: 3vw;
+                font-size: 2.3rem;
+                // line-height: 115px;
+                letter-spacing: 1px;
+                font-family: 'myFont', sans-serif;
+                font-weight: bold;
+                color: rgba($color: #000000, $alpha: 1.0);
+                text-rendering: optimizeSpeed;
+            }
+        }
+        .productsContainer{
+            background: rgba($color: #717229, $alpha: 0);
+            height: auto;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // overflow-x: auto;
+            // display: flex;
+            // flex-direction: column;
+            // flex-wrap: wrap;
+            // align-items: center;
+            // justify-content: space-around;
+            // cursor: grab;
+            .productInnerContainer-1{
+                background: rgba($color: #adab1f, $alpha: 0);
+                height: auto;
+                width: 95vw;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                // padding: 0px 16px;
+                margin-bottom: 50px;
+                // overflow-x: auto;
+                // overflow-y: hidden;
+                // flex-wrap: nowrap;
+                // white-space: nowrap;
+                // flex-direction: row;
+                // overflow-x: auto;
+                // cursor: grab;
+                .imgContainer{
+                    background: rgba($color: #f1f1f1, $alpha: 1.0);
+                    // background-image: url('../prod_img/hikvisioncam1.png');
+                    // background-position: center center;
+                    // background-repeat: no-repeat;
+                    // background-size: cover;
+                    height: 80vh;
+                    width: 45vw;
+                    display: grid;
+                    position: relative;
+                    border: 0px solid transparent;
+                    transition: .5s;
+                    margin: 20px 10px;
+                    .container-1{
+                        background: rgba($color: #b48080, $alpha: 0);
+                        width: 45vw;
+                        height: 8vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .statusContainer{
+                            background: rgba($color: #000000, $alpha: 1.0);
+                            height: 2.2vh;
+                            width: 7vw;
+                            border-radius: 5px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-left: 2vw;
+                            color: rgba($color: #ffffff, $alpha: 1.0);
+                            font-size: 1em;
+                            font-weight: bolder;
+                            font-family: 'Open Sans', sans-serif;
+                        }
+                    }
+        
+                    .labelContainer{
+                        background: rgba($color: #2840aa, $alpha: 0);
+                        position: relative;
+                        position: absolute;
+                        bottom: 0;
+                        height: 8vh;
+                        width: 45vw;
+                        .label{
+                            background: rgba($color: #b98f8f, $alpha: 0);
+                            height: 8vh;
+                            width: 30vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .txt{
+                                margin-left: 3vw;
+                                font-size: 1.5em;
+                                font-weight: bold;
+                                font-family: 'Raleway', sans-serif;
+                                text-rendering: optimizeSpeed;
+                                color: rgba($color: #000000, $alpha: 1.0);
+                            }
+                        }
+                        .price{
+                            background: rgba($color: #83187a, $alpha: 0);
+                            height: 8vh;
+                            width: 10vw;
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .txt{
+                                font-size: 1.5em;
+                                // font-weight: bold;
+                                font-family: 'Raleway', sans-serif;
+                                text-rendering: optimizeSpeed;
+                                color: rgba($color: #000000, $alpha: 1.0);
+                            }
+                        }
+                    }
+        
+                    /// fixed img 
+                    .img{
+                        transform: translate(-50%,-50%);
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        height: 50vh;
+                        transition: .5s;
+                    }
+                }
+                .imgContainer:hover{
+                    transform: translateY(-20px);
+                    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.4);
+                    // .img{
+                    //     height: 60vh;
+                    // }
+                }
+            }
+        }
+    }
+    .innerDiv-5{
+        background: rgba($color: #583d3d, $alpha: 0);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        margin-bottom: 50px;
+        .imgContainer{
+            background: rgba($color: #c7be3e, $alpha: 0);
+            height: 100vh;
+            width: 50vw;
+            display: grid;
+            place-items: center;
+            .innerImgContainer{
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 87vh;
+                width: 45vw;
+                margin-left: 3vw;
+            }
+        }
+        .contextContainer{
+            background: rgba($color: #22a7a0, $alpha: 0);
+            height: 100vh;
+            width: 50vw;
+            display: flex;
+            flex-direction: column;
+            .innerContextContainer-1{
+                background: rgba($color: #58caca, $alpha: 0);
+                height: 50vh;
+                width: 50vw;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                .titleContainer{
+                    background: rgba($color: #af5858, $alpha: 0);
+                    height: 6vh;
+                    width: 45vw;
+                    margin-top: 14vh;
+                    display: grid;
+                    align-items: center;
+                    .title{
+                        font-family: 'myFont', sans-serif;
+                        font-weight: bold;
+                        font-size: 2.8em;
+                    }
+                }
+                .textContainer{
+                    background: rgba($color: #2fac40, $alpha: 0);
+                    height: auto;
+                    width: 45vw;
+                    text-align: justify;
+                    display: grid;
+                    align-items: center;
+                    margin-top: 2vh;
+                    .text{
+                        font-family: 'myFont', sans-serif;
+                        font-size: 1.4em;
+                        color: rgba($color: #696969, $alpha: 1.0);
+                        font-weight: bold;
+                        // width: 90%;
+                    }
+                }
+            }
+            .innerContextContainer-2{
+                background: rgba($color: #ad6e25, $alpha: 0);
+                height: 43.5vh;
+                width: 50vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .AboutUsImgContainer{
+                    background: rgba($color: #000000, $alpha: 1.0);
+                    height: 43.5vh;
+                    width: 25vw;
+                    margin-right: 4vw;
+                    display: grid;
+                    align-items: center;
+                    justify-content: center;
+                    // overflow: hidden;
+                    border: 0px solid transparent;
+                    position: relative;
+                    .img{
+                        position: relative;
+                        position: absolute;
+                        transform: translate(-0%,-0%);
+                        height: 43.5vh;
+                        width: 25vw;
+                        transition: .3s ease-in-out;
+                        z-index: 99;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        .dateContainer{
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            background: rgba($color: #8d3f3f, $alpha: 0);
+                            height: 6vh;
+                            width: 12.5vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                color: rgba($color: #fff, $alpha: 1.0);
+                                font-weight: bold;
+                                margin-left: 1.2vw;
+                                font-size: 1.2em;
+                            }
+                        }
+                        .timeContainer{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            background: rgba($color: #97a32a, $alpha: 0);
+                            height: 6vh;
+                            width: 12.5vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            .text{
+                                font-family: 'myFont', sans-serif;
+                                color: rgba($color: #fff, $alpha: 1.0);
+                                font-weight: bold;
+                                font-size: 1.2em;
+                                margin-right: 1.2vw;
+                            }
+                        }
+                    }
+                    .innerTextContainer{
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background: rgba($color: #a05353, $alpha: 0);
+                        height: 5vh;
+                        width: 25vw;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            font-family: 'myFont', sans-serif;
+                            color: rgba($color: #fff, $alpha: 1.0);
+                            font-weight: bold;
+                            margin-left: 2vw;
+                            font-size: 1.5em;
+                            letter-spacing: 5px;
+                        }
+                    }
+                }
+                .AboutUsImgContainer:hover{
+                    .img{
+                        transform: translate(-10%,-10%);
+                        box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// tommorow finish product view!

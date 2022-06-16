@@ -1,0 +1,85 @@
+@import 'fonts.scss';  
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    color: black;
+}
+
+@mixin baseDisplay($height,$width,$display,$alignItems,$justifyContent){
+    height: $height;
+    width: $width;
+    display: $display;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+.Wheretobuy{
+    background: rgba($color: #40aa3d, $alpha: 0);
+    height: 110vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .titleContainer{
+        background: rgba($color: #8f2121, $alpha: 0);
+        height: 45vh;
+        width: 100vw;
+        margin-top: 12vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        .txt{
+            font-family: 'myFont',sans-serif;
+            font-size: 6.5em;
+            font-weight: bold;
+            line-height: 150px;
+            margin-left: 3vw;
+        }
+    }
+    .contentContainer{
+        background: rgba($color: #b18b8b, $alpha: 0);
+        height: auto;
+        width: 94vw;
+        display: flex;
+        .text{
+            font-family: 'myFont',sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 5vh;
+        }
+        .text2{
+            font-family: 'myFont',sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 5vh;
+        }
+    }
+    .contentContainer-2{
+        background: rgba($color: #b18b8b, $alpha: 0);
+        height: auto;
+        width: 94vw;
+        display: flex;
+        .text{
+            font-family: 'myFont',sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 5vh;
+        }
+    }
+    .contentContainer-3{
+        background: rgba($color: #b18b8b, $alpha: 0);
+        height: auto;
+        width: 94vw;
+        display: flex;
+        .text{
+            font-family: 'myFont',sans-serif;
+            font-size: 2em;
+            margin-top: 5vh;
+            margin-left: 3vw;
+        }
+    }
+}

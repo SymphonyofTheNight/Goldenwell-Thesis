@@ -1,0 +1,228 @@
+@import 'fonts.scss'; 
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.CustomerLogin{
+    background: rgba($color: #ffffff, $alpha: 1.0);
+    height: 100vh;
+    width: 23vw;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 150;
+    position: fixed;
+    transform: translateX(100%);
+    box-shadow: 0px 2px 10px rgba($color: #000000, $alpha: 0.4);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transition: .3s ease-in-out;
+    .labelContainer{
+        background: rgba($color: #925656, $alpha: 0);
+        height: 10vh;
+        width: 20vw;
+        margin-top: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .label{
+            font-family: 'myFont', sans-serif;
+            color: rgba($color: #000000, $alpha: 1.0);
+            font-size: 2em;
+            margin-left: 1.5vw;
+        }
+    }
+    .inputContainer{
+        background: rgba($color: #5f4343, $alpha: 0);
+        height: auto;
+        width: 23vw;
+        .usernamelabelContainer{
+            background: rgba($color: #919924, $alpha: 0);
+            height: 2.3vh;
+            width: 23vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .text{
+                color: #000000;
+                font-family: 'myFont', sans-serif;
+                font-size: 1rem;
+                font-weight: 700;
+                margin-left: 1.5vw;
+            }
+        }
+        .usernameFormContainer{
+            background: rgba($color: #371fa0, $alpha: 0);
+            height: 5.5vh;
+            width: 23vw;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: relative;
+            .usernameInput{
+                outline: none;
+                margin-left: 1.5vw;
+                height: 4vh;
+                width: 15vw;
+                padding: 0px 16px;
+                font-family: 'myFont', sans-serif;
+            }
+        }
+        .passwordlabelContainer{
+            background: rgba($color: #919924, $alpha: 0);
+            height: 2.3vh;
+            width: 23vw;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .text{
+                color: #000000;
+                font-family: 'myFont', sans-serif;
+                font-size: 1rem;
+                font-weight: 700;
+                margin-left: 1.5vw;
+            }
+        }
+        .passwordFormContainer{
+            background: rgba($color: #1c8077, $alpha: 0);
+            height: 5.5vh;
+            width: 23vw;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: relative;
+            .passwordInput{
+                outline: none;
+                margin-left: 1.5vw;
+                height: 4vh;
+                width: 15vw;
+                padding: 0px 16px;
+                font-family: 'myFont', sans-serif;
+            }
+        }
+    }
+    .forgotpasswordContainer{
+        background: rgba($color: #5a2828, $alpha: 0);
+        height: auto;
+        width: 23vw;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        .forgotpassbtn{
+            background: rgba($color: #000000, $alpha: 0);
+            height: auto;
+            width: auto;
+            margin-left: 1.5vw;
+            border: 0px solid transparent;
+            .text{
+                padding: 0px 0px;
+                color: rgba($color: #000000, $alpha: 1.0);
+                font-family: 'myFont', sans-serif;
+                font-size: .9em;
+            }
+        }
+        .signupbtn{
+            position: absolute;
+            background: rgba($color: #000000, $alpha: 0);
+            right: 28%;
+            height: auto;
+            width: auto;
+            margin-left: 1.5vw;
+            border: 0px solid transparent;
+            .text{
+                padding: 0px 0px;
+                color: rgba($color: #000000, $alpha: 1.0);
+                font-family: 'myFont', sans-serif;
+                font-size: .9em;
+                font-weight: bold;
+            }
+        }
+    }
+    .submitbtnContainer{
+        background: rgba($color: #6d2f2f3b, $alpha: 0);
+        height: 5vh;
+        width: 23vw;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        margin-top: 2vh;
+        position: relative;
+        .submitbtn{
+            background: rgba($color: #000000, $alpha: 1.0);
+            height: 3.5vh;
+            width: 7vw;
+            margin-left: 1.5vw;
+            border: 0px solid transparent;
+            display: grid;
+            place-items: center;
+            color: #ffffff;
+        }
+        .submitbtn:hover{
+            background: rgba($color: #000000, $alpha: 1.0);
+            color: #ffffff;
+        }
+        .cancelbtn{
+            position: absolute;
+            background: rgba($color: #ffffff, $alpha: 1.0);
+            height: 3.5vh;
+            width: 7vw;
+            margin-left: 1.5vw;
+            border: 1px solid black;
+            display: grid;
+            place-items: center;
+            color: #000000;
+            right: 27%;
+        }
+        .cancelbtn:hover{
+            background: rgba($color: #000000, $alpha: 1.0);
+            color: #ffffff;
+        }
+    }
+    .submitbtnContainer-2{
+        background: rgba($color: #6d2f2f3b, $alpha: 0);
+        height: 8vh;
+        width: 23vw;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        .gmaillogin{
+            margin-left: 1.5vw;
+            width: 15.3vw;
+            height: 4vh;
+            // font-family: 'myFont',sans-serif;
+            background: rgba($color: #000000, $alpha: 1.0);
+            color: #ffffff;
+            font-size: 1em;
+            transition: .2s;
+            // font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .gmaillogin:hover{
+            background: #ffffff;
+            color: rgba($color: #000000, $alpha: 1.0);
+            border: 1px solid black;
+        }
+    }
+    .footer{
+        background: rgba($color: #814e4e, $alpha: 0);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 7vh;
+        width: 23vw;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .img{
+            height: 2vh;
+            margin-left: 1.5vw;
+        }
+    }
+}

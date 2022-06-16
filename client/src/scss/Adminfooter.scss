@@ -1,0 +1,184 @@
+@import 'fonts.scss';  
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.Adminfooter{
+    background: rgba($color: #664242, $alpha: 0);
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .innerContainer{
+        background: rgba($color: #000000, $alpha: 0);
+        height: 8vh;
+        width: 84vw;
+        position: relative;
+        .container-1{
+            background: rgba($color: #248821, $alpha: 0);
+            height: 8vh;
+            width: 15vw;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .logo{
+                margin-left: 1vw;
+            }
+            .txt{
+                font-family: 'Raleway', sans-serif;
+                font-size: .9em;
+                font-weight: bold;
+            }
+        }
+        .container-2{
+            background: rgba($color: #248821, $alpha: 0);
+            height: 8vh;
+            width: 15vw;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .txt{
+                margin-right: 1vw;
+                font-family: 'Raleway', sans-serif;
+                font-size: .8em;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@include media('<=sWindow'){
+    .Adminfooter{
+        height: 7vh;
+        .innerContainer{
+            height: 7vh;
+            .container-1{
+                height: 7vh;
+                .logo{
+                    margin-left: 1vw;
+                }
+                .txt{
+                    font-size: .8em;
+                }
+            }
+            .container-2{
+                height: 7vh;
+                .txt{
+                    font-size: .7em;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=Ipad'){
+    .Adminfooter{
+        height: 4vh;
+        .innerContainer{
+            height: 4vh;
+            .container-1{
+                height: 4vh;
+                .logo{
+                    margin-left: 1vw;
+                }
+                .txt{
+                    font-size: .8em;
+                }
+            }
+            .container-2{
+                height: 4vh;
+                .txt{
+                    font-size: .7em;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=Tablet'){
+    .Adminfooter{
+        height: 4vh;
+        .innerContainer{
+            height: 4vh;
+            .container-1{
+                height: 4vh;
+                width: 25vw;
+                .logo{
+                    margin-left: 1vw;
+                }
+                .txt{
+                    font-size: .7em;
+                }
+            }
+            .container-2{
+                height: 4vh;
+                width: 25vw;
+                .txt{
+                    font-size: .6em;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=Phone'){
+    .Adminfooter{
+        height: 4vh;
+        .innerContainer{
+            height: 4vh;
+            .container-1{
+                height: 4vh;
+                width: 50vw;
+                .logo{
+                    margin-left: 1vw;
+                }
+                .txt{
+                    font-size: .7em;
+                }
+            }
+            .container-2{
+                height: 4vh;
+                width: 50vw;
+                .txt{
+                    font-size: .6em;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=mPhone'){
+    .Adminfooter{
+        height: 4vh;
+        .innerContainer{
+            height: 4vh;
+            .container-1{
+                height: 4vh;
+                width: 50vw;
+                .logo{
+                    margin-left: 1vw;
+                }
+                .txt{
+                    font-size: .7em;
+                }
+            }
+            .container-2{
+                height: 4vh;
+                width: 50vw;
+                .txt{
+                    font-size: .5em;
+                }
+            }
+        }
+    }
+}

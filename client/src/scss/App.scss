@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+::-webkit-scrollbar{
+    background: rgba($color: #ffffff, $alpha: 1.0);
+    width: .1vw;
+    height: .1vh;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgba($color: #000000, $alpha: 1.0);
+}
+
+:root{
+    background-color: rgba($color: #881d1d, $alpha: 1.0);
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.Modal{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    background-color: papayawhip;
+}

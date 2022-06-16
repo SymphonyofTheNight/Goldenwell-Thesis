@@ -1,0 +1,492 @@
+@import 'fonts.scss';  
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+@mixin baseDisplay($height,$width,$display,$alignItems,$justifyContent){
+    height: $height;
+    width: $width;
+    display: $display;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+.CustomerCheckout{
+    background: rgba($color: #e08011, $alpha: 1.0);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .CheckoutDetailsContainer{
+        background: rgba($color: #964e4e, $alpha: 0);
+        height: 70vh;
+        width: 70vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .innerContainer1{
+            background: rgba($color: #000000, $alpha: 1.0);
+            height: 70vh;
+            width: 50vw;
+            z-index: 5;
+            .titleContainer{
+                background: rgba($color: #922e2e, $alpha: 0);
+                height: 6vh;
+                width: 50vw;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                .img{
+                    height: 3vh;
+                    margin-left: 1vw;
+                }
+            }
+            .textContainerSummary{
+                background: rgba($color: #1c7894, $alpha: 0);
+                height: 7vh;
+                width: 50vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .text{
+                    font-family: 'myFont',sans-serif;
+                    font-size: 1.2em;
+                    margin-left: 1.5vw;
+                    color: #ffffff;
+                    font-weight: bold;
+                }
+            }
+            .itemContainer{
+                background: rgba($color: #0f2c6b, $alpha: 0);
+                min-height: 40vh;
+                max-height: 40vh;
+                width: auto;
+                display: flex;
+                flex-direction: column;
+                overflow-y: scroll;
+                .inneritemContainer{
+                    background: rgba($color: #128d7d, $alpha: 0);
+                    height: 7vh;
+                    // max-height: 20vh;
+                    width: 50vw;
+                    display: flex;
+                    align-items: flex-start;
+                    align-items: center;
+                    // justify-content: space-around;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    overflow-y: scroll;
+                    display: grid;
+                    place-items: center;
+                    .item{
+                        background: rgba($color: #0f0f0f, $alpha: 1);
+                        height: 6.5vh;
+                        width: 49vw;
+                        margin: 5px 0px;
+                        display: flex;
+                        flex-direction: row;
+                        // border: 1px solid rgb(151, 65, 65);
+                        border-radius: 5px;
+                        .productname{
+                            background: rgba($color: #93c02a, $alpha: 0);
+                            height: 6.5vh;
+                            width: 15vw;
+                            display: flex;
+                            align-items: center;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                font-size: 1em;
+                                margin-left: 1.5vw;
+                                color: #ffffff;
+                            }
+                        }
+                        .productprice{
+                            background: rgba($color: #0fbcc2, $alpha: 0);
+                            height: 6.5vh;
+                            width: 35vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                font-size: 1em;
+                                margin-right: 1.5vw;
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+            .totalContainer{
+                background: rgba($color: #852727, $alpha: 0);
+                height: 17vh;
+                width: 50vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: column;
+                .titleContainer{
+                    background: rgba($color: #131585, $alpha: 0);
+                    height: 5vh;
+                    width: 50vw;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    .text{
+                        font-family: 'myFont',sans-serif;
+                        font-size: 1em;
+                        margin-left: 1.5vw;
+                        color: #ffffff;
+                        font-weight: bold;
+                    }
+                }
+                .priceContainer{
+                    background: rgba($color: #6d8113, $alpha: 0);
+                    height: 12vh;
+                    width: 50vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .text{
+                        font-family: 'myFont',sans-serif;
+                        font-size: 3em;
+                        margin-left: 1.5vw;
+                        color: #ffffff;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+        }
+        .innerContainer2{
+            background: rgba($color: #ffffff, $alpha: 1);
+            height: 70vh;
+            width: 20vw;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            .titleContainer{
+                background: rgba($color: #8d1717, $alpha: 0);
+                height: 8vh;
+                width: 20vw;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                position: relative;
+                .text{
+                    font-family: 'myFont',sans-serif;
+                    font-weight: bold;
+                    color: #000000;
+                    margin-left: 1.2vw;
+                    font-size: 1.5em;
+                    margin-bottom: 1.5vh;
+                }
+                .img{
+                    height: 6vh;
+                    position: absolute;
+                    right: 0;
+                    margin-right: .8vw;
+                }
+            }
+            .detailsContainer{
+                background: rgba($color: #973f3f, $alpha: 0);
+                height: 62vh;
+                width: 20vw;
+                display:  flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                .fullnameContainer{
+                    background: rgba($color: #51b32a, $alpha: 0);
+                    height: 6vh;
+                    width: 20vw;
+                    display:  flex;
+                    flex-direction: column;
+                    margin-top: 2vh;
+                    .label{
+                        background: rgba($color: #2c758b, $alpha: 0);
+                        height: 2vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: .7em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                    .textdetailContainer{
+                        background: rgba($color: #9db614, $alpha: 0);
+                        height: 4vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: 1.3em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                }
+                .addressContainer{
+                    background: rgba($color: #51b32a, $alpha: 0);
+                    height: 6vh;
+                    width: 20vw;
+                    display:  flex;
+                    flex-direction: column;
+                    margin-top: 1vh;
+                    .label{
+                        background: rgba($color: #2c758b, $alpha: 0);
+                        height: 2vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: .7em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                    .textdetailContainer{
+                        background: rgba($color: #9db614, $alpha: 0);
+                        height: 4vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: 1.3em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                }
+                .emailContainer{
+                    background: rgba($color: #51b32a, $alpha: 0);
+                    height: 6vh;
+                    width: 20vw;
+                    display:  flex;
+                    flex-direction: column;
+                    margin-top: 1vh;
+                    .label{
+                        background: rgba($color: #2c758b, $alpha: 0);
+                        height: 2vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: .7em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                    .textdetailContainer{
+                        background: rgba($color: #9db614, $alpha: 0);
+                        height: 4vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: 1.3em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                }
+                .numberContainer{
+                    background: rgba($color: #51b32a, $alpha: 0);
+                    height: 6vh;
+                    width: 20vw;
+                    display:  flex;
+                    flex-direction: column;
+                    margin-top: 1vh;
+                    .label{
+                        background: rgba($color: #2c758b, $alpha: 0);
+                        height: 2vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: .7em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                    .textdetailContainer{
+                        background: rgba($color: #9db614, $alpha: 0);
+                        height: 4vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: 1.3em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                }
+                .topayContainer{
+                    background: rgba($color: #51b32a, $alpha: 0);
+                    height: 6vh;
+                    width: 20vw;
+                    display:  flex;
+                    flex-direction: column;
+                    margin-top: 3vh;
+                    .label{
+                        background: rgba($color: #2c758b, $alpha: 0);
+                        height: 2vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: .7em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                    .textdetailContainer{
+                        background: rgba($color: #9db614, $alpha: 0);
+                        height: 4vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            color: rgba($color: #414141, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: 2em;
+                            font-weight: bold;
+                            margin-left: 1.2vw;
+                        }
+                    }
+                }
+                .paymethodsContainer{
+                    background: rgba($color: #1f681f, $alpha: 0);
+                    height: 24vh;
+                    width: 20vw;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    .cashondeliveryContainer{
+                        background: rgba($color: #000000, $alpha: 0);
+                        width: 17vw;
+                        height: 7vh;
+                        display: grid;
+                        place-items: center;
+                        .codbtn{
+                            background: rgba($color: #e78f0a, $alpha: 1.0);
+                            font-family: 'myFont',sans-serif;
+                            font-size: 1.1em;
+                            width: 17vw;
+                            height: 4.5vh;
+                            border-radius: 4px;
+                            border: 0px solid transparent;
+                            color: white;
+                        }
+                    }
+                    .paypalbtnContainer{
+                        background: rgba($color: #000000, $alpha: 0);
+                        width: 17vw;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        .datetxt{
+            // background: rgba($color: #000000, $alpha: 1.0);
+            margin: auto;
+            font-family: 'myFont',sans-serif;
+            font-size: 15em;
+            color: rgba($color: #835122, $alpha: 1.0);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(-50%,-50%);
+            font-weight: bold;
+            line-height: 200px;
+            transform: translateY(-45px);
+            letter-spacing: 10px;
+    
+        }
+    }
+    // popout
+    .popoutContainer{
+        background: rgba($color: #000000, $alpha: 0.5);
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 500;
+        display: grid;
+        place-items: center;
+        opacity: 0;
+        transition: .5s;
+        display: none;
+        .popout{
+            background: rgba($color: #ffffff, $alpha: 1.0);
+            height: 25vh;
+            width: 20vw;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: .3s;
+            .logoContainer{
+                background: rgba($color: #8a3a3a, $alpha: 0);
+                height: 15vh;
+                width: 20vw;
+                display: grid;
+                place-items: center;
+                .wrapper{
+                    height: 15vh;
+                    display:flex;
+                    justify-content:center;
+                    align-items:flex-end;
+                }.checkmark__circle{
+                    stroke-dasharray: 166;stroke-dashoffset: 166;stroke-width: 2;stroke-miterlimit: 10;stroke: #7ac142;fill: none;animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards}.checkmark{width: 56px;height: 56px;border-radius: 50%;display: block;stroke-width: 2;stroke: #fff;stroke-miterlimit: 10;margin: 10% auto;box-shadow: inset 0px 0px 0px #7ac142;animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+                }.checkmark__check{
+                    transform-origin: 50% 50%;stroke-dasharray: 48;stroke-dashoffset: 48;animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards}@keyframes stroke{100%{stroke-dashoffset: 0}}@keyframes scale{0%, 100%{transform: none}50%{transform: scale3d(1.1, 1.1, 1)}}@keyframes fill{100%{box-shadow: inset 0px 0px 0px 30px #7ac142}
+                }
+            }
+            .textContainer{
+                background: rgba($color: #899c35, $alpha: 0);
+                height: 10vh;
+                width: 20vw;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                .text{
+                    font-family: 'myFont',sans-serif;
+                    font-size: 1.5em;
+                    font-weight: 700;
+                    margin-top: 2vh;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,700 @@
+@import 'fonts.scss';  // font-family: 'Heebo', sans-serif;
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.Adminlogin{
+    background: rgba($color: #ffffff, $alpha: 1.0);
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    .inner-container{
+        background: rgba($color: #000000, $alpha: 0);
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        .container-1{
+            background: rgba($color: #227aa3, $alpha: 0);
+            height: 100vh;
+            width: 42vw;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .container-2{
+            background: rgba($color: #2b3344, $alpha: 0); // important
+            height: 100vh;
+            width: 37.5vw;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+           
+            .loginContainer{
+                background: rgba($color: #000000, $alpha: 0);
+                height: auto;
+                width: 30vw;
+                display: grid;
+                .labelContainer{
+                    background: rgba($color: #968e21, $alpha: 0);
+                    height: 12.5vh;
+                    width: 30vw;
+                    display: grid;
+                    .label-1{
+                        background: rgba($color: #8d3939, $alpha: 0);
+                        height: 5vh;
+                        width: 30vw;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .txt{
+                            margin-left: 1vw;
+                            font-size: 2.3rem;
+                            font-family: 'Heebo', sans-serif;
+                            color: rgba($color: #000000, $alpha: 1.0);
+                        }
+                    }
+                    .label-2{
+                        background: rgba($color: #218192, $alpha: 0);
+                        height: 7.5vh;
+                        width: 30vw;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .txt{
+                            margin-left: 1vw;
+                            font-size: 1rem;
+                            font-family: 'Heebo', sans-serif;
+                            color: rgba($color: #000000, $alpha: 1.0);
+                        }
+                    }
+                }
+                .inputContainer{
+                    background: rgba($color: #7a3737, $alpha: 0);
+                    height: 20vh;
+                    width: 30vw;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    .UserContainer{
+                        background: rgba($color: #234d2e, $alpha: 0);
+                        height: 6vh;
+                        width: 30vw;
+                        margin-top: 5vh;
+                        display: grid;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .textfield{
+                            margin-left: 1vw;
+                            width: 15vw;
+                            padding: 6x 0px;
+                        }
+                    }
+                    .PassContainer{
+                        background: rgba($color: #b46028, $alpha: 0);
+                        height: 6vh;
+                        width: 30vw;
+                        display: grid;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .textfield{
+                            margin-left: 1vw;
+                            width: 15vw;
+                            padding: 6x 0px;
+                        }
+                    }
+                }
+                .btnContainer{
+                   background-color: rgba($color: #c54375, $alpha: 0);
+                   height: 10vh;
+                   width: 30vw;
+                   display: flex;
+                   align-items: center;
+                   justify-content: flex-start;
+                   .login-btn{
+                    background: rgba($color: #2b3344, $alpha: 1.0);
+                       height: 4vh;
+                       width: 6vw;
+                       border: 1px solid black;
+                       margin-left: 1vw;
+                       .txt{
+                           color: rgba($color: #ffffff, $alpha: 1.0);
+                           padding: 12px 16px;
+                           font-family: 'Rubik', sans-serif;
+                           letter-spacing: 5px;
+                       }
+                   }
+                }
+                .btn2Container{
+                    background: rgba($color: #205f6e, $alpha: 0);
+                    height: 15.5vh;
+                    width: 30vw;
+                    display: grid;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    position: relative;
+                    .gotohome-btn{
+                        background: rgba($color: #b86969, $alpha: 0);
+                        padding: 4px 0px;
+                        margin-top: 1vh;
+                        margin-left: 1vw;
+                        border: 0px;
+                        .txt{
+                            color: rgba($color: #000000, $alpha: 1.0);
+                            font-weight: bold;
+                            font-family: 'Rubik', sans-serif;
+                            letter-spacing: 5px;
+                        }
+                    }
+                    .devname{
+                        position: absolute;
+                        bottom: 15%;
+                        margin-left: 1vw;
+                        font-family: 'Heebo', sans-serif;
+                        font-size: .8em;
+                    }
+                }
+            }
+        }
+    }
+    .circle-1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba($color: #2b3344, $alpha: 1.0);
+        height: 100vh;
+        width: 100vw;
+        clip-path: circle(17.3% at 0 100%);
+    }
+    .circle-2{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba($color: #2b3344, $alpha: 1.0);
+        height: 100vh;
+        width: 100vw;
+        clip-path: circle(30% at 100% 0);
+    }
+
+}
+
+@include media('<=sWindow'){
+    .Adminlogin{
+        .inner-container{
+            .container-1{
+                .img{
+                    height: 65%;
+                }
+            }
+            .container-2{
+                .loginContainer{
+                    .labelContainer{
+                        .label-1{
+                            .txt{
+                                font-size: 1.5rem;
+                            }
+                        }
+                        .label-2{
+                            .txt{
+                                font-size: .8rem;
+                            }
+                        }
+                    }
+                    .inputContainer{
+                        .UserContainer{
+                            .textfield{
+                                width: 15vw;
+                            }
+                        }
+                        .PassContainer{
+                            .textfield{
+                                width: 15vw;
+                            }
+                        }
+                    }
+                    .btnContainer{
+                       .login-btn{
+                           border: 0px solid black;
+                           .txt{
+                               padding: 12px 16px;
+                               letter-spacing: 2px;
+                               font-size: .8em;
+                           }
+                       }
+                    }
+                    .btn2Container{
+                        .gotohome-btn{
+                            .txt{
+                                letter-spacing: 2px;
+                                font-size: .8em;
+                            }
+                        }
+                        .devname{
+                            font-size: .6em;
+                        }
+                    }
+                }
+            }
+        }
+        .circle-1{
+            clip-path: circle(14.3% at 0 100%);
+        }
+        .circle-2{
+            clip-path: circle(25% at 100% 0);
+        }
+    } 
+}
+
+@include media('<=Ipad'){
+    .Adminlogin{
+        .inner-container{
+            width: auto;
+            .container-1{
+                display: none;
+                .img{
+                    height: 70%;
+                }
+            }
+            .container-2{
+                width: 70vw;
+                .loginContainer{
+                    width: 70vw;
+                    .labelContainer{
+                        width: 70vw;
+                        height: auto;
+                        .label-1{
+                            width: 70vw;
+                            .txt{
+                                font-size: 2.1rem;
+                            }
+                        }
+                        .label-2{
+                            width: 70vw;
+                            height: 5vh;
+                            .txt{
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+                    .inputContainer{
+                        width: 70vw;
+                        .UserContainer{
+                            width: 70vw;
+                            height: 5vh;
+                            .textfield{
+                                width: 23vw;
+                            }
+                        }
+                        .PassContainer{
+                            width: 70vw;
+                            height: 5vh;
+                            .textfield{
+                                width: 23vw;
+                            }
+                        }
+                    }
+                    .btnContainer{
+                        width: 70vw;
+                        height: 5vh;
+                       .login-btn{
+                           height: 3vh;
+                           width: 8vw;
+                           border: 0px solid black;
+                           .txt{
+                               padding: 12px 16px;
+                               letter-spacing: 2px;
+                               font-size: .8em;
+                           }
+                       }
+                    }
+                    .btn2Container{
+                        width: 70vw;
+                        height: 10vh;
+                        .gotohome-btn{
+                            .txt{
+                                letter-spacing: 2px;
+                                font-size: .8em;
+                            }
+                        }
+                        .devname{
+                            font-size: .6em;
+                        }
+                    }
+                }
+            }
+        }
+        .circle-1{
+            clip-path: circle(14.3% at 0 100%);
+        }
+        .circle-2{
+            clip-path: circle(25% at 100% 0);
+        }
+    } 
+}
+
+@include media('<=Tablet'){
+    .Adminlogin{
+        .inner-container{
+            width: auto;
+            .container-1{
+                display: none;
+                .img{
+                    height: 70%;
+                }
+            }
+            .container-2{
+                width: 70vw;
+                .loginContainer{
+                    width: 70vw;
+                    .labelContainer{
+                        width: 70vw;
+                        height: auto;
+                        .label-1{
+                            width: 70vw;
+                            .txt{
+                                font-size: 2.1rem;
+                            }
+                        }
+                        .label-2{
+                            width: 70vw;
+                            height: 5vh;
+                            .txt{
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+                    .inputContainer{
+                        width: 70vw;
+                        .UserContainer{
+                            width: 70vw;
+                            height: 5vh;
+                            .textfield{
+                                width: 27vw;
+                            }
+                        }
+                        .PassContainer{
+                            width: 70vw;
+                            height: 5vh;
+                            .textfield{
+                                width: 27vw;
+                            }
+                        }
+                    }
+                    .btnContainer{
+                        width: 70vw;
+                        height: 5vh;
+                       .login-btn{
+                           height: 4vh;
+                           width: 11vw;
+                           border: 0px solid black;
+                           .txt{
+                               padding: 12px 16px;
+                               letter-spacing: 2px;
+                               font-size: .8em;
+                           }
+                       }
+                    }
+                    .btn2Container{
+                        width: 70vw;
+                        height: 10vh;
+                        .gotohome-btn{
+                            .txt{
+                                letter-spacing: 2px;
+                                font-size: .9em;
+                            }
+                        }
+                        .devname{
+                            font-size: .7em;
+                        }
+                    }
+                }
+            }
+        }
+        .circle-1{
+            clip-path: circle(14.3% at 0 100%);
+        }
+        .circle-2{
+            clip-path: circle(25% at 100% 0);
+        }
+    } 
+}
+
+@include media('<=Phone'){
+    .Adminlogin{
+        height: 850px;
+        .inner-container{
+            width: auto;
+            .container-1{
+                display: none;
+                .img{
+                    height: 70%;
+                }
+            }
+            .container-2{
+                width: 70vw;
+                .loginContainer{
+                    width: 70vw;
+                    .labelContainer{
+                        width: 70vw;
+                        height: auto;
+                        .label-1{
+                            width: 70vw;
+                            height: 6.5vh;
+                            .txt{
+                                font-size: 1.6rem;
+                            }
+                        }
+                        .label-2{
+                            width: 70vw;
+                            height: 6vh;
+                            .txt{
+                                font-size: .9rem;
+                            }
+                        }
+                    }
+                    .inputContainer{
+                        width: 70vw;
+                        .UserContainer{
+                            width: 70vw;
+                            height: 7vh;
+                            .textfield{
+                                width: 50vw;
+                            }
+                        }
+                        .PassContainer{
+                            width: 70vw;
+                            height: 7vh;
+                            .textfield{
+                                width: 50vw;
+                            }
+                        }
+                    }
+                    .btnContainer{
+                        width: 70vw;
+                        height: 10vh;
+                       .login-btn{
+                           height: 4.5vh;
+                           width: 25vw;
+                           border: 0px solid black;
+                           .txt{
+                               padding:20px 16px;
+                               letter-spacing: 2px;
+                               font-size: .8em;
+                           }
+                       }
+                    }
+                    .btn2Container{
+                        width: 70vw;
+                        height: 15vh;
+                        .gotohome-btn{
+                            .txt{
+                                letter-spacing: 2px;
+                                font-size: .8em;
+                            }
+                        }
+                        .devname{
+                            font-size: .7em;
+                        }
+                    }
+                }
+            }
+        }
+        .circle-1{
+            clip-path: circle(20.3% at 0 100%);
+        }
+        .circle-2{
+            clip-path: circle(30% at 100% 0);
+        }
+    } 
+}
+
+@include media('<=mPhone'){
+    .Adminlogin{
+        .inner-container{
+            width: auto;
+            .container-1{
+                display: none;
+                .img{
+                    height: 70%;
+                }
+            }
+            .container-2{
+                width: 70vw;
+                .loginContainer{
+                    width: 70vw;
+                    .labelContainer{
+                        width: 70vw;
+                        height: auto;
+                        .label-1{
+                            width: 70vw;
+                            height: 7.5vh;
+                            .txt{
+                                font-size: 1.5rem;
+                            }
+                        }
+                        .label-2{
+                            width: 70vw;
+                            height: 6vh;
+                            .txt{
+                                font-size: .9rem;
+                            }
+                        }
+                    }
+                    .inputContainer{
+                        width: 70vw;
+                        .UserContainer{
+                            width: 70vw;
+                            height: 7vh;
+                            .textfield{
+                                width: 50vw;
+                            }
+                        }
+                        .PassContainer{
+                            width: 70vw;
+                            height: 7vh;
+                            .textfield{
+                                width: 50vw;
+                            }
+                        }
+                    }
+                    .btnContainer{
+                        width: 70vw;
+                        height: 10vh;
+                       .login-btn{
+                           height: 5vh;
+                           width: 20vw;
+                           border: 0px solid black;
+                           .txt{
+                               padding: 5px 5px;
+                               letter-spacing: 2px;
+                               font-size: .7em;
+                           }
+                       }
+                    }
+                    .btn2Container{
+                        width: 70vw;
+                        height: 15vh;
+                        .gotohome-btn{
+                            height: auto;
+                            .txt{
+                                letter-spacing: 2px;
+                                font-size: .7em;
+                            }
+                        }
+                        .devname{
+                            font-size: .6em;
+                        }
+                    }
+                }
+            }
+        }
+        .circle-1{
+            clip-path: circle(20.3% at 0 100%);
+        }
+        .circle-2{
+            clip-path: circle(30% at 100% 0);
+        }
+    } 
+}
+
+@include media('<=sPhone'){
+    .Adminlogin{
+        .inner-container{
+            width: auto;
+            .container-1{
+                display: none;
+                .img{
+                    height: 70%;
+                }
+            }
+            .container-2{
+                width: 70vw;
+                .loginContainer{
+                    width: 70vw;
+                    .labelContainer{
+                        width: 70vw;
+                        height: auto;
+                        .label-1{
+                            width: 70vw;
+                            height: 7.5vh;
+                            .txt{
+                                font-size: 1.5rem;
+                            }
+                        }
+                        .label-2{
+                            width: 70vw;
+                            height: 6vh;
+                            .txt{
+                                font-size: .9rem;
+                            }
+                        }
+                    }
+                    .inputContainer{
+                        width: 70vw;
+                        .UserContainer{
+                            width: 70vw;
+                            height: 7vh;
+                            .textfield{
+                                width: 50vw;
+                            }
+                        }
+                        .PassContainer{
+                            width: 70vw;
+                            height: 7vh;
+                            .textfield{
+                                width: 50vw;
+                            }
+                        }
+                    }
+                    .btnContainer{
+                        width: 70vw;
+                        height: 10vh;
+                       .login-btn{
+                           height: 5vh;
+                           width: 20vw;
+                           border: 0px solid black;
+                           .txt{
+                               padding: 5px 5px;
+                               letter-spacing: 2px;
+                               font-size: .7em;
+                           }
+                       }
+                    }
+                    .btn2Container{
+                        width: 70vw;
+                        height: 15vh;
+                        .gotohome-btn{
+                            height: auto;
+                            .txt{
+                                letter-spacing: 2px;
+                                font-size: .7em;
+                            }
+                        }
+                        .devname{
+                            font-size: .6em;
+                        }
+                    }
+                }
+            }
+        }
+        .circle-1{
+            clip-path: circle(20.3% at 0 100%);
+        }
+        .circle-2{
+            clip-path: circle(30% at 100% 0);
+        }
+    } 
+}
+
+//phone elements make to pixels 
+
+
+

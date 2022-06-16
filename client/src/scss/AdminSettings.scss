@@ -1,0 +1,182 @@
+@import 'fonts.scss'; 
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.AdminSetting{
+    background: rgba($color: #222222, $alpha: 0);
+    height: 92vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .coverContainer{
+        background: rgba($color: #964040, $alpha: 0);
+        height: 75vh;
+        width: 100vw;
+        margin-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        .labelContainer{
+            background: rgba($color: #0a4220, $alpha: 0);
+            height: 12vh;
+            width: 85vw;
+            display: flex;
+            align-items: center;
+            .text{
+                font-family: 'myFont',sans-serif;
+                font-size: 3em;
+                margin-left: 2vw;
+            }
+        }
+        .inputContainer{
+            background: rgba($color: #000000, $alpha: 0);
+            height: 20vh;
+            width: 85vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            .labelContainer{
+                background: rgba($color: #297f85, $alpha: 0);
+                height: 5vh;
+                width: 85vw;
+                margin-top: 3vh;
+                display: flex;
+                flex-direction: row;
+                .usernameLabel{
+                    background: rgba($color: #8d2626, $alpha: 0);
+                    height: 5vh;
+                    width: 42.5vw;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    .text{
+                        font-family: 'myFont',sans-serif;
+                        font-size: 1.5em;
+                        font-weight: bold;
+                    }
+                }
+                .passwordLabel{
+                    background: rgba($color: #8d2626, $alpha: 0);
+                    height: 5vh;
+                    width: 42.5vw;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    .text {
+                        font-family: 'myFont',sans-serif;
+                        font-size: 1.5em;
+                        font-weight: bold;
+                    }
+                }
+            }
+            .inputFormContainer{
+                background: rgba($color: #ffffff, $alpha: 0);
+                height: 6vh;
+                width: 85vw;
+                display: flex;
+                flex-direction: row;
+                .usernameLabel{
+                    background: rgba($color: #255e94, $alpha: 0);
+                    height: 7vh;
+                    width: 42.5vw;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    position: relative;
+                    .EditBtn{
+                        background: rgba($color: #000000, $alpha: 1.0);
+                        height: 7vh;
+                        width: 10vw;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        margin-right: 2vw;
+                        box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: 0.5);
+                        border: 0px solid transparent;
+                        border-radius: 5px;
+                        font-size: 1.2em;
+                        color: #ffffff;
+                    }
+                    .FormContainer{
+                        background: rgba($color: #ffffff, $alpha: 1.0);
+                        height: 7vh;
+                        width: 26vw;
+                        margin-left: 2vw;
+                        box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: 0.5);
+                        border-radius: 5px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        .usernameTextForm {
+                            outline: none;
+                            width: 25vw;
+                            height: 5vh;
+                            padding: 8px 16px;
+                            font-family: 'myFont',sans-serif;
+                            // margin-left: 2vw;
+                            border: 1px solid rgb(167, 167, 167);
+                            border-radius: 5px;
+                            
+                        }
+                    }
+                }
+                .passwordLabel{
+                    background: rgba($color: #268d34, $alpha: 0);
+                    height: 7vh;
+                    width: 42.5vw;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    position: relative;
+                    .EditBtn{
+                        background: rgba($color: #000000, $alpha: 1.0);
+                        height: 7vh;
+                        width: 10vw;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        margin-right: 2vw;
+                        box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: 0.5);
+                        border: 0px solid transparent;
+                        border-radius: 5px;
+                        font-size: 1.2em;
+                        color: #ffffff;
+                    }
+                    .FormContainer{
+                        background: rgba($color: #ffffff, $alpha: 1.0);
+                        height: 7vh;
+                        width: 26vw;
+                        margin-left: 2vw;
+                        box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: 0.5);
+                        border-radius: 5px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        .passwordTextForm {
+                            outline: none;
+                            width: 25vw;
+                            height: 5vh;
+                            padding: 8px 16px;
+                            font-family: 'myFont',sans-serif;
+                            // margin-left: 2vw;
+                            border: 1px solid rgb(167, 167, 167);
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

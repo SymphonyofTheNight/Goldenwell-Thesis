@@ -1,0 +1,295 @@
+@import 'fonts.scss';  
+@import 'breakpoints.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+@mixin baseDisplay($height,$width,$display,$alignItems,$justifyContent){
+
+    @if $display == flex and $height <= 10vh and $width <= 20vw {
+        margin-left: 1.5vw;
+        @if $alignItems == center {
+            margin-top: 1.5vw;
+        }
+    }
+
+    height: $height;
+    width: $width;
+    display: $display;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+
+}
+
+@mixin font($fontFamily,$fontSize){
+    font-family: $fontFamily, sans-serif;
+    font-size: $fontSize;
+}
+
+.CustomerRegistration{
+    background: rgba($color: #ffffff, $alpha: 1.0);
+    @include baseDisplay(100vh,100vw,flex,center,flex-start);
+    .col-lg-3{
+        // background: rgba($color: #000000, $alpha: 1.0);
+        background-image: url('../img/regbackpic.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    .SignUpContainer{
+        background: rgba($color: #ffffff, $alpha: 1.0);
+        @include baseDisplay(100vh,75vw,flex,flex-start,flex-start);
+        flex-direction: column;
+        flex-wrap: wrap;
+        .headContainer{
+            background: rgba($color: #864949, $alpha: 0);
+            @include baseDisplay(12vh,75vw,flex,center,flex-start);
+            position: relative;
+            .logoContainer{
+                background: rgba($color: #86a02a, $alpha: 0);
+                height: 12vh;
+                width: 15vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .logo{
+                    margin-left: 2vw;
+                    height: 3vh;
+                    margin-top: 1vh;
+                }
+            }
+            .loginContainer{
+                background: rgba($color: #9b4545, $alpha: 0);
+                height: 12vh;
+                width: 21vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                right: 0;
+                top: 0;
+                .text{
+                    @include font('myFont',1.2em);
+                    font-weight: 700;
+                    margin-top: 1vh;
+                }
+                .signInbtn{
+                    @include font('myFont',1.1em);
+                    padding: 3px 12px;
+                    margin-left: .5vw;
+                    font-weight: bold;
+                    border-radius: 5px;
+                    margin-top: 1vh;
+                    background: #fff;
+                }
+            }
+        }
+        .contentContainer{
+            background: rgba($color: #3a8d53, $alpha: 0);
+            @include baseDisplay(73vh,75vw,flex,flex-start,flex-start);
+            flex-direction: column;
+            .TextTitleContainer{
+                margin-top: 1vh;
+                background: rgba($color: #162772, $alpha: 0);
+                @include baseDisplay(10vh,75vw,flex,center,flex-start);
+                .text{
+                    @include font('myFont',2.5em);
+                    font-weight: 700;
+                    margin-left: 2vw;
+                }
+            }
+            .RegForm{
+               .FullnameInputForm{
+                   background: rgba($color: #2f1f8f, $alpha: 0);
+                   @include baseDisplay(7vh,75vw,flex,center,flex-start);
+                   margin-top: 3vh;
+                   .InputForm{
+                       width: 20vw;
+                       margin-left: 2vw;
+                       padding: 6px 12px;
+                       border-radius: 5px;
+                       outline: none;
+                       @include font('myFont',1.1em);
+                       border: 2px solid rgb(190, 190, 190);
+                       color: #000000;
+                   }
+               }
+               .AddressInputForm{
+                    background: rgba($color: #2f1f8f, $alpha: 0);
+                    @include baseDisplay(7vh,75vw,flex,center,flex-start);
+                    .InputForm{
+                        width: 25vw;
+                        margin-left: 2vw;
+                        padding: 6px 12px;
+                        border-radius: 5px;
+                        outline: none;
+                        @include font('myFont',1.1em);
+                        border: 2px solid rgb(190, 190, 190);
+                        color: #000000;
+                    }
+               }
+               .EmailAndBirthdayInputForm{
+                    background: rgba($color: #2f1f8f, $alpha: 0);
+                    @include baseDisplay(7vh,75vw,flex,center,flex-start);
+                    .InputForm{
+                        width: 14vw;
+                        margin-left: 2vw;
+                        padding: 6px 12px;
+                        border-radius: 5px;
+                        outline: none;
+                        @include font('myFont',1.1em);
+                        border: 2px solid rgb(190, 190, 190);
+                        color: #000000;
+                    }
+                    .InputForm-2{
+                        width: 9vw;
+                        margin-left: 2vw;
+                        padding: 6px 12px;
+                        border-radius: 5px;
+                        outline: none;
+                        @include font('myFont',1.1em);
+                        border: 2px solid rgb(190, 190, 190);
+                        color: #000000;
+                    }
+               }
+               .NumberAndGenderInputForm{
+                    background: rgba($color: #2f1f8f, $alpha: 0);
+                    @include baseDisplay(7vh,75vw,flex,center,flex-start);
+                    position: relative;
+                    .InputForm{
+                        width: 11.5vw;
+                        margin-left: 2vw;
+                        padding: 6px 12px;
+                        border-radius: 5px;
+                        outline: none;
+                        @include font('myFont',1.1em);
+                        border: 2px solid rgb(190, 190, 190);
+                        color: #000000;
+                    }
+                    .text{
+                        position: absolute;
+                        left: 0;
+                        transform: translateY(30px);
+                        margin-left: 2.5vw;
+                        @include font('myFont',.7em);
+                        color: gray;
+                    }
+               }
+               .UsernameInputForm{
+                    background: rgba($color: #2f1f8f, $alpha: 0);
+                    @include baseDisplay(7vh,75vw,flex,center,flex-start);
+                    margin-top: 3vh;
+                    .InputForm{
+                        width: 25vw;
+                        margin-left: 2vw;
+                        padding: 6px 12px;
+                        border-radius: 5px;
+                        outline: none;
+                        @include font('myFont',1.1em);
+                        border: 2px solid rgb(190, 190, 190);
+                        color: #000000;
+                    }
+               }
+               .PasswordInputForm{
+                background: rgba($color: #2f1f8f, $alpha: 0);
+                @include baseDisplay(7vh,75vw,flex,center,flex-start);
+                position: relative;
+                .text{
+                    position: absolute;
+                    left: 0;
+                    transform: translateY(30px);
+                    margin-left: 2.5vw;
+                    @include font('myFont',.7em);
+                    color: gray;
+                }
+                .InputForm{
+                    width: 11.5vw;
+                    margin-left: 2vw;
+                    padding: 6px 12px;
+                    border-radius: 5px;
+                    outline: none;
+                    @include font('myFont',1.1em);
+                    border: 2px solid rgb(190, 190, 190);
+                    color: #000000;
+                }
+                .InputForm-2{
+                    width: 11.5vw;
+                    margin-left: 2vw;
+                    padding: 6px 12px;
+                    border-radius: 5px;
+                    outline: none;
+                    @include font('myFont',1.1em);
+                    border: 2px solid rgb(190, 190, 190);
+                    color: #000000;
+                }
+               }
+               .aggreementContainer{
+                   margin-top: 1vh;
+                   background: rgba($color: #973939, $alpha: 0);
+                   @include baseDisplay(10vh,75vw,flex,flex-start,flex-start);
+                   flex-direction: row;
+                   flex-wrap: wrap;
+                   .agreementInnerContainer{
+                       @include baseDisplay(5vh,75vw,flex,center,flex-start);
+                       background: rgba($color: #000000, $alpha: 0);
+                       .checkbox{
+                            height: 1.75vh;
+                            width: 1.75vw;
+                            border-radius: 50px;
+                            margin-left: 1.5vw;
+                        }
+                       .text{
+                            margin-left: 0vw;
+                            @include font('myFont',1em);
+                            font-weight: 700;
+                        }
+                   }
+                   .agreementInnerContainer-2{
+                    @include baseDisplay(5vh,75vw,flex,center,flex-start);
+                    background: rgba($color: #7a3f3f, $alpha: 0);
+                    .checkbox{
+                         height: 1.75vh;
+                         width: 1.75vw;
+                         border-radius: 50px;
+                         margin-left: 1.5vw;
+                     }
+                    .text{
+                         margin-left: 0vw;
+                         @include font('myFont',1em);
+                         font-weight: 700;
+                     }
+                   }
+               }
+               .btnSubmitContainer{
+                   margin-top: 2vh;
+                   background: rgba($color: #2baa26, $alpha: 0);
+                   @include baseDisplay(8vh,75vw,flex,center,flex-start);
+                   .submitBtn{
+                       margin-left: 1.5vw;
+                       @include baseDisplay(5vh,18vw,grid,center,center);
+                       border: 1px solid transparent;
+                       background: rgba($color: #0a0a0a, $alpha: 1.0);
+                       color: #fff;
+                       @include font('myFont',1em);
+                   }
+               }
+               .btnSubmitContainer-2{
+                background: rgba($color: #2baa26, $alpha: 0);
+                @include baseDisplay(5vh,75vw,flex,center,flex-start);
+                .submitBtn{
+                    margin-left: 1.5vw;
+                    @include baseDisplay(5vh,18vw,grid,center,center);
+                    border: 1px solid transparent;
+                    background: rgba($color: #0a0a0a, $alpha: 1.0);
+                    color: #fff;
+                    @include font('myFont',1em);
+                }
+            }
+            }
+        }
+    }
+}

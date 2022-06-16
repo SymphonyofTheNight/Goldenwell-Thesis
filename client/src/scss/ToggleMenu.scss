@@ -1,0 +1,487 @@
+@import 'fonts.scss';  // font-family: 'Heebo', sans-serif;
+@import 'breakpoints.scss';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+:root{
+    background-color: rgba($color: #ffffff, $alpha: 1.0);
+}
+
+.ToggleMenu{
+    background: rgba($color: #2b3344, $alpha: 1.0);
+    height: 100vh;
+    width: auto;
+    position: relative;
+    position: absolute;
+    left: 0;
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transform: translateX(-110%);
+    transition: .5s;
+    .logoContainer{
+        background: rgba($color: #8d4747, $alpha: 0);
+        width: 15vw;
+        height: 10vh;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        .toggle-btn{
+            background: rgba($color: #abad10, $alpha: 1.0);
+            padding: 12px 16px;
+            border: 0px;
+            position: absolute;
+            right: -10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .label-container{
+        background: rgba($color: #1d6683, $alpha: 0);
+        height: 4vh;
+        width: 15vw;
+        display: grid;
+        align-items: center;
+        margin-top: .5em;
+        .label{
+            color: rgba($color: #d4d4d4, $alpha: 1);
+            font-size: .8em;
+            // font-family: 'Heebo', sans-serif;
+            font-family: 'Rubik', sans-serif;
+        }
+    }
+    .menu-container{
+        background: rgba($color: #22909e, $alpha: 0);
+        height: auto;
+        width: 15vw;
+        .menu-btn{
+            background: rgba($color: #ffffff, $alpha: 0);
+            height: 5vh;
+            width: 15vw;
+            border: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .logo-container{
+                background: rgba($color: #751975, $alpha: 0);
+                height: 5vh;
+                width: 3vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .logo{
+                    font-size: 1rem;
+                    color: rgba($color: #d4d4d4, $alpha: 1.0);
+                    margin-right: 1em;
+                }
+            }
+            .txt-container{
+                background: rgba($color: #3f0836, $alpha: 0);
+                height: 5vh;
+                width: 12vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                // padding-left: .5em;
+                // font-family: 'Heebo', sans-serif;
+                font-family: 'Rubik', sans-serif;
+                font-size: .8em;
+                color: rgba($color: #d4d4d4, $alpha: 1.0);
+            }
+        }
+        .menu-btn:hover{
+            .logo-container{
+                .logo{
+                    color: rgba($color: #ffffff, $alpha: 1.0);
+                }
+            }
+            .txt-container{
+                color: rgba($color: #ffffff, $alpha: 1.0);
+            }
+        }
+    }
+    .credit-container{
+        background: rgba($color: #000000, $alpha: 0);
+        position: absolute;
+        bottom: 0;
+        height: 5vh;
+        width: 15vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            color: rgba($color: #ffffff, $alpha: 1.0);
+            font-size: .7em;
+        }
+    }
+}   
+
+@include media('<=sWindow'){
+    .ToggleMenu{
+        .logoContainer{
+            .toggle-btn{
+                padding: 9px 9px;
+                .logo{
+                    font-size: .9em;
+                }
+            }
+        }
+        .label-container{
+            height: 3.5vh;
+            .label{
+                font-size: .6em;
+            }
+        }
+        .menu-container{
+            .menu-btn{
+                .logo-container{
+                    .logo{
+                        font-size: .7rem;
+                    }
+                }
+                .txt-container{
+                    font-size: .65em;
+                }
+            }
+            .menu-btn:hover{
+                .logo-container{
+                    .logo{
+                        color: rgba($color: #ffffff, $alpha: 1.0);
+                    }
+                }
+                .txt-container{
+                    color: rgba($color: #ffffff, $alpha: 1.0);
+                }
+            }
+        }
+        .credit-container{
+            span{
+                font-size: .4em;
+            }
+        }
+    } 
+}
+
+@include media('<=Ipad'){
+    .ToggleMenu{
+        .logoContainer{
+            width: 23vw;
+            height: 8vh;
+            .toggle-btn{
+                padding: 9px 9px;
+                .logo{
+                    font-size: .9em;
+                }
+            }
+        }
+        .label-container{
+            height: 3.5vh;
+            width: 23vw;
+            .label{
+                font-size: .7em;
+            }
+        }
+        .menu-container{
+            width: 23vw;
+            .menu-btn{
+                width: 23vw;
+                height: 4vh;
+                .logo-container{
+                    width: 5vw;
+                    height: 4vh;
+                    .logo{
+                        font-size: .7rem;
+                    }
+                }
+                .txt-container{
+                    width: 18vw;
+                    height: 4vh;
+                    font-size: .65em;
+                }
+            }
+            .menu-btn:hover{
+                .logo-container{
+                    .logo{
+                        color: rgba($color: #ffffff, $alpha: 1.0);
+                    }
+                }
+                .txt-container{
+                    color: rgba($color: #ffffff, $alpha: 1.0);
+                }
+            }
+        }
+        .credit-container{
+            width: 23vw;
+            span{
+                font-size: .5em;
+            }
+        }
+    } 
+}
+
+@include media('<=Tablet'){
+    .ToggleMenu{
+        .logoContainer{
+            background: rgba($color: #000000, $alpha: 0);
+            width: 23vw;
+            height: 8vh;
+            .toggle-btn{
+                padding: 9px 9px;
+                .logo{
+                    font-size: .9em;
+                }
+            }
+        }
+        .label-container{
+            background: rgba($color: #743636, $alpha: 0);
+            height: 3.5vh;
+            width: 23vw;
+            .label{
+                font-size: .6em;
+            }
+        }
+        .menu-container{
+            width: 23vw;
+            .menu-btn{
+                background: rgba($color: #258ea1, $alpha: 0);
+                width: 23vw;
+                height: 4vh;
+                .logo-container{
+                    background: rgba($color: #3c25a1, $alpha: 0);
+                    width: 5vw;
+                    height: 4vh;
+                    .logo{
+                        font-size: .7rem;
+                        margin-right: .4em;
+                    }
+                }
+                .txt-container{
+                    background: rgba($color: #a16b25, $alpha: 0);
+                    padding-left: 6px;
+                    width: 18vw;
+                    height: 4vh;
+                    font-size: .65em;
+                }
+            }
+            .menu-btn:hover{
+                .logo-container{
+                    .logo{
+                        color: rgba($color: #ffffff, $alpha: 1.0);
+                    }
+                }
+                .txt-container{
+                    color: rgba($color: #ffffff, $alpha: 1.0);
+                }
+            }
+        }
+        .credit-container{
+            width: 23vw;
+            span{
+                font-size: .5em;
+            }
+        }
+    } 
+}
+
+@include media('<=Phone'){
+    .ToggleMenu{
+        .logoContainer{
+            background: rgba($color: #000000, $alpha: 0);
+            width: 45vw;
+            height: 10vh;
+            .toggle-btn{
+                padding: 9px 9px;
+                .logo{
+                    font-size: .9em;
+                }
+            }
+        }
+        .label-container{
+            background: rgba($color: #743636, $alpha: 0);
+            height: 3.5vh;
+            width: 45vw;
+            .label{
+                font-size: .6em;
+            }
+        }
+        .menu-container{
+            width: 45vw;
+            .menu-btn{
+                background: rgba($color: #258ea1, $alpha: 0);
+                width: 45vw;
+                height: 4vh;
+                .logo-container{
+                    background: rgba($color: #3c25a1, $alpha: 0);
+                    width: 10vw;
+                    height: 4vh;
+                    .logo{
+                        font-size: .8rem;
+                        margin-right: .4em;
+                    }
+                }
+                .txt-container{
+                    background: rgba($color: #a16b25, $alpha: 0);
+                    padding-left: 6px;
+                    width: 35vw;
+                    height: 4vh;
+                    font-size: .65em;
+                }
+            }
+            .menu-btn:hover{
+                .logo-container{
+                    .logo{
+                        color: rgba($color: #ffffff, $alpha: 1.0);
+                    }
+                }
+                .txt-container{
+                    color: rgba($color: #ffffff, $alpha: 1.0);
+                }
+            }
+        }
+        .credit-container{
+            width: 45vw;
+            span{
+                font-size: .5em;
+            }
+        }
+    } 
+}
+
+@include media('<=mPhone'){
+    .ToggleMenu{
+        .logoContainer{
+            background: rgba($color: #000000, $alpha: 0);
+            width: 45vw;
+            height: 10vh;
+            .toggle-btn{
+                padding: 6px 6px;
+                .logo{
+                    font-size: .9em;
+                }
+            }
+        }
+        .label-container{
+            background: rgba($color: #743636, $alpha: 0);
+            height: 4vh;
+            width: 45vw;
+            .label{
+                font-size: .6em;
+            }
+        }
+        .menu-container{
+            width: 45vw;
+            .menu-btn{
+                background: rgba($color: #258ea1, $alpha: 0);
+                width: 45vw;
+                height: 4vh;
+                .logo-container{
+                    background: rgba($color: #3c25a1, $alpha: 0);
+                    width: 10vw;
+                    height: 4vh;
+                    .logo{
+                        font-size: .7rem;
+                        margin-right: .3em;
+                    }
+                }
+                .txt-container{
+                    background: rgba($color: #a16b25, $alpha: 0);
+                    padding-left: 6px;
+                    width: 35vw;
+                    height: 4vh;
+                    font-size: .65em;
+                }
+            }
+            .menu-btn:hover{
+                .logo-container{
+                    .logo{
+                        color: rgba($color: #ffffff, $alpha: 1.0);
+                    }
+                }
+                .txt-container{
+                    color: rgba($color: #ffffff, $alpha: 1.0);
+                }
+            }
+        }
+        .credit-container{
+            width: 45vw;
+            span{
+                font-size: .5em;
+            }
+        }
+    } 
+}
+
+@include media('<=sPhone'){
+    .ToggleMenu{
+        .logoContainer{
+            background: rgba($color: #000000, $alpha: 0);
+            width: 45vw;
+            height: 10vh;
+            .toggle-btn{
+                padding: 6px 6px;
+                .logo{
+                    font-size: .9em;
+                }
+            }
+        }
+        .label-container{
+            background: rgba($color: #743636, $alpha: 0);
+            height: 4vh;
+            width: 45vw;
+            .label{
+                font-size: .6em;
+            }
+        }
+        .menu-container{
+            width: 45vw;
+            .menu-btn{
+                background: rgba($color: #258ea1, $alpha: 0);
+                width: 45vw;
+                height: 4vh;
+                .logo-container{
+                    background: rgba($color: #3c25a1, $alpha: 0);
+                    width: 10vw;
+                    height: 4vh;
+                    .logo{
+                        font-size: .65rem;
+                        margin-right: .3em;
+                    }
+                }
+                .txt-container{
+                    background: rgba($color: #a16b25, $alpha: 0);
+                    padding-left: 6px;
+                    width: 35vw;
+                    height: 4vh;
+                    font-size: .65em;
+                }
+            }
+            .menu-btn:hover{
+                .logo-container{
+                    .logo{
+                        color: rgba($color: #ffffff, $alpha: 1.0);
+                    }
+                }
+                .txt-container{
+                    color: rgba($color: #ffffff, $alpha: 1.0);
+                }
+            }
+        }
+        .credit-container{
+            width: 45vw;
+            span{
+                font-size: .5em;
+            }
+        }
+    } 
+}
+
+
+
+/// continue tommorow !!!!
