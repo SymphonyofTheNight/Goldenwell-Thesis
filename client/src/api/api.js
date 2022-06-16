@@ -17,6 +17,16 @@ export const addOrderAdmin = (ownerID,array) => api.patch(`/checkout/${ownerID}`
     }
 )
 
+export const AdminEditUsername = (adminID,username) => api.put(`/admin/settings/${adminID}`, 
+{
+    username: username
+})
+
+export const AdminEditPassword = (adminID,password) => api.patch(`/admin/settings/${adminID}`, 
+{
+    password: password
+})
+
 // client side
 
 export const addItem = (admin,product_identifier,productname,price,quantity,categoryfilter,description,specs,imageBase64,timestamp) => api.patch(`/admin/collections/all/${admin}`, 

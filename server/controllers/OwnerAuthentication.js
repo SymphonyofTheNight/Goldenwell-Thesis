@@ -66,6 +66,7 @@ export const ownersignin = async (req,res) => {
 export const EditOwnerUsername = async (req,res) => {
 
     const { id } = req.params;
+    console.log(req.body);
 
     try {
         if(!mongoose.Types.ObjectId.isValid(id)) return req.status(404).json({ message: 'invalid ID' });
@@ -82,6 +83,36 @@ export const EditOwnerUsername = async (req,res) => {
             if(err) return console.log(err);
             console.log(data);
         });
+
+
+    } catch (error) {
+        res.status(404).json(error);
+    }
+} 
+
+export const EditOwnerPassword = async (req,res) => {
+
+    const { id } = req.params;
+    const { password } = req.body;
+
+    try {
+        if(!mongoose.Types.ObjectId.isValid(id)) return req.status(404).json({ message: 'invalid ID' });
+
+        const Pass = await bcrypt.hash(password,12);
+
+        await OwnerModels.findByIdAndUpdate(id,
+        {
+            $set: {
+                password: Pass
+            }
+        },
+        {
+            new: true
+        },(err,data) => {
+            if(err) return console.log(err);
+            console.log(data);
+        });
+
 
 
     } catch (error) {

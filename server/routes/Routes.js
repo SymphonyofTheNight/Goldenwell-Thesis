@@ -6,16 +6,17 @@ const router = express.Router();
 ///////////////////////////////// owner router
 
 import { getOwnerProducts, addOwnerProducts, deleteProduct, updateProduct, toDeliver } from '../controllers/OwnerControllers.js';
-import { ownersignup,ownersignin } from '../controllers/OwnerAuthentication.js';
+import { ownersignup,ownersignin, EditOwnerPassword, EditOwnerUsername } from '../controllers/OwnerAuthentication.js';
 
 router.get('/', getOwnerProducts); // done
 router.patch('/admin/collections/all/:id', addOwnerProducts); // done
 router.patch('/admin/collections/view/:id', updateProduct); // working but gives status 404
 router.put('/admin/collections/all/:id', deleteProduct); // fix delete query
+router.put('/admin/settings/:id', EditOwnerUsername);
+router.patch('/admin/settings/:id', EditOwnerPassword);
 router.patch('/checkout/:id', toDeliver); // try this mofo
 // router.put('/checkout/:id', ); // try this 
 // router.patch('/checkout/:id', CreateUserToDeliver); // need to fix this later
-
 
 router.post('/admin', ownersignin); // done
 router.post('/admin/signup/', ownersignup); // done
