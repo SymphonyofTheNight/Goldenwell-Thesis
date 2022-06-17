@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.22.0",
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "bootstrap": "^5.1.3",
     "caniuse-lite": "^1.0.30001352",
     "chart.js": "^3.8.0",

@@ -100,7 +100,7 @@ export const EditOwnerPassword = async (req,res) => {
 
         const Pass = await bcrypt.hash(password,12);
 
-        await OwnerModels.findByIdAndUpdate(id,
+        await OwnerModels.findOneAndUpdate(id,
         {
             $set: {
                 password: Pass

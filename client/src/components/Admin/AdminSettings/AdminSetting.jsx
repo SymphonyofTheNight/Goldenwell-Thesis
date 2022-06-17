@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../../scss/AdminSettings.scss';
+import bcrypt from 'bcryptjs';
 import { AdminEditPassword } from '../../../api/api.js';
 
 const AdminSetting = ({ ID }) => {
@@ -12,23 +13,48 @@ const AdminSetting = ({ ID }) => {
 
     const [TextPassword, setTextPassword] = React.useState(getAdmin.result.password);
     const [TextUsername, setTextUsername] = React.useState(getAdmin.result.username);
-    const [show, setShow] = React.useState(true);
-    const [userForm, setUserForm] = React.useState(true);
+    const [show, setShow] = React.useState(false);
+    const [userForm, setUserForm] = React.useState(false);
     const [passForm, setPassForm] = React.useState(false);
 
+    const [Check_Hash, set_CheckHash] = React.useState(false);
+    const [toggleTrigger, setToggleTrigger] = React.useState(false);
+
     const [newPass, setNewPass] = React.useState({
-        oldpass: '', newpass: '', repeatpass: ''
+        oldpass: ' ', newpass: ' ', repeatpass: ' '
     })
+
+    React.useEffect(()=> {
+        bcrypt.compare(newPass.oldpass, getAdmin.result.password)
+        .then(val => {
+            set_CheckHash(val);
+        }).catch(err => {
+            console.log(err)
+        })
+    },[newPass.oldpass])
 
     const HandleSubmitUsername = (e) => {
 
     }
 
     const HandleSubmitPassword = (e) => {
-        // need fix to check oldpass if correct but working
-        if(newPass.oldpass && newPass.newpass === newPass.repeatpass) {
-            AdminEditPassword(getAdmin.result._id,newPass.newpass);
+        e.preventDefault();
+        setToggleTrigger(state => !state);
+
+        if(Check_Hash){
+            if(newPass.newpass === newPass.repeatpass) {
+                AdminEditPassword(getAdmin.result._id,newPass.newpass);
+                alert('change pass confirmed!');
+                
+            }
+        }else{
+            console.log(Check_Hash);
+            alert('failed!!');
         }
+        // if(newPass.newpass === newPass.repeatpass) {
+        //     alert('change pass confirmed!');
+        //     AdminEditPassword(getAdmin.result._id,newPass.newpass);
+        // }
     }
 
 
@@ -83,6 +109,10 @@ const AdminSetting = ({ ID }) => {
                                 />
                             </div>
                             <button className='EditBtn'
+                                onClick={()=> {
+                                    setShow(state => !state)
+                                    setUserForm(state => !state)
+                                }}
                                 type='submit'
                             >
                                 EDIT
@@ -150,7 +180,9 @@ const AdminSetting = ({ ID }) => {
                                         </div>
                                     </div>
                                     <div className='btnContainer'>
-                                        <button className='btnSubmit'>
+                                        <button className='btnSubmit'
+                                            type='submit'
+                                        >
                                             SUBMIT
                                         </button>
                                     </div>
