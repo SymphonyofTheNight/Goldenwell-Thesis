@@ -12,8 +12,8 @@ router.get('/', getOwnerProducts); // done
 router.patch('/admin/collections/all/:id', addOwnerProducts); // done
 router.patch('/admin/collections/view/:id', updateProduct); // working but gives status 404
 router.put('/admin/collections/all/:id', deleteProduct); // fix delete query
-router.put('/admin/settings/:id', EditOwnerUsername);
-router.patch('/admin/settings/:id', EditOwnerPassword);
+router.patch('/admin/settings/:id', EditOwnerUsername);
+router.put('/admin/settings/:id', EditOwnerPassword);
 router.patch('/checkout/:id', toDeliver); // try this mofo
 // router.put('/checkout/:id', ); // try this 
 // router.patch('/checkout/:id', CreateUserToDeliver); // need to fix this later

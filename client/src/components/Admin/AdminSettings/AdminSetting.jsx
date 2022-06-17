@@ -1,13 +1,12 @@
 import React from 'react';
 import '../../../scss/AdminSettings.scss';
 import bcrypt from 'bcryptjs';
-import { AdminEditPassword } from '../../../api/api.js';
+import { useDispatch } from 'react-redux';
+import { AdminEditPass, AdminEditUser } from '../../../controllers/Actions.js';
 
 const AdminSetting = ({ ID }) => {
 
-    // const [input, setInput] = React.useState({
-    //     username: '', password: '', 
-    // })
+    const dispatch = useDispatch();
 
     const [getAdmin] = React.useState(JSON.parse(localStorage.getItem('Administrator')));
 
@@ -17,7 +16,7 @@ const AdminSetting = ({ ID }) => {
     const [userForm, setUserForm] = React.useState(false);
     const [passForm, setPassForm] = React.useState(false);
 
-    const [Check_Hash, set_CheckHash] = React.useState(false);
+    const [Check_Hash, set_CheckHash] = React.useState();
     const [toggleTrigger, setToggleTrigger] = React.useState(false);
 
     const [newPass, setNewPass] = React.useState({
@@ -41,20 +40,28 @@ const AdminSetting = ({ ID }) => {
         e.preventDefault();
         setToggleTrigger(state => !state);
 
+        console.log(newPass);
+
+        // if(newPass.newpass === newPass.repeatpass) {
+        //     AdminEditPassword(getAdmin.result._id,newPass.newpass);
+        //     alert('change pass confirmed!');
+        // }
+
         if(Check_Hash){
             if(newPass.newpass === newPass.repeatpass) {
-                AdminEditPassword(getAdmin.result._id,newPass.newpass);
+                dispatch(AdminEditPass(getAdmin.result._id,newPass.newpass));
                 alert('change pass confirmed!');
-                
+                console.log(Check_Hash);
+                setShow(state => !state);
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
             }
         }else{
             console.log(Check_Hash);
-            alert('failed!!');
+            alert('change pass failed!');
         }
-        // if(newPass.newpass === newPass.repeatpass) {
-        //     alert('change pass confirmed!');
-        //     AdminEditPassword(getAdmin.result._id,newPass.newpass);
-        // }
+
     }
 
 
@@ -99,25 +106,23 @@ const AdminSetting = ({ ID }) => {
                         </form>
                     </div>
                     <div className='passwordLabel'>
-                        <form onSubmit={HandleSubmitPassword}>
-                            <div className='FormContainer'>
+                        <div className='FormContainer'>
                                 <input className='passwordTextForm' type='password' onChange={(e)=> {
                                     setTextPassword(e.target.value)
                                 }}
                                 value={TextPassword}
                                 disabled='true'
                                 />
-                            </div>
-                            <button className='EditBtn'
-                                onClick={()=> {
-                                    setShow(state => !state)
-                                    setUserForm(state => !state)
-                                }}
-                                type='submit'
+                        </div>
+                        <button className='EditBtn'
+                            onClick={()=> {
+                                setShow(state => !state)
+                                setUserForm(state => !state)
+                            }}
+                            type='submit'
                             >
-                                EDIT
-                            </button>
-                        </form>
+                            EDIT
+                        </button>
                     </div>
                 </div>
             </div>

@@ -95,6 +95,9 @@ export const EditOwnerPassword = async (req,res) => {
     const { id } = req.params;
     const { password } = req.body;
 
+    console.log(id);
+    console.log(req.body);
+
     try {
         if(!mongoose.Types.ObjectId.isValid(id)) return req.status(404).json({ message: 'invalid ID' });
 
@@ -108,12 +111,7 @@ export const EditOwnerPassword = async (req,res) => {
         },
         {
             new: true
-        },(err,data) => {
-            if(err) return console.log(err);
-            console.log(data);
         });
-
-
 
     } catch (error) {
         res.status(404).json(error);

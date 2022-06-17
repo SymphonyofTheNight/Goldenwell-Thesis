@@ -108,3 +108,21 @@ export const WishToCartAPI = (product_identifier,productname,price,imageBase64,q
         console.log(error);
     }
 }
+
+export const AdminEditPass = (adminID,password) => async (dispatch) => {
+    try {
+        const { data } = await api.AdminPasswordEdit(adminID,password);
+        dispatch({ type: 'EDIT_PASS', payload: data });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const AdminEditUser = (adminID,username) => async (dispatch) => {
+    try {
+        const { data } = await api.AdminPasswordEdit(adminID,username);
+        dispatch({ type: 'EDIT_PASS', payload: data });
+    } catch (error) {
+        console.log(error);
+    }
+}

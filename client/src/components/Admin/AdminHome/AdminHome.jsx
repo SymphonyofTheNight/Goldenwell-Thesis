@@ -18,7 +18,7 @@ const AdminHome = ({ ID }) => {
         datasets: [
           {
             label: '# of Votes',
-            data: [getAdmin[0]?.totalOrders - 1, getAdmin[0].totalOrders - 1,],
+            data: [getAdmin[0]?.totalOrders - 1, getAdmin[0]?.totalOrders - 1,],
             backgroundColor: [
               'rgba(255, 99, 132, .8)',
               'rgba(54, 162, 235, .8)',

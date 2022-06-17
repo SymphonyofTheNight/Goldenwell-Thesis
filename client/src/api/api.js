@@ -17,12 +17,12 @@ export const addOrderAdmin = (ownerID,array) => api.patch(`/checkout/${ownerID}`
     }
 )
 
-export const AdminEditUsername = (adminID,username) => api.put(`/admin/settings/${adminID}`, 
+export const AdminEditUsername = (adminID,username) => api.patch(`/admin/settings/${adminID}`, 
 {
     username: username
 })
 
-export const AdminEditPassword = (adminID,password) => api.patch(`/admin/settings/${adminID}`, 
+export const AdminPasswordEdit = (adminId,password) => api.put(`admin/settings/${adminId}`, 
 {
     password: password
 })

@@ -26,6 +26,14 @@ const reducer = (state = initialState, action) => {
             return {
                 storage: state.reducer.storage.map(state => state._id === action.payload._id ? action.payload : state)
             }
+        case 'EDIT_PASS': 
+            return {
+                storage: state.storage.map(state => state.password === action.payload ? action.payload : null)
+            }
+        case 'EDIT_USER': 
+            return {
+                storage: state.storage.map(state => state.username === action.payload ? action.payload : null)
+            }
         default:
             return state;
     }
