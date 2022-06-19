@@ -84,6 +84,7 @@ const ToggleMenu = ({ ID,isTogglemenu,setIsTogglemenu }) => {
                 <button className='menu-btn'
                     onClick={()=> {
                         history.push('/admin/deliveries')
+                        setIsTogglemenu(toggle => !toggle)
                     }}
                 >
                     <div className='logo-container'>

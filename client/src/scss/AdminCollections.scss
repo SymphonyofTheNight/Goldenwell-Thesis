@@ -8,13 +8,13 @@
 }
 
 .AdminCollections{
-    background: rgba($color: #532525, $alpha: 0);
+    background: rgba($color: #532525, $alpha: 1);
     height: 92vh;
     display: grid;
     align-items: flex-start;
     justify-content: center;
     .innerAdminUserContainer-1{
-        background: rgba($color: #a84949, $alpha: 0);
+        background: rgba($color: #a84949, $alpha: 1);
         height: 70vh; // 70
         width: 84vw;
         display: flex;
@@ -389,6 +389,5 @@
         }
 
     }
-
 }
 //   {/* continue later */}

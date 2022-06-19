@@ -196,6 +196,7 @@ const AdminCollections = ({ ID, setModal, modal, setCollectionID }) => {
                 </div>
 
                 {/* modal */}
+                
            </div>
 
         </div>
