@@ -12,7 +12,16 @@ const Shop_Collection = ({ ID }) => {
             console.log(err);
         })
     },[])
-    
+
+    // React.useEffect(()=> {
+    //     axios.get('https://goldenwell.netlify.app/')
+    //     .then(res => {
+    //         setContainer(res.data);
+    //     }).catch(err => {
+    //         console.log(err);
+    //     })
+    // },[])
+
     const [container, setContainer] = React.useState([]);
     const [objectsArray, setObjectsArray] = React.useState([]);
 

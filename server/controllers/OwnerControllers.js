@@ -181,6 +181,8 @@ export const toDeliver = async (req,res) => {
 
             console.log('email sent');
 
+            console.log(req.body.delivery[i].email);
+
             const OAuth2 = google.auth.OAuth2;
             const OAuth2_Client = new OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET);
             OAuth2_Client.setCredentials({ refresh_token: process.env.CLIENT_TOKEN })
@@ -201,12 +203,11 @@ export const toDeliver = async (req,res) => {
                     rejectUnauthorized: false
                 }
             });
-    
+
             let mailOptions = {
                 from: 'goldenwell2015@gmail.com',
-                to: 'sndlshin@gmail.com',
-                subject: 'Testing',
-                text: 'IT works',
+                to: req.body.delivery[i].email,
+                subject: 'Order Being Processed' + ' ' + '#' + req.body.delivery[i]._id,
                 html: `
                     <h1>Thanks for shopping with us!</h1>
                     <h3>Hi! ${req.body.delivery[i].clientname}</h3>

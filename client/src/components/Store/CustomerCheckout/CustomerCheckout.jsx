@@ -87,7 +87,7 @@ const CustomerCheckout = ({ ID }) => {
           setInterval(()=> {
             history.push('/');
             window.location.reload();
-          }, 1000)
+          }, 3000)
         }
       }, 1000);
     }

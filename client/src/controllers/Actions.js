@@ -120,8 +120,8 @@ export const AdminEditPass = (adminID,password) => async (dispatch) => {
 
 export const AdminEditUser = (adminID,username) => async (dispatch) => {
     try {
-        const { data } = await api.AdminPasswordEdit(adminID,username);
-        dispatch({ type: 'EDIT_PASS', payload: data });
+        const { data } = await api.AdminEditUsername(adminID,username);
+        dispatch({ type: 'EDIT_USER', payload: data });
     } catch (error) {
         console.log(error);
     }

@@ -66,6 +66,8 @@ export const ownersignin = async (req,res) => {
 export const EditOwnerUsername = async (req,res) => {
 
     const { id } = req.params;
+
+    console.log(id);
     console.log(req.body);
 
     try {
@@ -79,9 +81,6 @@ export const EditOwnerUsername = async (req,res) => {
         },
         {
             new: true
-        },(err,data) => {
-            if(err) return console.log(err);
-            console.log(data);
         });
 
 

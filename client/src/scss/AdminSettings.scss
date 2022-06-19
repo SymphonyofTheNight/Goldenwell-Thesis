@@ -180,7 +180,7 @@
             }
         }
     }
-    .popupEditCover{
+    .editContainer{
         background: rgba($color: #000000, $alpha: 0.2);
         height: 100vh;
         width: 100vw;
@@ -191,7 +191,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        .usernameEditForm{
+        position: relative;
+        .passwordEditForm{
             background: rgba($color: #ffffff, $alpha: 1.0);
             height: 48vh;
             width: 30vw;
@@ -199,6 +200,9 @@
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
+            transition: .3s;
+            transform: translateY(20px);
+            opacity: 0;
             .labelContainer{
                 background: rgba($color: #000000, $alpha: 1.0);
                 height: 10vh;
@@ -349,6 +353,382 @@
                     color: #ffffff;
                 }
             }
+        }
+        
+    }
+    .popupDiv{
+        background: rgba($color: #000000, $alpha: 0.5);
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 600;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        .EditFormPassword{
+            background: rgba($color: #ffffff, $alpha: 1.0);
+            height: 48vh;
+            width: 30vw;
+            box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: 0.2);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            transition: .3s;
+            // transform: translateY(20px);
+            // opacity: 1;
+            .labelContainer{
+                background: rgba($color: #000000, $alpha: 1.0);
+                height: 10vh;
+                width: 30vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .text{
+                    color: #ffffff;
+                    font-family: 'myFont',sans-serif;
+                    font-size: 2em;
+                    margin-left: 1.5vw;
+                }
+            }
+            .oldpasswordContainer{
+                background: rgba($color: #802c2c, $alpha: 0);
+                height: auto;
+                width: 30vw;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin-top: 2vh;
+                .label{
+                    background: rgba($color: #188b7c, $alpha: 0);
+                    height: 2vh;
+                    width: 30vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .text{
+                        color: #1d1d1d;
+                        font-family: 'myFont',sans-serif;
+                        font-size: .7em;
+                        margin-left: 1.5vw;
+                    }
+                }
+                .inputContainer{
+                    background: rgba($color: #741777, $alpha: 0);
+                    height: 4vh;
+                    width: 30vw;
+                    display: grid;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .inputForm{
+                        height: 4vh;
+                        width: 27vw;
+                        outline: none;
+                        border: 1px solid black;
+                        margin-left: 1.5vw;
+                        padding: 0px 12px;
+                    }
+                }
+            }
+            .newpasswordContainer{
+                background: rgba($color: #802c2c, $alpha: 0);
+                height: auto;
+                width: 30vw;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin-top: 2vh;
+                .label{
+                    background: rgba($color: #188b7c, $alpha: 0);
+                    height: 2vh;
+                    width: 30vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .text{
+                        color: #1d1d1d;
+                        font-family: 'myFont',sans-serif;
+                        font-size: .7em;
+                        margin-left: 1.5vw;
+                    }
+                }
+                .inputContainer{
+                    background: rgba($color: #741777, $alpha: 0);
+                    height: 4vh;
+                    width: 30vw;
+                    display: grid;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .inputForm{
+                        height: 4vh;
+                        width: 27vw;
+                        outline: none;
+                        border: 1px solid black;
+                        margin-left: 1.5vw;
+                        padding: 0px 12px;
+                    }
+                }
+            }
+            .repeatpasswordContainer{
+                background: rgba($color: #802c2c, $alpha: 0);
+                height: auto;
+                width: 30vw;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin-top: 2vh;
+                .label{
+                    background: rgba($color: #188b7c, $alpha: 0);
+                    height: 2vh;
+                    width: 30vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .text{
+                        color: #1d1d1d;
+                        font-family: 'myFont',sans-serif;
+                        font-size: .7em;
+                        margin-left: 1.5vw;
+                    }
+                }
+                .inputContainer{
+                    background: rgba($color: #741777, $alpha: 0);
+                    height: 4vh;
+                    width: 30vw;
+                    display: grid;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .inputForm{
+                        height: 4vh;
+                        width: 27vw;
+                        outline: none;
+                        border: 1px solid black;
+                        margin-left: 1.5vw;
+                        padding: 0px 12px;
+                    }
+                }
+            }
+            .btnContainer{
+                background: rgba($color: #772a2a, $alpha: 0);
+                height: 10vh;
+                width: 30vw;
+                margin-top: 2vh;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .btnSubmit{
+                    background: rgba($color: #000000, $alpha: 1.0);
+                    height: 5vh;
+                    width: 7vw;
+                    margin-left: 1.5vw;
+                    display: grid;
+                    place-items: center;
+                    // font-family: 'myFont',sans-serif;
+                    color: #ffffff;
+                }
+            }
+        }
+        .EditFormUsername{
+            background: rgba($color: #ffffff, $alpha: 1.0);
+            height: 48vh;
+            width: 30vw;
+            box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: 0.2);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            transition: .3s;
+            // transform: translateY(20px);
+            // opacity: 1;
+            .labelContainer{
+                background: rgba($color: #000000, $alpha: 1.0);
+                height: 10vh;
+                width: 30vw;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .text{
+                    color: #ffffff;
+                    font-family: 'myFont',sans-serif;
+                    font-size: 2em;
+                    margin-left: 1.5vw;
+                }
+            }
+            .newUserContainer{
+                background: rgba($color: #802c2c, $alpha: 0);
+                height: auto;
+                width: 30vw;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin-top: 2vh;
+                .label{
+                    background: rgba($color: #188b7c, $alpha: 0);
+                    height: 2vh;
+                    width: 30vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .text{
+                        color: #1d1d1d;
+                        font-family: 'myFont',sans-serif;
+                        font-size: .7em;
+                        margin-left: 1.5vw;
+                    }
+                }
+                .inputContainer{
+                    background: rgba($color: #741777, $alpha: 0);
+                    height: 4vh;
+                    width: 30vw;
+                    display: grid;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .inputForm{
+                        height: 4vh;
+                        width: 27vw;
+                        outline: none;
+                        border: 1px solid black;
+                        margin-left: 1.5vw;
+                        padding: 0px 12px;
+                    }
+                }
+            }
+            .passwordContainer{
+                background: rgba($color: #802c2c, $alpha: 0);
+                height: auto;
+                width: 30vw;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin-top: 2vh;
+                .label{
+                    background: rgba($color: #188b7c, $alpha: 0);
+                    height: 2vh;
+                    width: 30vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .text{
+                        color: #1d1d1d;
+                        font-family: 'myFont',sans-serif;
+                        font-size: .7em;
+                        margin-left: 1.5vw;
+                    }
+                }
+                .inputContainer{
+                    background: rgba($color: #741777, $alpha: 0);
+                    height: 4vh;
+                    width: 30vw;
+                    display: grid;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .inputForm{
+                        height: 4vh;
+                        width: 27vw;
+                        outline: none;
+                        border: 1px solid black;
+                        margin-left: 1.5vw;
+                        padding: 0px 12px;
+                    }
+                }
+            }
+            .repeatpasswordContainer{
+                background: rgba($color: #802c2c, $alpha: 0);
+                height: auto;
+                width: 30vw;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin-top: 2vh;
+                .label{
+                    background: rgba($color: #188b7c, $alpha: 0);
+                    height: 2vh;
+                    width: 30vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .text{
+                        color: #1d1d1d;
+                        font-family: 'myFont',sans-serif;
+                        font-size: .7em;
+                        margin-left: 1.5vw;
+                    }
+                }
+                .inputContainer{
+                    background: rgba($color: #741777, $alpha: 0);
+                    height: 4vh;
+                    width: 30vw;
+                    display: grid;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .inputForm{
+                        height: 4vh;
+                        width: 27vw;
+                        outline: none;
+                        border: 1px solid black;
+                        margin-left: 1.5vw;
+                        padding: 0px 12px;
+                    }
+                }
+            }
+            .btnContainer{
+                background: rgba($color: #772a2a, $alpha: 0);
+                height: 10vh;
+                width: 30vw;
+                margin-top: 2vh;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .btnSubmit{
+                    background: rgba($color: #000000, $alpha: 1.0);
+                    height: 5vh;
+                    width: 7vw;
+                    margin-left: 1.5vw;
+                    display: grid;
+                    place-items: center;
+                    // font-family: 'myFont',sans-serif;
+                    color: #ffffff;
+                }
+            }
+        }
+
+        // btnClose
+
+        .btnClose{
+            background: rgba($color: #000000, $alpha: 0);
+            height: 8vh;
+            width: 7vw;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: grid;
+            place-items: center;
+            border: 0px solid transparent;
+            .closeLogo{
+                font-size: 2em;
+            }
+        }
+    }
+    .logout{
+        background: rgba($color: #000000, $alpha: 1.0);
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 700;
+        transform: translateY(100%);
+        transition: .5s;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        .text{
+            color: #fff;
+            font-family: 'myFont',sans-serif;
+            font-size: 2em;
+            opacity: 0;
+            transition: .5s;
         }
     }
 }

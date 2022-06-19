@@ -41,6 +41,16 @@ const Shop_Collection_View = ({ ID,selectedProdId, setTransition }) => {
         })
     },[])
 
+    // React.useEffect(()=>{
+    //     axios.get('https://goldenwell.netlify.app/')
+    //     .then(res => {
+    //         //get store data
+    //         setContainer(res.data.map(state => state.store));
+    //     }).catch(err => {
+    //         console.log(err)
+    //     })
+    // },[])
+
     console.log();
 
     // get specific product based on selectedProdId = product_identifier

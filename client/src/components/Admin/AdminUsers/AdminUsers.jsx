@@ -160,7 +160,16 @@ const AdminUsers = ({ ID }) => {
                                 {viewCustomer && viewCustomer.wishlist.map(state => {
                                     return (
                                         <div className='item'>
-
+                                            <div className='name'>
+                                                <span className='text'>
+                                                    {state.productname}
+                                                </span>
+                                            </div>
+                                            <div className='price'>
+                                                <span className='text'>
+                                                    Price: {state.price}
+                                                </span>    
+                                            </div>
                                         </div>
                                     )
                                 })}

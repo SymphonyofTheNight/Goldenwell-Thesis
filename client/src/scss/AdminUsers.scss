@@ -199,7 +199,9 @@
         place-items: center;
         .innerViewCustomer{
             background: rgba($color: #ffffff, $alpha: 1.0);
-            height: 85vh;
+            min-height: auto;
+            max-height: 85vh;
+            // height: 85vh;
             width: 40vw;
             overflow-y: scroll;
             .nameContainer{
@@ -375,7 +377,7 @@
                     }
                 }
                 .ItemContainer{
-                    background: rgba($color: #868812, $alpha: 1);
+                    background: rgba($color: #868812, $alpha: 0);
                     height: auto;
                     width: 40vw;
                     display: flex;
@@ -383,10 +385,42 @@
                     flex-wrap: wrap;
                     align-items: center;
                     .item{
-                        background: rgba($color: #000000, $alpha: 1.0);
-                        height: 5vh;
-                        width: 38vw;
-                        margin: 5px 0px;
+                        background: rgba($color: #a55454, $alpha: 0);
+                        height: 7vh;
+                        width: 37vw;
+                        margin: 10px 0px;
+                        box-shadow: 0px 5px 10px rgba($color: #000000, $alpha: 0.4);
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        .name{
+                            background: rgba($color: #000000, $alpha: 1.0);
+                            height: 7vh;
+                            width: 12vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                font-size: 1.3em;
+                                margin-left: 1.5vw;
+                                color: #fff;
+                            }
+                        }
+                        .price{
+                            background: rgba($color: #691515, $alpha: 0);
+                            height: 7vh;
+                            width: 25vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                font-size: 1.5em;
+                                margin-right: 2vw;
+                                color: rgb(0, 0, 0);
+                            }
+                        }
                     }
                 }
             }

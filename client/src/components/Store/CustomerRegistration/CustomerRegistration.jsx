@@ -1,6 +1,7 @@
 import React from 'react';
 import { CustomerSignup } from '../../../controllers/Authentication.js';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import logo from '../../../img/logo.png';
 import '../../../scss/CustomerRegistration.scss';
@@ -8,6 +9,7 @@ import '../../../scss/CustomerRegistration.scss';
 const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [agreement, setAgreement] = React.useState(false);
   const [privacypolicy, setPrivacyPolicy] = React.useState(false);
@@ -60,11 +62,10 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
     }
   },[gmailId])
 
-
-
   // TOMMOROW FIXED EMPTY GMAIL AND NOT EMPTY GMAIL_ID ON DATABASE SCHEMA
 
   const RegistrationPage = <div className={ID}>
+
       <section className='col-lg-3'>
 
       </section>
@@ -78,7 +79,11 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
               <span className='text'>
                 Already have an account?
               </span>
-              <button className='signInbtn'>
+              <button className='signInbtn'
+                onClick={()=> {
+                  history.push('/');
+                }}
+              >
                   Log in
               </button>
           </div>
@@ -189,8 +194,8 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
               </section>
             </form>
         </div>
+      </section> 
 
-      </section>
   </div>
 
   return (
