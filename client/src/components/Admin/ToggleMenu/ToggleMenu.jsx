@@ -80,15 +80,19 @@ const ToggleMenu = ({ ID,isTogglemenu,setIsTogglemenu }) => {
                     <div className='txt-container'>
                             Sales
                     </div>
-                </button>
-                <button className='menu-btn'>
+                </button> */}
+                <button className='menu-btn'
+                    onClick={()=> {
+                        history.push('/admin/deliveries')
+                    }}
+                >
                     <div className='logo-container'>
                         <FaTruck className='logo'/>
                     </div>
                     <div className='txt-container'>
                         Deliveries
                     </div>
-                </button> */}
+                </button>
             </div>
 
             <div className='label-container'>

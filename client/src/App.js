@@ -13,6 +13,7 @@ import ToggleMenu from './components/Admin/ToggleMenu/ToggleMenu.jsx';
 import AdminHome from './components/Admin/AdminHome/AdminHome.jsx';
 import AdminUsers from './components/Admin/AdminUsers/AdminUsers.jsx';
 import AdminSetting from './components/Admin/AdminSettings/AdminSetting';
+import AdminDeliveries from './components/Admin/AdminDeliveries/AdminDeliveries';
 import AdminCollections from './components/Admin/AdminCollections/AdminCollections.jsx';
 import ViewProduct from './components/Admin/AdminCollections/ViewProduct/ViewProduct.jsx';
 import CollectionModal from './components/Admin/AdminCollections/CollectionModal/CollectionModal.jsx';
@@ -133,6 +134,12 @@ const App = () => {
                         <ToggleMenu ID='ToggleMenu col-lg-12 m-0 p-0' isTogglemenu={isTogglemenu} setIsTogglemenu={setIsTogglemenu}/>
                         <AdminCollections ID='AdminCollections col-lg-12 m-0 p-0' setModal={setModal} modal={modal} setCollectionID={setCollectionID}/>
                         <CollectionModal ID='CollectionModal col-lg-12 m-0 p-0' setModal={setModal} modal={modal}/>
+                        <AdminFooter ID='Adminfooter col-lg-12 m-0 p-0'/>
+                    </Route>
+                    <Route path='/admin/deliveries'>
+                        <Navbar ID='Navbar col-lg-12 m-0 p-0' setIsTogglemenu={setIsTogglemenu}/>
+                        <ToggleMenu ID='ToggleMenu col-lg-12 m-0 p-0' isTogglemenu={isTogglemenu} setIsTogglemenu={setIsTogglemenu}/>
+                        <AdminDeliveries ID='AdminDeliveries col-lg-12 m-0 p-0'/>
                         <AdminFooter ID='Adminfooter col-lg-12 m-0 p-0'/>
                     </Route>
                     <Route path='/admin/collections/view'>

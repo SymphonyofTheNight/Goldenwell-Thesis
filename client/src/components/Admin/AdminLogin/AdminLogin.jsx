@@ -28,7 +28,12 @@ const AdminLogin = () => {
 
     const adminlogin = (e) => {
         e.preventDefault();
-        dispatch(AdministratorLogin(Admin,history));
+        if(Admin.username === '' && Admin.password === '') return alert('Empty input');
+        if(Admin.username === '') return alert('Empty Username');
+        if(Admin.password === '') return alert('Empty Password');
+        if(Admin.username && Admin.password){
+            dispatch(AdministratorLogin(Admin,history));
+        }
     }
 
     console.log(Admin);
@@ -150,7 +155,11 @@ const AdminLogin = () => {
                         </div>
 
                         <div className='btn2Container'>
-                            <button className='gotohome-btn'>
+                            <button className='gotohome-btn'
+                                onClick={()=> {
+                                    history.push('/');
+                                }}
+                            >
                                 <span className='txt'>
                                     <u>
                                         Back to home page
