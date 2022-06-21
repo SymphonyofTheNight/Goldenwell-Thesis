@@ -162,3 +162,22 @@ export const WishtocartAPI = (product_identifier,productname,price,imageBase64,q
         ]
     }
 )
+
+export const deliverOTW = (product_identifier,productname,price,imageBase64,quantity,customerID,clientname,address,email,number) => api.patch(`/admin/deliveries/${customerID}`, 
+    {
+        toBeDeliver: [
+            {
+                product_identifier: product_identifier,
+                productname: productname,
+                price: price,
+                imageBase64: imageBase64,
+                quantity: quantity,
+                clientID: customerID,
+                clientname: clientname,
+                address: address,
+                email: email,
+                number: number
+            }
+        ]
+    }
+)

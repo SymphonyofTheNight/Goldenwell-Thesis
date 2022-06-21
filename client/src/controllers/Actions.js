@@ -91,6 +91,15 @@ export const CustomerWishlist = (product_identifier,productname,price,imageBase6
     }
 }
 
+export const CustomertoBeDeliver = (product_identifier,productname,price,imageBase64,quantity,customerID,clientname,address,email,number) => async (dispatch) => {
+    try {
+        const { data } = await api.deliverOTW(product_identifier,productname,price,imageBase64,quantity,customerID,clientname,address,email,number);
+        dispatch({ type: 'DELIVERY', payload: data });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const AddOrderToAdmin = (ownerID,array) => async (dispatch) => {
     try {
         const { data } = await api.addOrderAdmin(ownerID,array);

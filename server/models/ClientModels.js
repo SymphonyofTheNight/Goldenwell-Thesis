@@ -41,7 +41,6 @@ const ClientSchema = mongoose.Schema({
         require: true,
         type: String,
     },  
-
     cart: [                    
           {
               product_identifier: {
@@ -135,36 +134,52 @@ const ClientSchema = mongoose.Schema({
       }
       ],
     toBeDeliver: [                    
-        {
-          product_identifier: {
+      {
+        product_identifier: {
+          type: String,
+          require: true,
+        },
+        productname: {
             type: String,
-            require: true,
+            required: true,
           },
-          productname: {
-              type: String,
-              required: true,
-            },
-          price: {
-              type: Number,
-              required: true,
-            },
-          imageBase64: {
-              type: String,
-              required: true,
-            },
-          deliverStatus: {
-              type: String,
-              require: true,
-            },
-          dateofdeliver: {
-              type: String,
-              require: true, 
-            },
-          date: {
-              type: String,
-              default: Date.now(),
-            }
+        price: {
+            type: Number,
+            required: true,
+          },
+        imageBase64: {
+            type: String,
+            required: true,
+          },
+        quantity: {
+          type: String,
+          required: true
+        },
+        clientID: {
+          type: String,
+          required: true
+        },
+        clientname: {
+          type: String,
+          required: true
+        },
+        address: {
+          type: String,
+          required: true
+        },
+        email: {
+          type: String,
+          required: true
+        },
+        number: {
+          type: Number,
+          required: true
+        },
+        date: {
+            type: String,
+            default: Date.now(),
         }
+      }
       ],
     Delivered: [                    
       {
@@ -184,18 +199,34 @@ const ClientSchema = mongoose.Schema({
             type: String,
             required: true,
           },
-        deliverStatus: {
-            type: String,
-            require: true,
-          },
-        dateofdeliver: {
-            type: String,
-            require: true, 
-          },
+        quantity: {
+          type: String,
+          required: true
+        },
+        clientID: {
+          type: String,
+          required: true
+        },
+        clientname: {
+          type: String,
+          required: true
+        },
+        address: {
+          type: String,
+          required: true
+        },
+        email: {
+          type: String,
+          required: true
+        },
+        number: {
+          type: Number,
+          required: true
+        },
         date: {
             type: String,
             default: Date.now(),
-          }
+        }
       }
       ],
 });

@@ -202,7 +202,6 @@ export const deleteItem = async (req,res) => {
 } 
 
 export const wishtocart = async (req,res) => {
-
     const { id } = req.params;
 
     console.log(req.body);
@@ -233,8 +232,42 @@ export const wishtocart = async (req,res) => {
             }
         )
     } catch (error) {
-        
+        res.status(404).json(error);
     }
 }
 
+export const deliverOTW = async (req,res) => {
+    const { id } = req.params;
+
+    console.log(id);
+
+    try {
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({ message: 'ID not found' });
+
+        await ClientModels.findByIdAndUpdate(
+            id,
+            {
+                $push: {
+                    toBeDeliver: {
+                        productname: req.body.toBeDeliver[0].productname,
+                        product_identifier: req.body.toBeDeliver[0].product_identifier,
+                        price: req.body.toBeDeliver[0].price,
+                        imageBase64: req.body.toBeDeliver[0].imageBase64,
+                        quantity: req.body.toBeDeliver[0].quantity,
+                        clientID: req.body.toBeDeliver[0].clientID,
+                        clientname: req.body.toBeDeliver[0].clientname,
+                        address: req.body.toBeDeliver[0].address,
+                        email: req.body.toBeDeliver[0].email,
+                        number: req.body.toBeDeliver[0].number
+                    }
+                }
+            },
+            {
+                new: true
+            }
+        )
+    } catch (error) {
+        res.status(404).json(error);
+    }
+}
 

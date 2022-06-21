@@ -8,6 +8,9 @@ const router = express.Router();
 import { getOwnerProducts, addOwnerProducts, deleteProduct, updateProduct, toDeliver } from '../controllers/OwnerControllers.js';
 import { ownersignup,ownersignin, EditOwnerPassword, EditOwnerUsername } from '../controllers/OwnerAuthentication.js';
 
+import { clientsignup,clientsignin } from '../controllers/ClientAuthentication.js';
+import { tobeDeliver,DeliveredItems,getClientProducts,AddProdToCard, Addtowishlist, deleteAllitems, deleteItem, wishtocart, deliverOTW } from '../controllers/ClientController.js';
+
 router.get('/', getOwnerProducts); // done
 router.patch('/admin/collections/all/:id', addOwnerProducts); // done
 router.patch('/admin/collections/view/:id', updateProduct); // working but gives status 404
@@ -15,16 +18,12 @@ router.put('/admin/collections/all/:id', deleteProduct); // fix delete query
 router.patch('/admin/settings/:id', EditOwnerUsername);
 router.put('/admin/settings/:id', EditOwnerPassword);
 router.patch('/checkout/:id', toDeliver); // try this mofo
-// router.put('/checkout/:id', ); // try this 
-// router.patch('/checkout/:id', CreateUserToDeliver); // need to fix this later
+router.patch('/admin/deliveries/:id', deliverOTW) // try 
 
 router.post('/admin', ownersignin); // done
 router.post('/admin/signup/', ownersignup); // done
 
-///////////////////////////////// client router
-
-import { clientsignup,clientsignin } from '../controllers/ClientAuthentication.js';
-import { tobeDeliver,DeliveredItems,getClientProducts,AddProdToCard, Addtowishlist, deleteAllitems, deleteItem, wishtocart } from '../controllers/ClientController.js';
+///////////////////////// client router
 
 router.post('/', clientsignin); // done
 router.patch('/:id', deleteAllitems); // 
@@ -34,6 +33,7 @@ router.get('/user', getClientProducts); // getcustomerDetails
 router.patch('/collections/view/:id', AddProdToCard); //finished
 router.put('/collections/view/:id', Addtowishlist); // finished
 router.patch('/wishlist/addtocart/:id', wishtocart);
+
 
 //from cart to checkouts
 

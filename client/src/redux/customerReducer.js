@@ -32,6 +32,10 @@ const CustomerReducer = (state = initialState,action) => {
             return {
                 wishlistStorage: action.payload
             }
+        case 'DELIVERY':
+            return {
+                storage: action.payload 
+            }
         case 'EDIT_CUSTOMER':
             return {
                 storage: state.storage.map(client => client._id === action.payload._id ? action.payload : client )

@@ -50,7 +50,7 @@ const CustomerLogin = ({ ID, loginToggle, setLoginToggle, setGmailname, setGmail
         }
     }
 
-    var user_find = useSelector(state => customerLogin.password ? state.CustomerReducer.storage.find(val => val.google_id === customerLogin.password) : null );
+    var user_find = useSelector(state => customerLogin?.password ? state?.CustomerReducer?.storage?.find(val => val?.google_id === customerLogin?.password) : null );
 
     const gmailsuccess = (e) => {
 

@@ -1,9 +1,14 @@
 import React from 'react';
 import '../../../scss/AdminDeliveries.scss';
-import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { FaTimes } from 'react-icons/fa';
+import { CustomertoBeDeliver } from '../../../controllers/Actions.js';
 
 const AdminDeliveries = ({ ID }) => {
+
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const getDeliveries = useSelector(state => state.reducer.storage);
 
@@ -20,6 +25,49 @@ const AdminDeliveries = ({ ID }) => {
     },[getDeliveries])
 
     const getTodeliverProduct = useSelector(state => getProduct ? state.reducer.storage.map(val => val?.delivery.find(product => product._id === getProduct)) : null)
+
+    const [clientId, setClientId] = React.useState(''); // client id 
+    const [productname, setProductname] = React.useState('');
+    const [product_identifier, setProduct_identifier] = React.useState('');
+    const [quantity, setQuantity] = React.useState('');
+    const [price, setPrice] = React.useState('');
+    const [imagebase64, setImagebase64] = React.useState('');
+    const [clientname, setClientname] = React.useState('');
+    const [address, setAddress] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [number, setNumber] = React.useState('');
+
+    // React.useEffect(()=> {
+    //     if(getTodeliverProduct[0]){
+    //     console.log(getTodeliverProduct[0]?.price)
+    //     }
+    // },[getTodeliverProduct])
+
+    React.useEffect(()=> {
+        if(getTodeliverProduct){
+            setClientId(getTodeliverProduct[0]?.clientID);
+            setProductname(getTodeliverProduct[0]?.productname);
+            setProduct_identifier(getTodeliverProduct[0]?.product_identifier);
+            setQuantity(getTodeliverProduct[0]?.quantity);
+            setPrice(getTodeliverProduct[0]?.price);
+            setImagebase64(getTodeliverProduct[0]?.imageBase64);
+            setClientname(getTodeliverProduct[0]?.clientname);
+            setAddress(getTodeliverProduct[0]?.address);
+            setEmail(getTodeliverProduct[0]?.email);
+            setNumber(getTodeliverProduct[0]?.number);
+        }
+    },[getTodeliverProduct])
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        // console.log(clientId,clientname,productname,product_identifier,quantity,price,imagebase64,address,email,number);
+        if(clientId && clientname && productname && product_identifier && quantity && price && imagebase64 && address && email && number){
+            dispatch(CustomertoBeDeliver(product_identifier,productname,price,imagebase64,quantity,clientId,clientname,address,email,number));
+            // setTimeout(() => {
+                
+            // }, 2000);
+        }
+    }
 
     return (
         <div className={ID}>
@@ -113,9 +161,9 @@ const AdminDeliveries = ({ ID }) => {
                 toggleView && 
                 <div className='viewProductContainer'>
                     {getTodeliverProduct && getTodeliverProduct.map(state => {
-                        console.log(state)
                         return (
                         <div className='innerViewProductContainer' key={state._id}>
+                            <form onSubmit={onSubmitHandler}>
                             <div className='ImgContainer'>
                                 <img src={state.imageBase64} />
                             </div>
@@ -156,11 +204,14 @@ const AdminDeliveries = ({ ID }) => {
                                     Approve Delivery
                                 </button>
                             </div>
+                            </form>
                         </div>
                         )
                     })}
 
                     {/* btnClose */}
+
+                    {/* REMINDER !! TO SEND THE PRODUCT TO CLIENT YOU HIS ID */}
 
                     <button className='btnClose'
                         onClick={()=>{

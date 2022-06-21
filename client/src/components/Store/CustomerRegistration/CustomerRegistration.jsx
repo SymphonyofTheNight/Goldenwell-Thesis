@@ -82,6 +82,7 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
               <button className='signInbtn'
                 onClick={()=> {
                   history.push('/');
+                  window.location.reload();
                 }}
               >
                   Log in
