@@ -257,19 +257,44 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer 
         <div className='navigationHeader'>
             <ul className="nav nav-tabs">
                 <li className="nav-item">
-                    <button className="nav-link" aria-current="page">To Pay</button>
-                </li>
-                <li className="nav-item">
-                    <button className="nav-link">To Ship</button>
-                </li>
-                <li className="nav-item">
-                    <button className="nav-link">Received</button>
+                    <button className="nav-link">To Received</button>
                 </li>
             </ul>
         </div>
 
         <div className='TabsContentContainer'>
-
+            {
+                _ClientInfo &&
+                Object.keys(_ClientInfo.toBeDeliver).map(state => {
+                    return (
+                        <div className='item'>
+                                <div className='productimg'>
+                                    <img src={_ClientInfo.toBeDeliver[state].imageBase64} className='img'/>
+                                </div>
+                                <div className='productname'>
+                                    <span className='text'>
+                                        {_ClientInfo.toBeDeliver[state].productname}
+                                    </span>
+                                </div>
+                                <div className='address'>
+                                    <span className='text'>
+                                        {_ClientInfo.toBeDeliver[state].address}
+                                    </span>
+                                </div>
+                                <div className='number'>
+                                    <span className='text'>
+                                        {_ClientInfo.toBeDeliver[state].number}
+                                    </span>
+                                </div>
+                                <div className='receiveContainerbtn'>
+                                    <button className='viewbtn'>
+                                        VIEW
+                                    </button>
+                                </div>
+                        </div>
+                    )
+                })
+            }
         </div>
 
     </div>
