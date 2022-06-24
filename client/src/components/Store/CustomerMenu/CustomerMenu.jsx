@@ -36,6 +36,7 @@ const CustomerMenu = ({ ID, CustomerMenuToggle, setCustomerMenuToggle, selectCat
   return (
     <div className={ID} ref={container}> 
         <section className='CustomerLabel'>
+            
             <span className='CustomerName'>
               {ExistingCustomer ? ExistingCustomer.result.fullname+'`s' + ' ' +'account' : ''}
             </span>

@@ -4,23 +4,23 @@ import '../../../scss/Shop_Collection.scss';
 
 const Shop_Collection = ({ ID }) => {
 
-    React.useEffect(()=> {
-        axios.get('http://localhost:5000/')
-        .then(res => {
-            setContainer(res.data);
-        }).catch(err => {
-            console.log(err);
-        })
-    },[])
-
     // React.useEffect(()=> {
-    //     axios.get('https://goldenwell.netlify.app/')
+    //     axios.get('http://localhost:5000/')
     //     .then(res => {
     //         setContainer(res.data);
     //     }).catch(err => {
     //         console.log(err);
     //     })
     // },[])
+
+    React.useEffect(()=> {
+        axios.get('https://goldenwell.herokuapp.com/')
+        .then(res => {
+            setContainer(res.data);
+        }).catch(err => {
+            console.log(err);
+        })
+    },[])
 
     const [container, setContainer] = React.useState([]);
     const [objectsArray, setObjectsArray] = React.useState([]);

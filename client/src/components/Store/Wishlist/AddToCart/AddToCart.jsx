@@ -55,11 +55,13 @@ const AddToCart = ({ ID , wishtocart, setTransition, setOpenmywishlist }) => {
         }, 2000)
         if(prodset){
             setTimeout(()=> {
-                console.log(prodset);
+                console.log(prodset.product_identifier,prodset.productname,prodset.price,prodset.imageBase64,prodset.quantity,prodset.clientID,prodset.clientname,prodset.address,prodset.email,prodset.number);
                 dispatch(WishToCartAPI(prodset.product_identifier,prodset.productname,prodset.price,prodset.imageBase64,prodset.quantity,prodset.clientID,prodset.clientname,prodset.address,prodset.email,prodset.number));
                 setTransition(state => !state)
-                history.push('/');
-                window.location.reload();
+                setTimeout(() => {
+                    history.push('/');
+                    window.location.reload();
+                }, 2000);
             }, 3000)
         }
         setTimeout(()=> {

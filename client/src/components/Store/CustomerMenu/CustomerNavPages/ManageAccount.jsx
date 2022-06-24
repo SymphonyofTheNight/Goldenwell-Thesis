@@ -283,7 +283,7 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer 
                                 </div>
                                 <div className='number'>
                                     <span className='text'>
-                                        {_ClientInfo.toBeDeliver[state].number}
+                                        +63 {_ClientInfo.toBeDeliver[state].number}
                                     </span>
                                 </div>
                                 <div className='receiveContainerbtn'>
@@ -296,6 +296,10 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer 
                 })
             }
         </div>
+
+    </div>
+
+    const Receive = <div className='Receive'>
 
     </div>
 
@@ -344,9 +348,15 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer 
                     My Orders
                 </span>
             </button>
-            <button className='myCancellationsBtn'>
+            <button className='myCancellationsBtn'
+                onClick={()=> {
+                    setSelectCategory(Receive)
+                    setHeader('Receive')
+                    history.push(`/user/profile/receive`)
+                }}
+            >
                 <span className='text'>
-                    My Cancellations
+                    My Receive
                 </span>
             </button>
         </div>
