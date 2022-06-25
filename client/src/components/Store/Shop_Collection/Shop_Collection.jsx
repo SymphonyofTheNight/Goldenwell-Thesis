@@ -1,26 +1,29 @@
 import React from 'react';
 import axios from 'axios';
 import '../../../scss/Shop_Collection.scss';
+import { useHistory } from 'react-router-dom';
 
-const Shop_Collection = ({ ID }) => {
+const Shop_Collection = ({ ID, setSelectedProdId }) => {
 
-    // React.useEffect(()=> {
-    //     axios.get('http://localhost:5000/')
-    //     .then(res => {
-    //         setContainer(res.data);
-    //     }).catch(err => {
-    //         console.log(err);
-    //     })
-    // },[])
+    const history = useHistory();
 
     React.useEffect(()=> {
-        axios.get('https://goldenwell.herokuapp.com/')
+        axios.get('http://localhost:5000/')
         .then(res => {
             setContainer(res.data);
         }).catch(err => {
             console.log(err);
         })
     },[])
+
+    // React.useEffect(()=> {
+    //     axios.get('https://goldenwell.herokuapp.com/')
+    //     .then(res => {
+    //         setContainer(res.data);
+    //     }).catch(err => {
+    //         console.log(err);
+    //     })
+    // },[])
 
     const [container, setContainer] = React.useState([]);
     const [objectsArray, setObjectsArray] = React.useState([]);
@@ -44,7 +47,13 @@ const Shop_Collection = ({ ID }) => {
             <div className='itemsContainer'>
                 {objectsArray && objectsArray.map(state => {
                     return (
-                        <button className='imgContainer' key={state._id}>
+                        <button className='imgContainer' key={state._id}
+                            onClick={()=> {
+                                setSelectedProdId(state.product_identifier);
+                                window.scrollTo(0,0);
+                                history.push(`/collections/view/`);
+                            }}
+                        >
                             <div className='container-1'>
                                 <div className='statusContainer'
                                 style={{

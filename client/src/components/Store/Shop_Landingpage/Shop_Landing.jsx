@@ -56,7 +56,6 @@ const Shop_Landing = ({ ID,setSelectedProdId }) => {
                     <div className='btnContainer'>
                         <button className='product-btn'
                         onClick={()=> {
-
                             history.push('/collections/all');
                         }}
                         >

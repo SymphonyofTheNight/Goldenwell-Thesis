@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const api = axios.create({ baseURL: 'http://localhost:5000/' });
-const api = axios.create({ baseURL: 'https://goldenwell.herokuapp.com/' });
+const api = axios.create({ baseURL: 'http://localhost:5000/' });
+// const api = axios.create({ baseURL: 'https://goldenwell.herokuapp.com/' });
 
 export const getDatabase = () => api.get('/');
 export const getCustomerDetails = () => api.get('/user');

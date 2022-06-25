@@ -321,7 +321,9 @@ const App = () => {
                         />
                         <Shop_Navbar ID='ShopNavbar col-lg-12 m-0 p-0' setShopNavToggle={setShopNavToggle} selectedProdId={selectedProdId} setLoginToggle={setLoginToggle} setCustomerMenuToggle={setCustomerMenuToggle}/>
                         <Shop_Toggle ID='ShopToggle col-lg-12 m-0 p-0' shopNavToggle={shopNavToggle} setShopNavToggle={setShopNavToggle}/>
-        {/* main */}    <Shop_Collection ID='ShopCollection col-lg-12 m-0 p-0'/>
+        {/* main */}    <Shop_Collection ID='ShopCollection col-lg-12 m-0 p-0'
+                        setSelectedProdId={setSelectedProdId}
+                        />
                         <Shop_Footer ID='ShopFooter col-lg-12 m-0 p-0'/>
                         <Transition ID='Transition col-lg-12 m-0 p-0' transition={transition} />
                     </Route>

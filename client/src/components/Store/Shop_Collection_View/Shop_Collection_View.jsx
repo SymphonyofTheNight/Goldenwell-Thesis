@@ -31,18 +31,8 @@ const Shop_Collection_View = ({ ID,selectedProdId, setTransition }) => {
     const [changeBG, setChangeBG] = React.useState(unsplash_1);
     const [quoteText, setQuoteText] = React.useState(quotesArr[0]);
 
-    // React.useEffect(()=>{
-    //     axios.get('http://localhost:5000/')
-    //     .then(res => {
-    //         //get store data
-    //         setContainer(res.data.map(state => state.store));
-    //     }).catch(err => {
-    //         console.log(err)
-    //     })
-    // },[])
-
     React.useEffect(()=>{
-        axios.get('https://goldenwell.herokuapp.com/')
+        axios.get('http://localhost:5000/')
         .then(res => {
             //get store data
             setContainer(res.data.map(state => state.store));
@@ -50,6 +40,16 @@ const Shop_Collection_View = ({ ID,selectedProdId, setTransition }) => {
             console.log(err)
         })
     },[])
+
+    // React.useEffect(()=>{
+    //     axios.get('https://goldenwell.herokuapp.com/')
+    //     .then(res => {
+    //         //get store data
+    //         setContainer(res.data.map(state => state.store));
+    //     }).catch(err => {
+    //         console.log(err)
+    //     })
+    // },[])
 
     console.log();
 
