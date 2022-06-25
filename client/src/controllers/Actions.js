@@ -135,3 +135,12 @@ export const AdminEditUser = (adminID,username) => async (dispatch) => {
         console.log(error);
     }
 }
+
+export const pullApproveItemFromAdmin = (adminID,prodID) => async (dispatch) => {
+    try {
+        const { data } = await api.pullApproveAdminItem(adminID,prodID);
+        dispatch({ type: 'PULL_APPROVE', payload: data });
+    } catch (error) {
+        console.log(error);
+    }
+} 

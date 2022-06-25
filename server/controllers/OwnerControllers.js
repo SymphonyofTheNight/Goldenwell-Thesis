@@ -243,6 +243,30 @@ export const toDeliver = async (req,res) => {
     }
 }
 
+export const pullApproveItem = async (req,res) => {
+
+    const { id } = req.params;
+
+    console.log(id);
+    console.log(req.body);
+
+    try {
+        if(!id) return res.status(404).json({ message: 'ID not found' });
+
+        await OwnerModels.findByIdAndUpdate(id, {
+            $pull: {
+                delivery: {
+                    _id: req.body.delivery[0]._id
+                }
+            }
+        },{
+            new: true
+        })
+    } catch (error) {
+        req.status(404).json(error);
+    }
+}
+
 // export const delivery = async (req,res) => {
 
 //     const { id } = req.params;

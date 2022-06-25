@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { FaTimes } from 'react-icons/fa';
 import { CustomertoBeDeliver } from '../../../controllers/Actions.js';
 
-const AdminDeliveries = ({ ID }) => {
+const AdminDeliveries = ({ ID, setApproveToggle, setApproveProduct, approveProduct }) => {
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -63,9 +63,12 @@ const AdminDeliveries = ({ ID }) => {
         // console.log(clientId,clientname,productname,product_identifier,quantity,price,imagebase64,address,email,number);
         if(clientId && clientname && productname && product_identifier && quantity && price && imagebase64 && address && email && number){
             dispatch(CustomertoBeDeliver(product_identifier,productname,price,imagebase64,quantity,clientId,clientname,address,email,number));
-            // setTimeout(() => {
-                
-            // }, 2000);
+            if(approveProduct){
+                setTimeout(() => {
+                    history.push('/approve/redirect/');
+                    setApproveToggle(state => !state)
+                }, 2000);
+            }
         }
     }
 
@@ -199,6 +202,10 @@ const AdminDeliveries = ({ ID }) => {
                             </div>
                             <div className='SubmitContainer'>
                                 <button className='btnSubmit'
+                                onClick={()=> {
+                                    setApproveToggle(state => !state)
+                                    setApproveProduct(state._id)
+                                }}
                                 type='submit'
                                 >
                                     Approve Delivery
@@ -210,8 +217,6 @@ const AdminDeliveries = ({ ID }) => {
                     })}
 
                     {/* btnClose */}
-
-                    {/* REMINDER !! TO SEND THE PRODUCT TO CLIENT YOU HIS ID */}
 
                     <button className='btnClose'
                         onClick={()=>{

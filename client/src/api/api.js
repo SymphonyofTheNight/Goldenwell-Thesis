@@ -11,6 +11,16 @@ export const OwnerSignup = (user,pass) => api.post('/admin/signup', {
     password: pass
 })
 
+export const pullApproveAdminItem = (adminID,prodID) => api.patch(`/approve/redirect/${adminID}`,
+{
+    delivery: [
+        {   
+            _id: prodID
+        }
+    ]
+}
+)
+
 export const addOrderAdmin = (ownerID,array) => api.patch(`/checkout/${ownerID}`,
     {
         delivery: array // array of 2 objects 

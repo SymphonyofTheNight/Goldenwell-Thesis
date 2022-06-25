@@ -34,6 +34,10 @@ const reducer = (state = initialState, action) => {
             return {
                 storage: state.storage.map(state => state.username === action.payload ? action.payload : null)
             }
+        case 'PULL_APPROVE': 
+            return {
+                storage: state.storage.map(state => state.delivery.find(val => val._id === action.payload ))
+            }
         default:
             return state;
     }

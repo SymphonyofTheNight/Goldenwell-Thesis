@@ -45,9 +45,10 @@ import Transition from './components/Store/Wishlist/transitionCover/Transition';
 import TransitionToCart from './components/Store/Shop_Collection_View/AddToCartTransition/TransitionToCart';
 import TransitionToWishlist from './components/Store/Shop_Collection_View/AddToWishlistTransition/TransitionToWishlist';
 import TransitionToLogin from './components/Store/TransitionTologin/TransitionToLogin';
+import TransitionCover from './components/Admin/AdminDeliveries/TransitionCover/TransitionCover';
+import ToTransitionDeleteItem from './components/Admin/AdminDeliveries/ToTransitionDeleteItem/ToTransitionDeleteItem';
 
 // customer account 
-
 import ManageAccount from './components/Store/CustomerMenu/CustomerNavPages/ManageAccount';
 
 const App = () => {
@@ -68,12 +69,15 @@ const App = () => {
     const [isTogglemenu, setIsTogglemenu] = React.useState(false);
     const [shopNavToggle, setShopNavToggle] = React.useState(false);
     const [modal, setModal] = React.useState(false);
+    const [approveToggle, setApproveToggle] = React.useState(false);
 
     const [selectContainer, setSelectContainer] = React.useState(false);
 
     const [collectionID, setCollectionID] = React.useState();
 
     const [selectedProdId, setSelectedProdId] = React.useState();
+
+    const [approveProduct, setApproveProduct] = React.useState();
 
     React.useEffect(()=> {
         window.scrollTo(0,0);
@@ -139,7 +143,8 @@ const App = () => {
                     <Route path='/admin/deliveries'>
                         <Navbar ID='Navbar col-lg-12 m-0 p-0' setIsTogglemenu={setIsTogglemenu}/>
                         <ToggleMenu ID='ToggleMenu col-lg-12 m-0 p-0' isTogglemenu={isTogglemenu} setIsTogglemenu={setIsTogglemenu}/>
-                        <AdminDeliveries ID='AdminDeliveries col-lg-12 m-0 p-0'/>
+                        <AdminDeliveries ID='AdminDeliveries col-lg-12 m-0 p-0' setApproveToggle={setApproveToggle} setApproveProduct={setApproveProduct} approveProduct={approveProduct}/>
+                        <TransitionCover approveToggle={approveToggle}/>
                         <AdminFooter ID='Adminfooter col-lg-12 m-0 p-0'/>
                     </Route>
                     <Route path='/admin/collections/view'>
@@ -148,6 +153,13 @@ const App = () => {
                         <ViewProduct ID='ViewProduct col-lg-12 m-0 p-0' collectionID={collectionID}/>
                         <AdminFooter ID='Adminfooter col-lg-12 m-0 p-0'/>
                     </Route>
+
+                    {/* transitions */}
+
+                    <Route path='/approve/redirect/'>
+                        <ToTransitionDeleteItem ID='TransitionToDelete' approveProduct={approveProduct}/>
+                    </Route>
+
                 </Switch>
 
                 <Switch>

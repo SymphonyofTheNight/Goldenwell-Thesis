@@ -5,7 +5,7 @@ const router = express.Router();
 
 ///////////////////////////////// owner router
 
-import { getOwnerProducts, addOwnerProducts, deleteProduct, updateProduct, toDeliver } from '../controllers/OwnerControllers.js';
+import { getOwnerProducts, addOwnerProducts, deleteProduct, updateProduct, toDeliver, pullApproveItem } from '../controllers/OwnerControllers.js';
 import { ownersignup,ownersignin, EditOwnerPassword, EditOwnerUsername } from '../controllers/OwnerAuthentication.js';
 
 import { clientsignup,clientsignin } from '../controllers/ClientAuthentication.js';
@@ -19,6 +19,7 @@ router.patch('/admin/settings/:id', EditOwnerUsername);
 router.put('/admin/settings/:id', EditOwnerPassword);
 router.patch('/checkout/:id', toDeliver); // try this mofo
 router.patch('/admin/deliveries/:id', deliverOTW) // try 
+router.patch('/approve/redirect/:id', pullApproveItem) // try
 
 router.post('/admin', ownersignin); // done
 router.post('/admin/signup/', ownersignup); // done
