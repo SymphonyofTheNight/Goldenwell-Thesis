@@ -40,6 +40,10 @@ const CustomerReducer = (state = initialState,action) => {
             return {
                 storage: state.storage.map(client => client._id === action.payload._id ? action.payload : client )
             }
+        case 'RECEIVE':
+            return {
+                storage: action.payload
+            }
         default:
             return {...state};
     }

@@ -13,6 +13,7 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
 
   const [agreement, setAgreement] = React.useState(false);
   const [privacypolicy, setPrivacyPolicy] = React.useState(false);
+  const [showpassword, setShowPassword] = React.useState(false);
   const [registration, setRegistration] = React.useState({
     fullname: '',
     address: '',
@@ -46,6 +47,11 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
         password: '',
         confirm: ''
       })
+      alert('Registration Successful');
+      setTimeout(() => {
+        history.push('/');
+        window.location.reload();
+      }, 1000);
     }
   }
 
@@ -98,14 +104,17 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
             </div>
             <form onSubmit={OnSubmitHandler}>
               <section className='RegForm'>
+
                   <div className='FullnameInputForm'>
                     <input type='text' placeholder='Fullname' className='InputForm' 
                       value={registration.fullname}
                       onChange={(e)=> {
                         setRegistration({...registration, fullname: e.target.value })
                       }}
-                    />
+                      disabled={gmailId ? true : false}
+                      />
                   </div>
+
                   <div className='AddressInputForm'>
                     <input type='text' placeholder='Address' className='InputForm' 
                       onChange={(e)=> {
@@ -113,6 +122,7 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
                       }}
                     />
                   </div>
+
                   <div className='EmailAndBirthdayInputForm'>
                     <input type='text' placeholder='Email' className='InputForm' 
                       value={registration.email}
@@ -126,6 +136,7 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
                         }}
                     />
                   </div>
+
                   <div className='NumberAndGenderInputForm'>
                     <input type='text' placeholder='Number' className='InputForm' 
                       onChange={(e)=> {
@@ -142,6 +153,7 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
                     </select>
                     <span className='text'>Ex: 09123456789 </span>
                   </div>
+
                   <div className='UsernameInputForm'>
                     <input type='text' placeholder='Username' className='InputForm' 
                       value={registration.username}
@@ -150,24 +162,36 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
                       }}
                     />
                   </div>
+
                   <div className='PasswordInputForm'>
-                    <input type='password' placeholder='Password' className='InputForm' 
+                    <input type={showpassword ? 'text' : 'password'} placeholder='Password' className='InputForm' 
                       value={registration.password}
                       onChange={(e)=> {
                         setRegistration({...registration, password: e.target.value })
                       }}
+                      disabled={gmailId ? true : false}
                     />
-                    <input type='password' placeholder='Confirm' className='InputForm-2' 
+                    <input type={showpassword ? 'text' : 'password'} placeholder='Confirm' className='InputForm-2' 
                       value={registration.confirm}
                       onChange={(e)=> {
                         setRegistration({...registration, confirm: e.target.value })
                       }}
+                      disabled={gmailId ? true : false}
                     />
                     <span className='text'>
                       Min 8 or more characters and requires atleast 1 upper case and numbers.
                     </span>
                   </div>
+
                   <div className='aggreementContainer'>
+                  <div className='agreementInnerContainer-3'>
+                      <input type='checkbox' className='checkbox' 
+                        onChange={()=> {
+                          setShowPassword(state => !state)
+                        }}
+                      /> 
+                      <span className='text'>Show password.</span>
+                    </div>
                     <div className='agreementInnerContainer'>
                       <input type='checkbox' className='checkbox' 
                         onChange={()=> {
@@ -187,11 +211,13 @@ const CustomerRegistration = ({ ID, gmail, gmailname, gmailId }) => {
                       </span>
                     </div>
                   </div>
+
                   <div className='btnSubmitContainer'>
                       <button className='submitBtn' type='submit'>
                         Create my account
                       </button>
                   </div>
+
               </section>
             </form>
         </div>

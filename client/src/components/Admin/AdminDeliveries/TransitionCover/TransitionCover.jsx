@@ -7,10 +7,7 @@ const TransitionCover = ({ approveToggle }) => {
 
     React.useEffect(()=> {
         if(approveToggle){
-            cover.current.style.transform ='translateY(0)';
-            setTimeout(() => {
-                
-            }, 1500);
+          cover.current.style.transform ='translateY(0)';
         }
     },[approveToggle])
 

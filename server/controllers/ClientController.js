@@ -271,3 +271,33 @@ export const deliverOTW = async (req,res) => {
     }
 }
 
+export const delivered = async (req,res) => {
+
+   const { id } = req.params;
+
+    console.log(id);
+    console.log(req.body);
+
+   try {
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({ message: 'Invalid ID' });
+
+        await ClientModels.findByIdAndUpdate(id,
+            {
+                $push: {
+                    Delivered: {
+                        product_identifier: req.body.Delivered[0].product_identifier,
+                        productname: req.body.Delivered[0].productname,
+                        price: rqe.body.Delivered[0].price,
+                        imageBase64: req.body.Delivered[0].imageBase64,
+                        clientname: req.body.Delivered[0].clientname,
+                        address: req.body.Delivered[0].address,
+                    }
+                }
+            },{
+                new: true
+            })
+   } catch (error) {
+        res.status(404).json(error);
+   }
+
+} 

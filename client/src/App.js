@@ -47,6 +47,8 @@ import TransitionToWishlist from './components/Store/Shop_Collection_View/AddToW
 import TransitionToLogin from './components/Store/TransitionTologin/TransitionToLogin';
 import TransitionCover from './components/Admin/AdminDeliveries/TransitionCover/TransitionCover';
 import ToTransitionDeleteItem from './components/Admin/AdminDeliveries/ToTransitionDeleteItem/ToTransitionDeleteItem';
+import TransitionReceive from './components/Store/CustomerMenu/TransitionReceive/TransitionReceive';
+import Cover from './components/Store/CustomerMenu/Cover';
 
 // customer account 
 import ManageAccount from './components/Store/CustomerMenu/CustomerNavPages/ManageAccount';
@@ -78,6 +80,10 @@ const App = () => {
     const [selectedProdId, setSelectedProdId] = React.useState();
 
     const [approveProduct, setApproveProduct] = React.useState();
+
+    const [receive, setReceive] = React.useState();
+
+    const [covertoggle, setCoverToggle] = React.useState(false);
 
     React.useEffect(()=> {
         window.scrollTo(0,0);
@@ -310,7 +316,8 @@ const App = () => {
 
                     <Route path='/user/profile/'>
                         <Shop_Navbar ID='ShopNavbar col-lg-12 m-0 p-0' setShopNavToggle={setShopNavToggle} selectedProdId={selectedProdId} setCustomerMenuToggle={setCustomerMenuToggle}/>
-                        <ManageAccount ID='ManageAccount col-lg-12 m-0 p-0' selectCategory={selectCategory} setSelectCategory={setSelectCategory} selectContainer={selectContainer}/>
+                        <ManageAccount ID='ManageAccount col-lg-12 m-0 p-0' selectCategory={selectCategory} setSelectCategory={setSelectCategory} selectContainer={selectContainer} setReceive={setReceive} setCoverToggle={setCoverToggle} covertoggle={covertoggle} />
+                        <Cover ID='Cover col-lg-12 m-0 -0' covertoggle={covertoggle} setCoverToggle={setCoverToggle}/>
                     </Route>
 
                     <Route path='/collections/all' >
@@ -399,6 +406,10 @@ const App = () => {
 
                     <Route path='/checkout'>
                         <CustomerCheckout ID='CustomerCheckout col-lg-12 m-0 p-0' />
+                    </Route>
+
+                    <Route path='/user/receive/'>
+                        <TransitionReceive ID='TransitionReceive col-lg-12 m-0 p-0' receive={receive}/>
                     </Route>
                 
                 </Switch>

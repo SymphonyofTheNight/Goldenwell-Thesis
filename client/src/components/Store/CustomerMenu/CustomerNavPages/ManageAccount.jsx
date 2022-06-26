@@ -6,7 +6,7 @@ import '../../../../scss/ManageAccount.scss';
 //img
 import logo from '../../../../img/logo.png';
 
-const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer }) => {
+const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer, setReceive, setCoverToggle, covertoggle }) => {
 
     const history = useHistory();
 
@@ -35,6 +35,15 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer 
             gender: _ClientInfo ? _ClientInfo?.gender : null
         });
     },[_ClientInfo]);
+
+    const ReceiveItem = (e) => {
+        e.preventDefault();
+        // transiiton cover
+        setCoverToggle(state => !state)
+        setTimeout(() => {
+            history.push('/user/receive/');
+        }, 2000);
+    }
 
     const customerHeader = <div className='header'>
         <div className='clientNameContainer'>
@@ -267,6 +276,7 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer 
                 _ClientInfo &&
                 Object.keys(_ClientInfo.toBeDeliver).map(state => {
                     return (
+                        <form onSubmit={ReceiveItem}>
                         <div className='item'>
                                 <div className='productimg'>
                                     <img src={_ClientInfo.toBeDeliver[state].imageBase64} className='img'/>
@@ -287,11 +297,17 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer 
                                     </span>
                                 </div>
                                 <div className='receiveContainerbtn'>
-                                    <button className='viewbtn'>
-                                        VIEW
+                                    <button className='viewbtn'
+                                    onClick={()=> {
+                                        setReceive(_ClientInfo.toBeDeliver[state].product_identifier)
+                                    }}
+                                    type='submit'
+                                    >
+                                        RECEIVE
                                     </button>
                                 </div>
                         </div>
+                        </form>
                     )
                 })
             }

@@ -199,14 +199,6 @@ const ClientSchema = mongoose.Schema({
             type: String,
             required: true,
           },
-        quantity: {
-          type: String,
-          required: true
-        },
-        clientID: {
-          type: String,
-          required: true
-        },
         clientname: {
           type: String,
           required: true
@@ -215,18 +207,6 @@ const ClientSchema = mongoose.Schema({
           type: String,
           required: true
         },
-        email: {
-          type: String,
-          required: true
-        },
-        number: {
-          type: Number,
-          required: true
-        },
-        date: {
-            type: String,
-            default: Date.now(),
-        }
       }
       ],
 });

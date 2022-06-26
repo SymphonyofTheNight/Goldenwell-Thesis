@@ -231,9 +231,24 @@
                .aggreementContainer{
                    margin-top: 1vh;
                    background: rgba($color: #973939, $alpha: 0);
-                   @include baseDisplay(10vh,75vw,flex,flex-start,flex-start);
+                   @include baseDisplay(15vh,75vw,flex,flex-start,flex-start);
                    flex-direction: row;
                    flex-wrap: wrap;
+                   .agreementInnerContainer-3{
+                    @include baseDisplay(5vh,75vw,flex,center,flex-start);
+                    background: rgba($color: #000000, $alpha: 0);
+                    .checkbox{
+                         height: 1.75vh;
+                         width: 1.75vw;
+                         border-radius: 50px;
+                         margin-left: 1.5vw;
+                     }
+                    .text{
+                         margin-left: 0vw;
+                         @include font('myFont',1em);
+                         font-weight: 700;
+                     }
+                }
                    .agreementInnerContainer{
                        @include baseDisplay(5vh,75vw,flex,center,flex-start);
                        background: rgba($color: #000000, $alpha: 0);

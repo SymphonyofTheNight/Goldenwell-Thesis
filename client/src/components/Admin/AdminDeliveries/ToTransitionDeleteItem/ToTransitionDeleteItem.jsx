@@ -11,6 +11,7 @@ const ToTransitionDeleteItem = ({ ID, approveProduct }) => {
 
   const [admin, setAdmin] = React.useState(JSON.parse(localStorage.getItem('Administrator')));
   const [text, setText] = React.useState('Approve Delivery....');
+  const cover = React.useRef();
 
   // const _product = useSelector(state => approveProduct ? state.reducer.storage.map(val => val?.delivery?.find(data => data._id === approveProduct )) : null );
 
@@ -23,6 +24,7 @@ const ToTransitionDeleteItem = ({ ID, approveProduct }) => {
           setTimeout(() => {
             try {
               dispatch(pullApproveItemFromAdmin(admin.result._id,approveProduct));
+              cover.current.style.opacity = '0';
               setTimeout(() => {
                 history.push('/admin/deliveries');
                 window.location.reload();
@@ -35,7 +37,7 @@ const ToTransitionDeleteItem = ({ ID, approveProduct }) => {
   },[])
 
   return (
-    <div className={ID}>
+    <div className={ID} ref={cover}>
         {text}
     </div>
   )

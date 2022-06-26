@@ -56,6 +56,7 @@ const CustomerMenu = ({ ID, CustomerMenuToggle, setCustomerMenuToggle, selectCat
                         <button className='btnNavigation'
                             onClick={()=> {
                                 history.push('/user/profile/');
+                                setCustomerMenuToggle(toggle => !toggle)
                             }}
                         >
                            <span className='text'>
@@ -68,6 +69,7 @@ const CustomerMenu = ({ ID, CustomerMenuToggle, setCustomerMenuToggle, selectCat
                         onClick={()=> {
                             // setSelectContainer(state => !state)
                             history.push('/user/profile/orders')
+                            setCustomerMenuToggle(toggle => !toggle)
                         }}>
                             <span className='text'>
                                My order
