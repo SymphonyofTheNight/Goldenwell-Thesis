@@ -19,33 +19,11 @@ const CustomerCheckout = ({ ID }) => {
   const popContainer = useRef();
   const logopopContainer = useRef();
 
-  const [sendEmail, setSendEmail] = React.useState(false);
-
   const [popToggle, setPopToggle] = React.useState(false);
   
   const [COD, setCOD] = React.useState({});
 
   const [number, setNumber] = React.useState(0);
-
-  // console.log(getClient) // client get cart
-
-  // React.useEffect(()=> {
-  //   const total = getClient.map(state => {
-  //     return state?.cart.flatMap(prod => {
-  //         if(isNaN(prod?.price)){
-  //             return;
-  //         }else {
-  //             return prod?.price
-  //         }
-  //     })
-  //   })
-  //     if(total[0]){
-  //         let arr = total[0]
-  //         let totalpay = arr.reduce((cur,prev)=> cur + prev,0);
-  //         setNumber(totalpay);
-  //     }
-
-  // },[getClient]);
 
   React.useEffect(()=> {
     if(getCart){
@@ -64,16 +42,12 @@ const CustomerCheckout = ({ ID }) => {
 
   },[getCart])
 
-  // console.log(getCart)
+
 
   const cashondelivery = (e) => {
     e.preventDefault();
-
     addOrderAdmin(ownerID,COD);
-
     setPopToggle(state => !state)
-
-    // dispatch(addOrderAdmin(ownerID,COD));
   }
 
   React.useEffect(()=> {
@@ -231,8 +205,8 @@ const CustomerCheckout = ({ ID }) => {
                           currency: "PHP"
                         }}
                         onSuccess={(details,data) => {
-                          alert(data);
                           setPopToggle(state => !state);
+                          addOrderAdmin(ownerID,COD);
                         }}
                         onError={err => {
                           console.log(err)
