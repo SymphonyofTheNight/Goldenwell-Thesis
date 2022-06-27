@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../../../scss/TransitionReceive.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { ItemReceive } from '../../../../controllers/Actions.js';
 import { useHistory } from 'react-router-dom';
+import { DeliveredItem } from '../../../../controllers/Actions.js';
 
 const TransitionReceive = ({ ID, receive }) => {
 
@@ -15,6 +15,7 @@ const TransitionReceive = ({ ID, receive }) => {
 
     const getProduct = useSelector(state => receive ? state.reducer.storage.map(data => data?.store.find(val => val.product_identifier === receive)) : null );
 
+    const [clientID, setClientID] = React.useState('');
     const [productname, setProductname] = React.useState('');
     const [product_identifier, setProduct_identifier] = React.useState('');
     const [price, setPrice] = React.useState('');
@@ -24,6 +25,7 @@ const TransitionReceive = ({ ID, receive }) => {
 
     React.useEffect(()=> {
         if(getProduct){
+            setClientID(client.result._id);
             setProductname(getProduct[0]?.productname);
             setProduct_identifier(getProduct[0]?.product_identifier);
             setPrice(getProduct[0]?.price);
@@ -32,6 +34,20 @@ const TransitionReceive = ({ ID, receive }) => {
             setAddress(client.result.address);
         }
     },[getProduct])
+
+    // console.log(getProduct) // product
+
+    React.useEffect(()=> {
+      if(clientID && product_identifier && productname && price && imagebase64 && clientname && address && cover.current) {
+        console.log(clientID,product_identifier,productname,price,imagebase64,clientname,address);
+        dispatch(DeliveredItem(clientID,product_identifier,productname,price,imagebase64,clientname,address));
+        cover.current.style.opacity = '0';
+        setInterval(() => {
+          history.push('/user/profile/');
+          window.location.reload();
+        }, 3000);
+      }
+    },[clientID && product_identifier && productname && price && imagebase64 && clientname && address])
 
   return (
     <div className={ID} ref={cover}>

@@ -145,9 +145,9 @@ export const pullApproveItemFromAdmin = (adminID,prodID) => async (dispatch) => 
     }
 } 
 
-export const ItemReceive = (product_identifier,productname,price,imageBase64,clientname,address) => async (dispatch) => {
+export const DeliveredItem = (clientID,product_identifier,productname,price,imageBase64,clientname,address) => async (dispatch) => {
     try {
-        const { data } = await api.delivered(product_identifier,productname,price,imageBase64,clientname,address);
+        const { data } = await api.Delivered(clientID,product_identifier,productname,price,imageBase64,clientname,address);
         dispatch({ type: 'RECEIVE', payload: data });
     } catch (error) {
         console.log(error);

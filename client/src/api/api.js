@@ -192,17 +192,20 @@ export const deliverOTW = (product_identifier,productname,price,imageBase64,quan
     }
 )
 
-export const delivered = (product_identifier,productname,price,imageBase64,customerID,clientname,address) => api.patch(`/user/receive/${customerID}`,
-{
-    Delivered: [
-        {
-            product_identifier: product_identifier,
-            productname: productname,
-            price: price,
-            imageBase64: imageBase64,
-            clientname: clientname,
-            address: address,
-        }
-    ]
-}
+// export const Delivered = (ClientID,product_identifier,productname,price,imageBase64,clientname,address) => api.patch(`/user/receive/${Client}`)
+
+export const Delivered = (clientID,product_identifier,productname,price,imageBase64,clientname,address) => api.patch(`/user/receive/${clientID}`,
+    {
+        Delivered: [
+            {
+                product_identifier: product_identifier,
+                productname: productname,
+                price: price,
+                imageBase64: imageBase64,
+                clientname: clientname,
+                address: address
+            }
+        ]
+    }
 )
+
