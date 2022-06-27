@@ -275,8 +275,8 @@ export const Delivered = async (req,res) => {
 
     const { id } = req.params;
 
-    console.log(id);
-    console.log(req.body);
+    // console.log(id);
+    // console.log(req.body);
 
     try {
         if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({ message: 'Invalid ID' });
@@ -303,4 +303,28 @@ export const Delivered = async (req,res) => {
         res.status(404).json(error);
     }
 
+}
+
+export const PullOrderedItem = async (req,res) => {
+
+    const { id } = req.params;
+
+    console.log(id);
+    console.log(req.body);
+
+    try {
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({ message: 'invalid Id' });
+
+        await ClientModels.findByIdAndUpdate(id,{
+            $pull: {
+                toBeDeliver: {
+                    product_identifier: req.body.toBeDeliver[0].product_identifier
+                }
+            }
+        },{
+            new: true
+        })
+    } catch (error) {
+        res.status(404).json(error);
+    }
 }

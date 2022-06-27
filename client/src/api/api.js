@@ -209,3 +209,13 @@ export const Delivered = (clientID,product_identifier,productname,price,imageBas
     }
 )
 
+export const receivePull = (clientID,product_identifier) => api.patch(`/item/receive/${clientID}`,
+    {
+        toBeDeliver: [
+            {
+                product_identifier: product_identifier
+            }
+        ]
+    }
+)
+

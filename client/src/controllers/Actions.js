@@ -153,3 +153,12 @@ export const DeliveredItem = (clientID,product_identifier,productname,price,imag
         console.log(error);
     }
 }
+
+export const ItemPullReceive = (clientID,product_identifier) => async (dispatch) => {
+    try {
+        const { data } = await api.receivePull(clientID,product_identifier);
+        dispatch({ type: 'PULL', payload: data });
+    } catch (error) {
+        console.log(error);
+    }
+}

@@ -9,7 +9,7 @@ import { getOwnerProducts, addOwnerProducts, deleteProduct, updateProduct, toDel
 import { ownersignup,ownersignin, EditOwnerPassword, EditOwnerUsername } from '../controllers/OwnerAuthentication.js';
 
 import { clientsignup,clientsignin } from '../controllers/ClientAuthentication.js';
-import { tobeDeliver,DeliveredItems,getClientProducts,AddProdToCard, Addtowishlist, deleteAllitems, deleteItem, wishtocart, deliverOTW, Delivered } from '../controllers/ClientController.js';
+import { tobeDeliver,DeliveredItems,getClientProducts,AddProdToCard, Addtowishlist, deleteAllitems, deleteItem, wishtocart, deliverOTW, Delivered, PullOrderedItem } from '../controllers/ClientController.js';
 
 router.get('/', getOwnerProducts); // done
 router.patch('/admin/collections/all/:id', addOwnerProducts); // done
@@ -35,6 +35,7 @@ router.patch('/collections/view/:id', AddProdToCard); //finished
 router.put('/collections/view/:id', Addtowishlist); // finished
 router.patch('/wishlist/addtocart/:id', wishtocart);
 router.patch('/user/receive/:id', Delivered); // try
+router.patch('/item/receive/:id', PullOrderedItem); // try
 
 
 //from cart to checkouts

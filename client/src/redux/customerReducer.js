@@ -44,6 +44,10 @@ const CustomerReducer = (state = initialState,action) => {
             return {
                 storage: action.payload
             }
+        case 'PULL':
+            return {
+                storage: state.storage.map(state => state.toBeDeliver.filter(val => val.product_identifier !== action.payload ))
+            }
         default:
             return {...state};
     }

@@ -41,10 +41,9 @@ const TransitionReceive = ({ ID, receive }) => {
       if(clientID && product_identifier && productname && price && imagebase64 && clientname && address && cover.current) {
         console.log(clientID,product_identifier,productname,price,imagebase64,clientname,address);
         dispatch(DeliveredItem(clientID,product_identifier,productname,price,imagebase64,clientname,address));
-        cover.current.style.opacity = '0';
         setInterval(() => {
-          history.push('/user/profile/');
-          window.location.reload();
+          history.push('/item/done/receive/');
+          // window.location.reload();
         }, 3000);
       }
     },[clientID && product_identifier && productname && price && imagebase64 && clientname && address])

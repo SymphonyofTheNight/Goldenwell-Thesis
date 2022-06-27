@@ -49,6 +49,7 @@ import TransitionCover from './components/Admin/AdminDeliveries/TransitionCover/
 import ToTransitionDeleteItem from './components/Admin/AdminDeliveries/ToTransitionDeleteItem/ToTransitionDeleteItem';
 import TransitionReceive from './components/Store/CustomerMenu/TransitionReceive/TransitionReceive';
 import Cover from './components/Store/CustomerMenu/Cover';
+import PullReceiveItem from './components/Store/CustomerMenu/PullReceiveItem/PullReceiveItem';
 
 // customer account 
 import ManageAccount from './components/Store/CustomerMenu/CustomerNavPages/ManageAccount';
@@ -410,6 +411,10 @@ const App = () => {
 
                     <Route path='/user/receive/'>
                         <TransitionReceive ID='TransitionReceive col-lg-12 m-0 p-0' receive={receive}/>
+                    </Route>
+
+                    <Route path='/item/done/receive/'>
+                        <PullReceiveItem ID='PullReceiveItem col-lg-12 m-0 p-0' receive={receive} setReceive={setReceive}/>
                     </Route>
                 
                 </Switch>
