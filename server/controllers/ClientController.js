@@ -328,3 +328,29 @@ export const PullOrderedItem = async (req,res) => {
         res.status(404).json(error);
     }
 }
+
+export const PullReceiveItem = async (req,res) => {
+
+    const { id } = req.params;
+
+    console.log(id);
+    console.log(req.body);
+
+    try {
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).json({ message: 'invalid ID' });
+
+        await ClientModels.findByIdAndUpdate(id,{
+            $pull: {
+                Delivered: {
+                    _id: req.body.Delivered[0]._id
+                }
+            }
+        },{
+            new: true
+        })
+
+    } catch (error) {
+        res.status(404).json(error);
+    }
+
+}

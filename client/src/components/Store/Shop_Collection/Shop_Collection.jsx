@@ -7,23 +7,23 @@ const Shop_Collection = ({ ID, setSelectedProdId }) => {
 
     const history = useHistory();
 
-    React.useEffect(()=> {
-        axios.get('http://localhost:5000/')
-        .then(res => {
-            setContainer(res.data);
-        }).catch(err => {
-            console.log(err);
-        })
-    },[])
-
     // React.useEffect(()=> {
-    //     axios.get('https://goldenwell.herokuapp.com/')
+    //     axios.get('http://localhost:5000/')
     //     .then(res => {
     //         setContainer(res.data);
     //     }).catch(err => {
     //         console.log(err);
     //     })
     // },[])
+
+    React.useEffect(()=> {
+        axios.get('https://goldenwell.herokuapp.com/')
+        .then(res => {
+            setContainer(res.data);
+        }).catch(err => {
+            console.log(err);
+        })
+    },[])
 
     const [container, setContainer] = React.useState([]);
     const [objectsArray, setObjectsArray] = React.useState([]);

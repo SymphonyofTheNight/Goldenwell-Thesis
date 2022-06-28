@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import '../../../../scss/ManageAccount.scss';
+import { PullReceive } from '../../../../api/api.js';
 
 //img
 import logo from '../../../../img/logo.png';
@@ -12,6 +13,8 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer,
 
     const [Client, setClient] = React.useState(JSON.parse(localStorage.getItem('Client')));
     const [Header, setHeader] = React.useState();
+
+    const [pull, setPull] = React.useState();
 
     const _ClientInfo = useSelector(state => Client ? state.CustomerReducer.storage?.find(customer => customer._id === Client.result._id) : Client);
 
@@ -44,6 +47,18 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer,
             history.push('/user/receive/');
         }, 2000);
     }
+
+    React.useEffect(()=> {
+        if(Client.result._id && pull){
+            // dispatch here
+            PullReceive(Client.result._id,pull);
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+        }
+    },[pull])
+
+
 
     const customerHeader = <div className='header'>
         <div className='clientNameContainer'>
@@ -316,6 +331,55 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer,
     </div>
 
     const Receive = <div className='Receive'>
+
+        <div className='navigationHeader'>
+            <ul className="nav nav-tabs">
+                <li className="nav-item">
+                    <button className="nav-link">Received</button>
+                </li>
+            </ul>
+        </div>
+
+        <div className='TabsContentContainer'>
+        {
+                _ClientInfo &&
+                Object.keys(_ClientInfo.Delivered).map(state => {
+
+                    // console.log(_ClientInfo.Delivered[state]._id)
+
+                    return (
+                        <div className='item'>
+                                <div className='productimg'>
+                                    <img src={_ClientInfo.Delivered[state].imageBase64} className='img'/>
+                                </div>
+                                <div className='productname'>
+                                    <span className='text'>
+                                        {_ClientInfo.Delivered[state].productname}
+                                    </span>
+                                </div>
+                                <div className='address'>
+                                    <span className='text'>
+                                        {_ClientInfo.Delivered[state].address}
+                                    </span>
+                                </div>
+                                <div className='number'>
+                                    <span className='text'>
+                                        +63 {_ClientInfo.Delivered[state].number}
+                                    </span>
+                                </div>
+                                <div className='receiveContainerbtn'>
+                                    <button className='viewbtn'
+                                    onClick={()=> {
+                                        setPull(_ClientInfo.Delivered[state]._id)
+                                    }}>
+                                        REMOVE
+                                    </button>
+                                </div>
+                        </div>
+                    )
+                })
+            }
+        </div>
 
     </div>
 

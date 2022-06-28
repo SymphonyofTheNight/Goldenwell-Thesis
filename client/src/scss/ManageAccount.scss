@@ -679,6 +679,107 @@
                     @include baseDisplay(60vh,79vw,flex,flex-start,flex-start);
                 }
             }
+            .Receive{
+                background: rgba($color: #000000, $alpha: 0);
+                @include baseDisplay(60vh,81vw,flex,center,flex-start);
+                flex-direction: column;
+                margin-top: 1vh;
+                .navigationHeader{
+                    background: rgba($color: #863232, $alpha: 0);
+                    @include baseDisplay(auto,81vw,flex,flex-start,flex-start);
+                    .nav-tabs{
+                        margin-left: 1vw;
+                        .nav-item{
+                            .nav-link{
+                                background: rgba($color: #f0f0f0, $alpha: 1);
+                                border-radius: 0px;
+                                color: #000000;
+                            }
+                        }
+                    }
+                }
+                .TabsContentContainer{
+                    background: rgba($color: #f0f0f0, $alpha: 1);
+                    min-height: 55vh;
+                    max-height: auto;
+                    width: 79vw;
+                    overflow-y: scroll;
+                    .item{
+                        background: rgba($color: #ffffff, $alpha: 1.0);
+                        height: 10vh;
+                        width: 78vw;
+                        margin: 10px 10px;
+                        border-radius: 5px;
+                        box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: 0.1);
+                        display: flex;
+                        .productimg{
+                            background: rgba($color: #ac5a5a, $alpha: 0);
+                            height: 10vh;
+                            width: 10vw;
+                            display: grid;
+                            place-items: center;
+                            border-radius: 5px;
+                            // border: 1px solid rgb(197, 197, 197);
+                            // box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: 0.2);
+                            .img{
+                                height: 8vh;
+                            }
+                        }
+                        .productname{
+                            background: rgba($color: #2b8a7d, $alpha: 0);
+                            height: 10vh;
+                            width: 14vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                font-size: 1.1em;
+                            }
+                        }
+                        .address{
+                            background: rgba($color: #3558a5, $alpha: 0);
+                            height: 10vh;
+                            width: 25vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                font-size: 1.1em;
+                            }
+                        }
+                        .number{
+                            background: rgba($color: #2b8a7d, $alpha: 0);
+                            height: 10vh;
+                            width: 14vw;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .text{
+                                font-family: 'myFont',sans-serif;
+                                font-size: 1.1em;
+                            }
+                        }
+                        .receiveContainerbtn{
+                            background: rgba($color: #a8a8a8, $alpha: 0);
+                            height: 10vh;
+                            width: 15vw;
+                            display: grid;
+                            place-items: center;
+                            .viewbtn{
+                                background: rgba($color: #e7e7e7, $alpha: 1.0);
+                                border: 0px solid transparent;
+                                height: 5vh;
+                                width: 7vw;
+                            }
+                            .viewbtn:hover{
+                                border: 1px solid black;
+                            }
+                        }
+                    }
+                }
+            }
 
             // scss editing functions
 

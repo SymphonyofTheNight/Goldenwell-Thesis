@@ -167,9 +167,13 @@ const Shop_Footer = ({ ID }) => {
 
                     {/* copyright */}
                     
-                    <span className='copyright'>
+                    <button className='copyright'
+                        onClick={()=> {
+                            history.push('/admin')
+                        }}
+                    >
                         <FaCopyright className='icon'/> Goldenwell
-                    </span>
+                    </button>
 
                     {/* show on mobile devices */}
 
