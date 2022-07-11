@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import  missionpng2 from '../../../img/missionpng2.jpeg';
 import  missionpng5 from '../../../img/missionpng5.jpg';
+import logo from '../../../img/logo.png';
 import '../../../scss/Mission.scss';
 
 const Mission = ({ ID }) => {

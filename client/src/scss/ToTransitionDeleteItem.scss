@@ -18,4 +18,17 @@
     font-family: 'myFont',sans-serif;
     font-size: 2em;
     color: #fff;
+    .SuccessBTN{
+        background: rgba($color: #53eb45, $alpha: 1.0);
+        height: 8vh;
+        width: 12vw;
+        border: 0px solid transparent;  
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        .check{
+            margin-left: .5vw;
+        }
+    }
 }
+

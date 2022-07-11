@@ -37,7 +37,7 @@ const Shop_Collection_View = ({ ID,selectedProdId, setTransition }) => {
     //         //get store data
     //         setContainer(res.data.map(state => state.store));
     //     }).catch(err => {
-    //         console.log(err)
+    //         console.log(err) 
     //     })
     // },[])
 

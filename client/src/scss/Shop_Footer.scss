@@ -291,9 +291,9 @@
             .innerFoot-1{
                 background: rgba($color: #2d8513, $alpha: 0);
                 .txt{
-                    background: rgba($color: #000000, $alpha: 0);
+                    background: rgba($color: #681616, $alpha: 0);
                     font-size: 5em;
-                    line-height: 110px;
+                    line-height: 98px;
                 }
             }
             .innerFoot-2{
@@ -344,10 +344,11 @@
                 }
                 .footerContents-2{
                     background: rgba($color: #2397a7, $alpha: 0);
+                    width: 24vw;
                     .performance{
                         background: rgba($color: #da2d2d, $alpha: 0);
                         margin-top: 0vh;
-                        width: 21vw;
+                        width: 24vw;
                         height: 5vh;
                         border: 0px solid transparent;
                         display: grid;
@@ -360,13 +361,13 @@
                             font-family: 'Raleway', sans-serif;
                             line-height: 15px;
                             color: rgba($color: #ffffff, $alpha: 1.0);
-                            width: 21vw;
-                            // background: rgba($color: #000000, $alpha: 0);
+                            width: auto;
+                            // background: rgba($color: #000000, $alpha: 1);
                         }
                         .line{
                             background: rgba($color: #ffffff, $alpha: 1.0);
                             height: .2vh;
-                            width: 21vw;
+                            width: 24vw;
                             position: absolute;
                             bottom: 0;
                             transform: translateX(-120%);
@@ -379,9 +380,9 @@
                         }
                     }
                     .wheretobuy{
-                        background: rgba($color: #da2d2d, $alpha: 0);
+                        background: rgba($color: #16a397, $alpha: 0);
                         margin-top: 0vh;
-                        width: 21vw;
+                        width: 24vw;
                         height: 4vh;
                         border: 0px solid transparent;
                         display: grid;
@@ -394,12 +395,12 @@
                             font-family: 'Raleway', sans-serif;
                             line-height: 15px;
                             color: rgba($color: #ffffff, $alpha: 1.0);
-                            margin-left: .5vw;
+                            // margin-left: .5vw;
                         }
                         .line{
                             background: rgba($color: #ffffff, $alpha: 1.0);
                             height: .2vh;
-                            width: 21vw;
+                            width: 24vw;
                             position: absolute;
                             bottom: 0;
                             transform: translateX(-120%);
@@ -546,7 +547,7 @@
                     background: rgba($color: #2397a7, $alpha: 0);
                     height: 20vh;
                     .performance{
-                        background: rgba($color: #da2d2d, $alpha: 0);
+                        background: rgba($color: #da2d2d, $alpha: 1);
                         margin-top: 0vh;
                         width: 25w;
                         height: 2.2vh;
@@ -759,7 +760,7 @@
                     background: rgba($color: #2397a7, $alpha: 9);
                     height: 20vh;
                     .performance{
-                        background: rgba($color: #da2d2d, $alpha: 9);
+                        background: rgba($color: #da2d2d, $alpha: 0);
                         margin-top: 0vh;
                         width: 25w;
                         height: 2.2vh;
@@ -873,6 +874,7 @@
                         display: flex;
                         flex-direction: column;
                         flex-wrap: wrap;
+                        border: 0px solid transparent;
                         .categoriesContainer{
                             background: rgba($color: #a31875, $alpha: 0);
                             height: 4vh;
@@ -955,6 +957,7 @@
                             margin-top: .2vh;
                             position: relative;
                             overflow: hidden;
+                            border: 0px solid transparent;
                             .line{
                                 background: rgba($color: #ffffff, $alpha: 1.0);
                                 height: .1vh;

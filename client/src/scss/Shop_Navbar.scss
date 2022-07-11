@@ -169,21 +169,28 @@
 
 @include media('<=Ipad') {
     .ShopNavbar{
+        background: rgba($color: #1e95b3, $alpha: 0);
         height: 12vh;
         .LogoContainer{
             height: 12vh;
+            background: rgba($color: #2ca84b, $alpha: 1.0);
             .logo{
                 margin-left: 3vw;
                 height: 2vh;
-            }
+            }   
         }
         .NavContainer{
+            background: rgba($color: #8eb928, $alpha: 1.0);
             height: 12vh;
             ul{
                 li{
+                    // display: flex;
+                    // align-items: center;
+                    // justify-content: center;
                     .nav-btn{
+                        background: rgba($color: #1e95b3, $alpha: 1.0);
                         font-size: 1.20rem;
-                        margin-top: .5vh;
+                        // margin-top: .5vh;
                         .line{
                             background: rgba($color: #000000, $alpha: 1.0);
                             height: .2vh;

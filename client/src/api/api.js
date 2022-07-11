@@ -12,13 +12,13 @@ export const OwnerSignup = (user,pass) => api.post('/admin/signup', {
 })
 
 export const pullApproveAdminItem = (adminID,prodID) => api.patch(`/approve/redirect/${adminID}`,
-{
-    delivery: [
-        {   
-            _id: prodID
-        }
-    ]
-}
+    {
+        delivery: [
+            {   
+                _id: prodID
+            }
+        ]
+    }
 )
 
 export const addOrderAdmin = (ownerID,array) => api.patch(`/checkout/${ownerID}`,

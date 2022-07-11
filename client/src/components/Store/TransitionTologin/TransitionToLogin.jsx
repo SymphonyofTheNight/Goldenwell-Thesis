@@ -15,8 +15,9 @@ const TransitionToLogin = ({ ID, setTransition, setLoginToggle }) => {
             setTimeout(() => {
                 setTransition(state => !state)
                 history.push('/')
-            }, 1000);
-        }, 2000);
+                // window.location.reload();
+            }, 2000);
+        }, 3000);
     },[])
 
   return (

@@ -5,7 +5,7 @@ import logo from '../../../img/logo.png';
 import remake from '../../../img/remake.png';
 import '../../../scss/Shop_Navbar.scss';
 
-const Shop_Navbar = ({ ID,setShopNavToggle,selectedProdId,setLoginToggle, setCustomerMenuToggle }) => {
+const Shop_Navbar = ({ ID,setShopNavToggle, selectedProdId, setLoginToggle, setCustomerMenuToggle }) => {
 
     const [user, setUser] = React.useState(JSON.parse(localStorage.getItem('Client')));
 
@@ -19,7 +19,7 @@ const Shop_Navbar = ({ ID,setShopNavToggle,selectedProdId,setLoginToggle, setCus
     },[])
 
     const navTrigger = () => {
-        setShopNavToggle(toggle => !toggle)
+        setLoginToggle(toggle => !toggle)
     }
 
     const goCollections = () => {

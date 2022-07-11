@@ -8,6 +8,8 @@ import '../../../scss/Shop_Footer.scss';
 
 const Shop_Footer = ({ ID }) => {
 
+    const getWidth = window.matchMedia('(max-width: 700px)');
+
     const history = useHistory();
 
     return (
@@ -91,7 +93,7 @@ const Shop_Footer = ({ ID }) => {
                                     </button>
                                 </div>
 
-                                {/* shows only on mobile version */}
+                                {/* shows only on mobile version and hide on ipad*/}
 
                                 <div className='footerNavContainer'>
                                     <button className='performance'

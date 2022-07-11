@@ -95,6 +95,7 @@ const CustomerLogin = ({ ID, loginToggle, setLoginToggle, setGmailname, setGmail
 
     const logout = (e) => {
         console.log('logout successfully')
+        localStorage.clear();
         setGlogin(state => !state)
     }
     

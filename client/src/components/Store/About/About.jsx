@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../../../img/logo.png';
 import '../../../scss/About.scss';
 
 const About = ({ ID }) => {
@@ -11,7 +12,7 @@ const About = ({ ID }) => {
         </div>
 
         <div className='imgContainer'>
-            
+            <img src={logo} className='logo'/>
         </div>
 
         <div className='aboutusContainer'>

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../../../scss/ToTransitionDeleteItem.scss';
 import { useHistory } from 'react-router-dom';
+import { FaCheck } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { pullApproveItemFromAdmin } from '../../../../controllers/Actions.js';
 
@@ -11,11 +12,8 @@ const ToTransitionDeleteItem = ({ ID, approveProduct }) => {
 
   const [admin, setAdmin] = React.useState(JSON.parse(localStorage.getItem('Administrator')));
   const [text, setText] = React.useState('Approve Delivery....');
+  const [show, setShow] = React.useState(false);
   const cover = React.useRef();
-
-  // const _product = useSelector(state => approveProduct ? state.reducer.storage.map(val => val?.delivery?.find(data => data._id === approveProduct )) : null );
-
-  // console.log(admin.result._id);
 
   React.useEffect(()=> {
     setTimeout(() => {
@@ -24,11 +22,9 @@ const ToTransitionDeleteItem = ({ ID, approveProduct }) => {
           setTimeout(() => {
             try {
               dispatch(pullApproveItemFromAdmin(admin.result._id,approveProduct));
-              cover.current.style.opacity = '0';
-              setTimeout(() => {
-                history.push('/admin/deliveries');
-                window.location.reload();
-              }, 1000);
+              // cover.current.style.background = 'white';
+              setText('');
+              setShow(state => !state);
             } catch (error) {
               console.log(error)
             }
@@ -39,6 +35,19 @@ const ToTransitionDeleteItem = ({ ID, approveProduct }) => {
   return (
     <div className={ID} ref={cover}>
         {text}
+        {show && 
+          <button className='SuccessBTN'
+            onClick={()=> {
+              cover.current.style.opacity = '0';
+              setTimeout(() => {
+                history.push('/admin/home');
+                window.location.reload();
+              }, 2000);
+            }}
+          >
+              Success <FaCheck className='check'/>
+          </button>
+        }
     </div>
   )
 

@@ -60,7 +60,6 @@ const AdminDeliveries = ({ ID, setApproveToggle, setApproveProduct, approveProdu
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        // console.log(clientId,clientname,productname,product_identifier,quantity,price,imagebase64,address,email,number);
         if(clientId && clientname && productname && product_identifier && quantity && price && imagebase64 && address && email && number){
             dispatch(CustomertoBeDeliver(product_identifier,productname,price,imagebase64,quantity,clientId,clientname,address,email,number));
             if(approveProduct){
