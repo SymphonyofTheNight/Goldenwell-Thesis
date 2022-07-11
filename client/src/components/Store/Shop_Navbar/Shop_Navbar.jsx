@@ -125,7 +125,7 @@ const Shop_Navbar = ({ ID,setShopNavToggle, selectedProdId, setLoginToggle, setC
                             return setLoginToggle(toggle => !toggle)
                         }}
                     >
-                        login
+                        Login
                     <div className='line'/>
                     </button>
                 )}

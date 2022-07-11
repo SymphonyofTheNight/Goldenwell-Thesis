@@ -35,7 +35,7 @@ const Mission = ({ ID }) => {
             <div className='textContainer'>
               <div className='textInnerContainer-1'>
                 <span className='text'>
-                  We knew what people need. security to protect our love ones. <br/> So we offered safety. 
+                  We knew what people need. Security to protect our love ones. <br/> So we offered safety. 
                   {/* Nothing is ever going to be unnoticed. Free your mind and protect your love ones. */}
                 </span>
                 <span className='text2'>
@@ -98,7 +98,7 @@ const Mission = ({ ID }) => {
         <div className='imgContainer-5'>
           <div className='imgInnerContainer1'>
             <span className='text'> 
-              The Goldenwell™ has been tested and trusted for more than 6 years. And It's getting better 
+              Goldenwell™ has been tested and trusted for more than 6 years. And It's getting better 
               with our passion to serve and protect.
             </span>
           </div>

@@ -233,6 +233,16 @@ const App = () => {
                     </Route>
 
                     <Route path='/about'>
+                        <CustomerLogin ID='CustomerLogin col-lg-12 m-0 p-0' 
+                        loginToggle={loginToggle} 
+                        setLoginToggle={setLoginToggle} 
+                        setGmailname={setGmailname}
+                        setGmailId={setGmailId}
+                        setGmail={setGmail}
+                        gmailId={gmailId}
+                        gmailname={gmailname}
+                        setTransition={setTransition}
+                        />
                         <CustomerMenu ID='CustomerMenu col-lg-12 m-0 p-0' 
                         CustomerMenuToggle={CustomerMenuToggle} 
                         setCustomerMenuToggle={setCustomerMenuToggle} 
@@ -322,6 +332,16 @@ const App = () => {
                     </Route>
 
                     <Route path='/collections/all' >
+                        <CustomerLogin ID='CustomerLogin col-lg-12 m-0 p-0' 
+                        loginToggle={loginToggle} 
+                        setLoginToggle={setLoginToggle} 
+                        setGmailname={setGmailname}
+                        setGmailId={setGmailId}
+                        setGmail={setGmail}
+                        gmailId={gmailId}
+                        gmailname={gmailname}
+                        setTransition={setTransition}
+                        />
                         <CustomerMenu ID='CustomerMenu col-lg-12 m-0 p-0' 
                         CustomerMenuToggle={CustomerMenuToggle} 
                         setCustomerMenuToggle={setCustomerMenuToggle} 
