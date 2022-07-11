@@ -17,4 +17,10 @@
     position: fixed;
     transition: .5s;
     transform: translateY(100%);
+    color: #ffffff;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-family: 'myFont',sans-serif;
+    font-size: 2em;
 }

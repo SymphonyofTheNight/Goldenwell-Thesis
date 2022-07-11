@@ -84,6 +84,8 @@ const App = () => {
 
     const [receive, setReceive] = React.useState();
 
+    const [pull, setPull] = React.useState();
+
     const [covertoggle, setCoverToggle] = React.useState(false);
 
     React.useEffect(()=> {
@@ -327,7 +329,7 @@ const App = () => {
 
                     <Route path='/user/profile/'>
                         <Shop_Navbar ID='ShopNavbar col-lg-12 m-0 p-0' setShopNavToggle={setShopNavToggle} selectedProdId={selectedProdId} setCustomerMenuToggle={setCustomerMenuToggle}/>
-                        <ManageAccount ID='ManageAccount col-lg-12 m-0 p-0' selectCategory={selectCategory} setSelectCategory={setSelectCategory} selectContainer={selectContainer} setReceive={setReceive} setCoverToggle={setCoverToggle} covertoggle={covertoggle} />
+                        <ManageAccount ID='ManageAccount col-lg-12 m-0 p-0' selectCategory={selectCategory} setSelectCategory={setSelectCategory} selectContainer={selectContainer} setReceive={setReceive} setPull={setPull} setCoverToggle={setCoverToggle} covertoggle={covertoggle} />
                         <Cover ID='Cover col-lg-12 m-0 -0' covertoggle={covertoggle} setCoverToggle={setCoverToggle}/>
                     </Route>
 
@@ -434,7 +436,7 @@ const App = () => {
                     </Route>
 
                     <Route path='/item/done/receive/'>
-                        <PullReceiveItem ID='PullReceiveItem col-lg-12 m-0 p-0' receive={receive} setReceive={setReceive}/>
+                        <PullReceiveItem ID='PullReceiveItem col-lg-12 m-0 p-0' receive={receive} setReceive={setReceive} setPull={setPull} pull={pull}/>
                     </Route>
                 
                 </Switch>

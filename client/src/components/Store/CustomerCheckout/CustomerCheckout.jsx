@@ -20,6 +20,8 @@ const CustomerCheckout = ({ ID }) => {
   const logopopContainer = useRef();
 
   const [popToggle, setPopToggle] = React.useState(false);
+
+  const [paymentText, setPaymentText] = React.useState('Request Payment Sent...');
   
   const [COD, setCOD] = React.useState({});
 
@@ -205,6 +207,7 @@ const CustomerCheckout = ({ ID }) => {
                           currency: "PHP"
                         }}
                         onSuccess={(details,data) => {
+                          setPaymentText('Payment Successful...');
                           setPopToggle(state => !state);
                           addOrderAdmin(ownerID,COD);
                         }}
@@ -234,7 +237,7 @@ const CustomerCheckout = ({ ID }) => {
               </div>
               <div className='textContainer'>
                   <span className='text'>
-                        Payment Successful
+                        {paymentText}
                   </span>
               </div>
             </div>

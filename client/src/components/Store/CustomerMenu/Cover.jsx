@@ -5,6 +5,8 @@ const Cover = ({ ID, covertoggle, setCoverToggle }) => {
 
     const toggleCover = React.useRef();
 
+    const [text, setText] = React.useState('');
+
     React.useEffect(()=> {
         if(covertoggle) {
             toggleCover.current.style.transform = 'translateY(0)';
@@ -16,7 +18,7 @@ const Cover = ({ ID, covertoggle, setCoverToggle }) => {
 
   return (
     <div  className={ID} ref={toggleCover}>
-
+      
     </div>
   )
 }

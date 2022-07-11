@@ -7,14 +7,12 @@ import { PullReceive } from '../../../../api/api.js';
 //img
 import logo from '../../../../img/logo.png';
 
-const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer, setReceive, setCoverToggle, covertoggle }) => {
+const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer, setReceive, setCoverToggle, covertoggle, setPull }) => {
 
     const history = useHistory();
 
     const [Client, setClient] = React.useState(JSON.parse(localStorage.getItem('Client')));
     const [Header, setHeader] = React.useState();
-
-    const [pull, setPull] = React.useState();
 
     const _ClientInfo = useSelector(state => Client ? state.CustomerReducer.storage?.find(customer => customer._id === Client.result._id) : Client);
 
@@ -41,23 +39,21 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer,
 
     const ReceiveItem = (e) => {
         e.preventDefault();
-        // transiiton cover
+
         setCoverToggle(state => !state)
         setTimeout(() => {
             history.push('/user/receive/');
         }, 2000);
     }
 
-    React.useEffect(()=> {
-        if(Client.result._id && pull){
-            // dispatch here
-            PullReceive(Client.result._id,pull);
-            setTimeout(() => {
-                window.location.reload();
-            }, 1500);
-        }
-    },[pull])
+    const RemoveItemPull = (e) => {
+        e.preventDefault();
 
+        setCoverToggle(state => !state)
+        setTimeout(() => {
+            history.push('/item/done/receive/');
+        }, 2000);
+    }
 
 
     const customerHeader = <div className='header'>
@@ -368,12 +364,16 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer,
                                     </span>
                                 </div>
                                 <div className='receiveContainerbtn'>
-                                    <button className='viewbtn'
-                                    onClick={()=> {
-                                        setPull(_ClientInfo.Delivered[state]._id)
-                                    }}>
-                                        REMOVE
-                                    </button>
+                                    <form onSubmit={RemoveItemPull}>
+                                        <button className='viewbtn'
+                                        onClick={()=> {
+                                            setPull(_ClientInfo.Delivered[state]._id)
+                                        }}
+                                        type='submit'
+                                        >
+                                            REMOVE
+                                        </button>
+                                    </form>
                                 </div>
                         </div>
                     )
@@ -621,8 +621,10 @@ const ManageAccount = ({ ID, selectCategory, setSelectCategory, selectContainer,
 
   return (
     <div className={ID}>
+
         {customerHeader}
         {navigation}
+
     </div>
   )
 

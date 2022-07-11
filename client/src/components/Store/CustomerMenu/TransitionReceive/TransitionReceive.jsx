@@ -10,7 +10,6 @@ const TransitionReceive = ({ ID, receive }) => {
     const history = useHistory();
 
     const [client, setClient] = React.useState(JSON.parse(localStorage.getItem('Client')));
-    const [text, setText] = React.useState('Receive Item....');
     const cover = React.useRef();
 
     const getProduct = useSelector(state => receive ? state.reducer.storage.map(data => data?.store.find(val => val.product_identifier === receive)) : null );
@@ -35,22 +34,19 @@ const TransitionReceive = ({ ID, receive }) => {
         }
     },[getProduct])
 
-    // console.log(getProduct) // product
-
     React.useEffect(()=> {
       if(clientID && product_identifier && productname && price && imagebase64 && clientname && address && cover.current) {
         console.log(clientID,product_identifier,productname,price,imagebase64,clientname,address);
         dispatch(DeliveredItem(clientID,product_identifier,productname,price,imagebase64,clientname,address));
         setInterval(() => {
           history.push('/item/done/receive/');
-          // window.location.reload();
         }, 3000);
       }
     },[clientID && product_identifier && productname && price && imagebase64 && clientname && address])
 
   return (
     <div className={ID} ref={cover}>
-        {text}
+      
     </div>
   )
 

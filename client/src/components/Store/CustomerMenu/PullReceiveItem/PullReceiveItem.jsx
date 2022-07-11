@@ -2,9 +2,10 @@ import React from 'react';
 import '../../../../scss/PullReceiveItem.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { ItemPullReceive } from '../../../../controllers/Actions.js';
+import { PullReceive } from '../../../../api/api.js';
 import { useHistory } from 'react-router-dom';
 
-const PullReceiveItem = ({ ID, receive, setReceive }) => {
+const PullReceiveItem = ({ ID, receive, setReceive, setPull, pull }) => {
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -14,27 +15,6 @@ const PullReceiveItem = ({ ID, receive, setReceive }) => {
 
     console.log(client.result._id);
     console.log(receive);
-
-    // React.useEffect(()=> {
-    //   if(receive && transi.current){
-    //     transi.current.style.opacity = '0';
-    //     setTimeout(() => {
-    //       dispatch(PullOrderedItem(client.result._id,receive));
-    //       history.push('/');
-    //       window.location.reload();
-    //     }, 2000);
-    //   }
-    // },[receive])
-
-    // React.useEffect(()=> {
-    //   if(receive && transi.current){
-    //     transi.current.style.opacity = '0';
-    //     setTimeout(() => {
-    //       dispatch(PullOrderedItem(client.result._id,receive));
-    //       history.push('/');
-    //     }, 2000);
-    //   }
-    // },[])
 
     React.useEffect(()=> {
       if(receive && transi.current){
@@ -51,6 +31,22 @@ const PullReceiveItem = ({ ID, receive, setReceive }) => {
         }, 2000);
       }
     },[receive])
+
+    React.useEffect(()=>{
+      if(pull && transi.current){
+        transi.current.style.opacity = '0';
+        setTimeout(() => {
+          if(pull !== ''){
+            PullReceive(client.result._id,pull);
+            setReceive('');
+            setTimeout(() => {
+              history.push('/');
+              window.location.reload();
+            }, 1000);
+          }
+        }, 2000);
+      }
+    },[pull])
 
   return (
     <div className={ID} ref={transi}>
